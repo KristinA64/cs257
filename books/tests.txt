@@ -1,0 +1,26 @@
+author search tests:
+
+1. blank input
+2. input not in dataset
+3. can handle bronte case
+4. can handle periods in names
+5. can handle multiple authors per book
+6. authors with >2 names
+7. can handle typical search
+
+book search test:
+1. blank input
+2. input not in dataset
+3. book name with commas
+4. book name with hyphens
+5. book names with numbers
+6. can handle typical input
+
+books between years:
+1. blank input
+2. incomplete input
+3. no books written between those years
+4. make sure it's inclusive
+5. invalid input (anything besides integers)
+6. check if start year is None
+7. check if end year is None
