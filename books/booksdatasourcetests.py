@@ -22,7 +22,7 @@ class BooksDataSourceTester(unittest.TestCase):
         Author Tests
     '''
     def test_blank_input(self):
-       self.assertTrue(self.data_source.authors('') == "Please input a string")
+    
 
     def test_abbr_author(self):
         authors = self.data_source.authors('VE Schwab')
@@ -32,7 +32,27 @@ class BooksDataSourceTester(unittest.TestCase):
         authors = self.data_source.authors('Jane Austen')
         self.assertTrue(Author('Austen', 'Jane') in authors)
 
-    
+   '''
+       Book Tests
+   '''
+   def test_blank_input(self):
+   
+
+   def test_books(self):
+      books = self.data_source.books('Sula', 'year')
+      self.assertTrue(Book('Sula', 1973, Author('Morrison', 'Tony')) in books)
+
+   def test_sorted_books(self):
+      books = self.data_source.books('There', 'title')
+      self.assertTrue(books[0] == Book('And Then There Were None', 1939, Author('Christie', 'Agatha')))
+
+
+   def test_comma_books(self):
+      books = self.data_source.books('fine thanks', 'title')
+      self.assertTrue(Book('Fine, Thanks', 2019, Author('Dunnewold', 'Mary')) in books)
+
+
+
     
 
 
