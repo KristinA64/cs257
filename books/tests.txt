@@ -6,7 +6,7 @@ author search tests:
 4. can handle periods in names
 5. can handle multiple authors per book
 6. authors with >2 names
-7. can handle typical search              X
+7. can handle typical search              
 
 book search test:
 1. blank input

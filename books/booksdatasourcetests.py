@@ -25,8 +25,10 @@ class BooksDataSourceTester(unittest.TestCase):
     #not complete?
     #change to be more like between years blank test
     def test_blank_author(self):
+        self.data_source = booksdatasource.BooksDataSource('books_medium.csv')
         authors = self.data_source.authors()
-        self.assertFalse(authors)
+        #depends on length of smaller CSV
+        self.assertTrue(len(authors) == 11)
 
     #wouldnt work
     #replace
@@ -40,6 +42,10 @@ class BooksDataSourceTester(unittest.TestCase):
     def test_authors(self):
         authors = self.data_source.authors('Jane Austen')
         self.assertTrue(Author('Austen', 'Jane') in authors)
+
+    def test_sorted_authors(self):
+        authors = self.data_source.authors('te')
+        self.assertTrue(authors[0] == Author('Austen', 'Jane'))
 
     '''
        Book Tests
@@ -56,11 +62,15 @@ class BooksDataSourceTester(unittest.TestCase):
 
     def test_books(self):
         books = self.data_source.books('Sula', 'year')
-        self.assertTrue(Book('Sula', 1973, [Author('Morrison', 'Tony')]) in books)
+        self.assertTrue(Book('Sula', 1973, [Author('Morrison', 'Toni')]) in books)
 
-    def test_sorted_books(self):
+    def test_sorted_title(self):
         books = self.data_source.books('There', 'title')
         self.assertTrue(books[0] == Book('And Then There Were None', 1939, [Author('Christie', 'Agatha')]))
+
+    def test_sorted_year(self):
+        books = self.data_source.books('the', 'year')
+        self.assertTrue(books[0] == Book('The Life and Opinions of Tristram Shandy, Gentleman', 1759, [Author('Sterne', 'Laurence')]))
 
     #wouldnt work
     #replace
