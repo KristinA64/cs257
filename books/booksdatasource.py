@@ -49,6 +49,27 @@ class BooksDataSource:
             suitable instance variables for the BooksDataSource object containing
             a collection of Author objects and a collection of Book objects.
         '''
+        books = []
+        authors = []
+        with open(books_csv_file_name, 'r') as csv_file:
+            reader = csv.reader(csv_file, delimiter=',')
+            for row in reader:
+                #author = row[2].split()
+                info_length = len(row[2].split())
+                temp_author = Author()
+                # for item in info_length:
+                #     temp_author.given_name(item)
+                #     if item[0] == "(":
+                #         b_year = item[1-4]
+                #         if item[6]:
+                #             temp_author.birth_year(item[6-8])
+                g_name = ""
+                for i in range(info_length-2, -1, -1):
+                    g_name = g_name + " " + row[2][i]
+                temp_author.given_name(g_name)
+                authors.append(temp_author)
+                books.append(Book(row[0]),row[1])
+
         pass
 
     def authors(self, search_text=None):
@@ -57,6 +78,8 @@ class BooksDataSource:
             returns all of the Author objects. In either case, the returned list is sorted
             by surname, breaking ties using given name (e.g. Ann Brontë comes before Charlotte Brontë).
         '''
+        print()
+
         return []
 
     def books(self, search_text=None, sort_by='title'):
@@ -85,4 +108,3 @@ class BooksDataSource:
             should be included.
         '''
         return []
-
