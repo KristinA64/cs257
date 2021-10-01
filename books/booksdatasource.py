@@ -52,23 +52,25 @@ class BooksDataSource:
         books = []
         authors = []
         with open(books_csv_file_name, 'r') as csv_file:
-            reader = csv.reader(csv_file, delimiter=',')
+            reader = csv.Dictreader(csv_file, delimiter=',')
             for row in reader:
-                #author = row[2].split()
-                info_length = len(row[2].split())
-                temp_author = Author()
-                # for item in info_length:
-                #     temp_author.given_name(item)
-                #     if item[0] == "(":
-                #         b_year = item[1-4]
-                #         if item[6]:
-                #             temp_author.birth_year(item[6-8])
-                g_name = ""
-                for i in range(info_length-2, -1, -1):
-                    g_name = g_name + " " + row[2][i]
-                temp_author.given_name(g_name)
-                authors.append(temp_author)
-                books.append(Book(row[0]),row[1])
+                print(row['title'], row['year'], row['author_info'])
+                author1 = ""
+                author2 = ""
+                if row['author_info'].index('and'):
+                    index = row['author_info'].index('and')
+                    author1 = row['author_info'][:index]
+                    author2 = row['author_info'][index+1:]
+                #this is the birth to death years
+                author1[-1] 
+                #this is the last name
+                author1[-2] = 
+                #index 0 to where last name is, that is the given name
+
+                #if author2 is not an empty string, do the same for author2
+                if author2 != "":
+
+                books.append(Book(row['title']),row['year'])
 
         pass
 
