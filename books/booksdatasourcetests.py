@@ -19,6 +19,11 @@ class BooksDataSourceTester(unittest.TestCase):
         authors = self.data_source.authors('Pratchett')
         self.assertTrue(len(authors) == 1)
         self.assertTrue(authors[0] == Author('Pratchett', 'Terry'))
+        '''
+        should do booksdatasource.Author(...) instead of Author(...)
+        not the datasource, but the module has a class Author
+        can also get rid of the import and won't need to have booksdatasource.
+        '''
 
     '''
         Author Tests
