@@ -86,20 +86,20 @@ class BooksDataSource:
                     #authors is now a list of all the authors of the book
                     #authors[0] should give all info about the first author
                     for i in range(len(book_authors)):
-                        temp_author2.surname(book_authors[i][-2])
+                        temp_author2.surname = book_authors[i][-2]
                         if book_authors[i][-3] == book_authors[i][0]:
                         #^^checks if there is only 1 given name
-                            temp_author2.given_name(book_authors[i][0])
+                            temp_author2.given_name = book_authors[i][0]
                         else:
                         #assumes that there are at most 2 given names
-                            temp_author2.given_name(book_authors[i][0]+ " " +book_authors[i][1])
+                            temp_author2.given_name = book_authors[i][0]+ " " +book_authors[i][1]
                             #^^attempts to concatenate given names, not sure if works
-                        temp_author2.birth_year(int(book_authors[i][-1][1:5]))
-                        if book_authors[i][-1][-2] != "-":
+                        temp_author2.birth_year = book_authors[i][-1][1:5]
+                        if len(book_authors[i][-1]) > 7:
                         #^^checks if a death year exists
-                            temp_author2.death_year(int(book_authors[i][-1][6:10]))
+                            temp_author2.death_year = int(book_authors[i][-1][6:10])
                         all_authors.append(temp_author2)
-                temp_book.authors(all_authors)
+                temp_book.authors = all_authors
                 books.append(temp_book)
                 if temp_author2 not in authors: authors.append(temp_author2)
         '''
@@ -134,7 +134,7 @@ class BooksDataSource:
         '''
         print(authors)
         if search_text is not None:
-            filtered_authors = filter(lambda author: author.given_name.contains(search_text) or author.surname.contains(search_text), authors)
+            filtered_authors = list(filter(lambda author: (search_text in author.given_name) or (search_text in author.surname), authors))
             sorted(filtered_authors, key=lambda author: author.given_name)
             sorted(filtered_authors, key=lambda author: author.surname)
             return filtered_authors
@@ -154,8 +154,8 @@ class BooksDataSource:
                             or 'title', just do the same thing you would do for 'title')
         '''
         print(books)
-        if search_text is not None:
-            filtered_books = filter(lambda book: book.title.contains(search_text), books)
+        if search_text != None:
+            filtered_books = list(filter(lambda book: search_text in book.title, books))
             if sort_by == 'year':
                 sorted(filtered_books, key=lambda book: book.title)
                 sorted(filtered_books, key=lambda book: book.publication_year)
@@ -179,17 +179,17 @@ class BooksDataSource:
             should be included.
         '''
         if start_year is not None and end_year is not None:
-            filtered_books = filter(lambda book: book.publication_year>= start_year or book.publication_year<= end_year, books)
+            filtered_books = list(filter(lambda book: book.publication_year>= start_year or book.publication_year<= end_year, books))
             sorted(filtered_books, key=lambda book: book.title)
             sorted(filtered_books, key=lambda book: book.publication_year)
             return filtered_books
         elif start_year is not None:
-            filtered_books = filter(lambda book: book.publication_year>= start_year, books)
+            filtered_books = list(filter(lambda book: book.publication_year>= start_year, books))
             sorted(filtered_books, key=lambda book: book.title)
             sorted(filtered_books, key=lambda book: book.publication_year)
             return filtered_books
         elif end_year is not None:
-            filtered_books = filter(lambda book: book.publication_year<= end_year, books)
+            filtered_books = list(filter(lambda book: book.publication_year<= end_year, books))
             sorted(filtered_books, key=lambda book: book.title)
             sorted(filtered_books, key=lambda book: book.publication_year)
             return filtered_books
