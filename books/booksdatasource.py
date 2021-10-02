@@ -34,6 +34,9 @@ class Book:
             thing as "same book". '''
         return self.title == other.title
 
+books = []
+authors = []
+
 class BooksDataSource:
     def __init__(self, books_csv_file_name):
         ''' The books CSV file format looks like this:
@@ -49,8 +52,7 @@ class BooksDataSource:
             suitable instance variables for the BooksDataSource object containing
             a collection of Author objects and a collection of Book objects.
         '''
-        books = []
-        authors = []
+        
         with open(books_csv_file_name, 'r') as csv_file:
             reader = csv.reader(csv_file, delimiter=',')
             '''
@@ -128,9 +130,14 @@ class BooksDataSource:
             returns all of the Author objects. In either case, the returned list is sorted
             by surname, breaking ties using given name (e.g. Ann Brontë comes before Charlotte Brontë).
         '''
-        print()
-
-        return []
+        print(authors)
+        if search_text is not None:
+            filtered_authors = filter(lambda author: author.given_name.contains(search_text) or author.surname.contains(search_text), authors)
+            sorted(filtered_authors, key=lambda author: author.given_name)
+            sorted(filtered_authors, key=lambda author: author.surname)
+            return filtered_authors
+        else:
+            return authors
 
     def books(self, search_text=None, sort_by='title'):
         ''' Returns a list of all the Book objects in this data source whose
