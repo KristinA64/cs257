@@ -1,10 +1,10 @@
 SYNOPSIS
 
-	-b  Given a string, print the list of books in the 
+	-b  Given a string, print the list of books in the
 	    dataset whose titles contain that string.
-	
+
 	-a  Given a string, print the list of books in the
-	    dataset whose authors name contains that string,
+	    dataset whose authors name contains that string.
 
 	-y  Given 2 integers, print the list of books in the
 	    dataset which were published between the years of
