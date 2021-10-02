@@ -5,6 +5,8 @@
 
     For use in the "books" assignment at the beginning of Carleton's
     CS 257 Software Design class, Fall 2021.
+
+    Kristin Albright and Jayti Arora, 2 October 2021
 '''
 
 import csv
@@ -52,7 +54,7 @@ class BooksDataSource:
             suitable instance variables for the BooksDataSource object containing
             a collection of Author objects and a collection of Book objects.
         '''
-        
+
         with open(books_csv_file_name, 'r') as csv_file:
             reader = csv.reader(csv_file, delimiter=',')
             '''
@@ -151,7 +153,19 @@ class BooksDataSource:
                 default -- same as 'title' (that is, if sort_by is anything other than 'year'
                             or 'title', just do the same thing you would do for 'title')
         '''
-        return []
+        print(books)
+        if search_text is not None:
+            filtered_books = filter(lambda book: book.title.contains(search_text), books)
+            if sort_by == 'year':
+                sorted(filtered_books, key=lambda book: book.title)
+                sorted(filtered_books, key=lambda book: book.publication_year)
+            else:
+                sorted(filtered_books, key=lambda book: book.publication_year)
+                sorted(filtered_books, key=lambda book: book.title)
+            return filtered_books
+        else:
+            return books
+
 
     def books_between_years(self, start_year=None, end_year=None):
         ''' Returns a list of all the Book objects in this data source whose publication
