@@ -78,24 +78,26 @@ class BooksDataSource:
                 for item in author_info:
                     temp_author2 = Author()
                     #^^not sure if should be created within for loop or out of
-                    authors = author_info.split('and')
+                    book_authors = author_info.split('and')
                     #authors is now a list of all the authors of the book
                     #authors[0] should give all info about the first author
-                    for i in range(len(authors)):
-                        temp_author2.surname(authors[i][-2])
-                        if authors[i][-3] == authors[i][0]:
+                    for i in range(len(book_authors)):
+                        temp_author2.surname(book_authors[i][-2])
+                        if book_authors[i][-3] == book_authors[i][0]:
                         #^^checks if there is only 1 given name
-                            temp_author2.given_name(authors[i][0])
+                            temp_author2.given_name(book_authors[i][0])
                         else:
                         #assumes that there are at most 2 given names
-                            temp_author2.given_name(authors[i][0]+ " " +authors[i][1])
+                            temp_author2.given_name(book_authors[i][0]+ " " +book_authors[i][1])
                             #^^attempts to concatenate given names, not sure if works
-                        temp_author2.birth_year(authors[i][-1][1:5])
-                        if authors[i][-1][-2] != "-":
+                        temp_author2.birth_year(book_authors[i][-1][1:5])
+                        if book_authors[i][-1][-2] != "-":
                         #^^checks if a death year exists
-                            temp_author2.death_year(authors[i][-1][6:10])
+                            temp_author2.death_year(book_authors[i][-1][6:10])
                         all_authors.append(temp_author2)
                 temp_book.authors(all_authors)
+                books.append(temp_book)
+                if temp_author2 not in authors: authors.append(temp_author2)
         '''
             reader = csv.Dictreader(csv_file, delimiter=',')
             for row in reader:
