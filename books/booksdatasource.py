@@ -96,6 +96,27 @@ class BooksDataSource:
                             temp_author2.death_year(authors[i][-1][6:10])
                         all_authors.append(temp_author2)
                 temp_book.authors(all_authors)
+        '''
+            reader = csv.Dictreader(csv_file, delimiter=',')
+            for row in reader:
+                print(row['title'], row['year'], row['author_info'])
+                author1 = ""
+                author2 = ""
+                if row['author_info'].index('and'):
+                    index = row['author_info'].index('and')
+                    author1 = row['author_info'][:index]
+                    author2 = row['author_info'][index+1:]
+                #this is the birth to death years
+                author1[-1]
+                #this is the last name
+                author1[-2] =
+                #index 0 to where last name is, that is the given name
+
+                #if author2 is not an empty string, do the same for author2
+                if author2 != "":
+
+                books.append(Book(row['title']),row['year'])
+            '''
 
         pass
 
