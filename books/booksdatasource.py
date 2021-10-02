@@ -53,22 +53,49 @@ class BooksDataSource:
         authors = []
         with open(books_csv_file_name, 'r') as csv_file:
             reader = csv.reader(csv_file, delimiter=',')
+            '''
             for row in reader:
-                #author = row[2].split()
                 info_length = len(row[2].split())
                 temp_author = Author()
-                # for item in info_length:
-                #     temp_author.given_name(item)
-                #     if item[0] == "(":
-                #         b_year = item[1-4]
-                #         if item[6]:
-                #             temp_author.birth_year(item[6-8])
                 g_name = ""
                 for i in range(info_length-2, -1, -1):
                     g_name = g_name + " " + row[2][i]
                 temp_author.given_name(g_name)
                 authors.append(temp_author)
                 books.append(Book(row[0]),row[1])
+            '''
+
+            for row in reader:
+                #books have title, publication year, and authors
+                #so authors must be done first
+                temp_book = Book()
+                temp_book.title = row[0]
+                temp_book.publication_year = row[1]
+                #^^book stuff that doesn't include authors is done
+                author_info = row[2]
+                all_authors = []
+                #^^list that will hold all the authors of 1 book as author objects
+                for item in author_info:
+                    temp_author2 = Author()
+                    #^^not sure if should be created within for loop or out of
+                    authors = author_info.split('and')
+                    #authors is now a list of all the authors of the book
+                    #authors[0] should give all info about the first author
+                    for i in range(len(authors)):
+                        temp_author2.surname(authors[i][-2])
+                        if authors[i][-3] == authors[i][0]:
+                        #^^checks if there is only 1 given name
+                            temp_author2.given_name(authors[i][0])
+                        else:
+                        #assumes that there are at most 2 given names
+                            temp_author2.given_name(authors[i][0]+ " " +authors[i][1])
+                            #^^attempts to concatenate given names, not sure if works
+                        temp_author2.birth_year(authors[i][-1][1:5])
+                        if authors[i][-1][-2] != "-":
+                        #^^checks if a death year exists
+                            temp_author2.death_year(authors[i][-1][6:10])
+                        all_authors.append(temp_author2)
+                temp_book.authors(all_authors)
 
         pass
 
