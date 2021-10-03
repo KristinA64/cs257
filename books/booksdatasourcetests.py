@@ -5,6 +5,15 @@
    Jayti Arora, Kristin Albright, 27 September 2021
 '''
 
+'''
+IMPORTANT NOTICE:
+
+Test file creates copies of the csv file for reasons that Jayti, Kristin, nor
+a lab assistant were able to figure out. Jeff has been notified of this issue.
+
+
+'''
+
 import booksdatasource
 import unittest
 
@@ -15,44 +24,35 @@ class BooksDataSourceTester(unittest.TestCase):
     def tearDown(self):
         pass
 
+
     def test_unique_author(self):
         authors = self.data_source.authors('Pratchett')
-        self.assertTrue(len(authors) == 1)
+        for author in authors:
+            self.assertEqual(author, booksdatasource.Author('Pratchett', 'Terry'))
         self.assertTrue(authors[0] == booksdatasource.Author('Pratchett', 'Terry'))
-        '''
-        should do booksdatasource.Author(...) instead of Author(...)
-        not the datasource, but the module has a class Author
-        can also get rid of the import and won't need to have booksdatasource.
-        '''
 
-    '''
-        Author Tests
-    '''
 
     def test_blank_author(self):
-        self.data_source = booksdatasource.BooksDataSource('books_medium.csv')
         authors = self.data_source.authors()
-        #print(len(authors))
-        self.assertTrue(len(authors) == 11)
+        self.assertTrue(authors)
 
     def test_authors(self):
-        authors = self.data_source.authors('Jane Austen')
+        authors = self.data_source.authors('Jane')
         self.assertTrue(booksdatasource.Author('Austen', 'Jane') in authors)
 
     def test_sorted_authors(self):
         authors = self.data_source.authors('te')
-        #print("Author List Here:", authors)
+
         self.assertTrue(authors[0] == booksdatasource.Author('Austen', 'Jane'))
 
     '''
        Book Tests
+
     '''
 
     def test_blank_books(self):
-        self.data_source = booksdatasource.BooksDataSource('books_medium.csv')
         books = self.data_source.books()
-        #print(len(books))
-        self.assertTrue(len(books) == 10)
+        self.assertTrue(books)
 
     def test_books(self):
         books = self.data_source.books('Sula', 'year')
@@ -67,17 +67,18 @@ class BooksDataSourceTester(unittest.TestCase):
         self.assertTrue(books[0] == booksdatasource.Book('The Life and Opinions of Tristram Shandy, Gentleman', 1759, [booksdatasource.Author('Sterne', 'Laurence')]))
 
     '''
-       Between Years Tests
-    '''
+        Between Years Tests
 
+    '''
     def test_blank_years(self):
-        self.data_source = booksdatasource.BooksDataSource('books_medium.csv')
+        #self.data_source = booksdatasource.BooksDataSource('books_medium.csv')
+        allBooks = self.data_source.books()
         books = self.data_source.books_between_years()
-        #print(len(books))
-        self.assertTrue(len(books) == 10)
+        self.assertEqual(books, allBooks)
 
     def test_no_books(self):
         books = self.data_source.books_between_years(1500, 1550)
+        #print(books[0].title)
         self.assertFalse(books)
 
     def test_inclusive(self):
@@ -87,8 +88,6 @@ class BooksDataSourceTester(unittest.TestCase):
     def test_sorted(self):
         books = self.data_source.books_between_years(1813, 1815)
         self.assertTrue(books[0] == booksdatasource.Book('Pride and Prejudice', 1813, [booksdatasource.Author('Austen', 'Jane')]))
-        self.assertTrue(books[1] == booksdatasource.Book('Sense and Sensibility', 1813, [booksdatasource.Author('Austen', 'Jane')]))
-
 
 
 
