@@ -37,6 +37,7 @@ class Book:
 
 books = []
 authors = []
+Dict = {}
 
 class BooksDataSource:
     def __init__(self, books_csv_file_name):
@@ -152,7 +153,7 @@ class BooksDataSource:
             by surname, breaking ties using given name (e.g. Ann Bronte comes before Charlotte Bronte).
         '''
         if search_text is not None:
-            filtered_authors = list(filter(lambda author: (search_text in author.given_name) or (search_text in author.surname), authors))
+            filtered_authors = list(filter(lambda author: (search_text.lower() in author.given_name.lower()) or (search_text.lower() in author.surname.lower()), authors))
             filtered_authors = sorted(filtered_authors, key=lambda author: author.given_name)
             filtered_authors = sorted(filtered_authors, key=lambda author: author.surname)
             return filtered_authors

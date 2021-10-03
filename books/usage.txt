@@ -1,13 +1,27 @@
 SYNOPSIS
+	python3 books.py [-b | -a | -y | -u] [search-text ...]
 
-	-b  Given a string, print the list of books in the
-	    dataset whose titles contain that string.
+DESCRIPTION
+In the command-line, provide one of the the following with the proper 
+amount of parameters as described for each propmts. 
 
-	-a  Given a string, print the list of books in the
+Ex: python3 books.py -b the year
+Returns a list of books contating the word the in the title, sorted by publication year
+Ex: python3 books.py -y 1800 2020
+Returns a list of books published between 1800 and 2020 inclusive.
+
+	-b, --book  Takes 2 parameters; search-text and sort method.
+			Given a string, print the list of books in the
+	    dataset whose titles contain that string. Provided a sort method of 
+			years or title, will sort accordidly. 
+
+	-a, --author Takes 1 parameter; search-text.
+			Given a string, print the list of books in the
 	    dataset whose authors name contains that string.
 
-	-y  Given 2 integers, print the list of books in the
+	-y, --years  Takes 2 parameters; sstart-year and end-year.
+			Given 2 integers, print the list of books in the
 	    dataset which were published between the years of
 	    the integers.
 
-	-u  Prints the usage statement.
+	-u, --usage  Prints the usage statement.

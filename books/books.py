@@ -13,11 +13,10 @@ parser.add_argument("-u", "--usage", action="store_true", dest="use", help="Prin
 #parse the arguments
 args = parser.parse_args()
 
-#print(args) #prints args correctly
-
 books = BooksDataSource("books1.csv")
 #send in args
 if args.book:
+  #call booksdata source books function on parameter --book
   book_list = books.books(args.book)
   for book in book_list:
       authors = book.authors
@@ -28,9 +27,9 @@ if args.book:
           else:
               format_author = name.given_name + " " + name.surname + " " + name.birth_year + "-)"
       print(book.title, book.publication_year, format_author)
-  #call booksdata source books function on parameter --book
 
 elif args.author:
+  #calls booksdata source author function on parameter --author
   author_list = books.authors(args.author)
   for author in author_list:
       if author.death_year:
@@ -38,7 +37,6 @@ elif args.author:
       else:
           format_author = author.given_name + " " + author.surname + "(" + author.birth_year + "-)"
       print(format_author)
-  #call booksdata source author function on parameter --author
 elif args.years:
   if len(args.years) == 2:
       book_list = books.books_between_years(args.years[0],args.years[1])
