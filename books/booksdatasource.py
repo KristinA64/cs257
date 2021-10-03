@@ -149,7 +149,7 @@ class BooksDataSource:
         ''' Returns a list of all the Author objects in this data source whose names contain
             (case-insensitively) the search text. If search_text is None, then this method
             returns all of the Author objects. In either case, the returned list is sorted
-            by surname, breaking ties using given name (e.g. Ann Brontë comes before Charlotte Brontë).
+            by surname, breaking ties using given name (e.g. Ann Bronte comes before Charlotte Bronte).
         '''
         if search_text is not None:
             filtered_authors = list(filter(lambda author: (search_text in author.given_name) or (search_text in author.surname), authors))
@@ -157,7 +157,9 @@ class BooksDataSource:
             filtered_authors = sorted(filtered_authors, key=lambda author: author.surname)
             return filtered_authors
         else:
-            return authors
+            filtered_authors = sorted(authors, key=lambda author: author.given_name)
+            filtered_authors = sorted(filtered_authors, key=lambda author: author.surname)
+            return filtered_authors
 
     def books(self, search_text=None, sort_by='title'):
         ''' Returns a list of all the Book objects in this data source whose
