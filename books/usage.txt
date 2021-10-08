@@ -24,4 +24,4 @@ Returns a list of books published between 1800 and 2020 inclusive.
 	    dataset which were published between the years of
 	    the integers.
 
-	-u, --usage  Prints the usage statement.
+	-h, --help  Prints the usage statement.

@@ -8,6 +8,10 @@
     Kristin Albright and Jayti Arora, 2 October 2021
 '''
 
+    filtered_authors = sorted(filtered_authors, key=lambda author: author.given_name) 
+    filtered_authors = sorted(filtered_authors, key=lambda author: author.surname)
+    filtered_authors = sorted(filtered_authors, key=lambda author: (author.surname, author.given_name)
+
 import csv
 
 class Author:
