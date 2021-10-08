@@ -2,7 +2,7 @@
 '''
     booksdatasource.py
     Jeff Ondich, 21 September 2021
-    For use in the "books" assignment at the beginning of Carleton's
+    For use in the 'books' assignment at the beginning of Carleton's
     CS 257 Software Design class, Fall 2021.
 
     Kristin Albright and Jayti Arora, 2 October 2021
@@ -31,8 +31,8 @@ class Book:
 
     def __eq__(self, other):
         ''' We're going to make the excessively simplifying assumption that
-            no two books have the same title, so "same title" is the same
-            thing as "same book". '''
+            no two books have the same title, so 'same title' is the same
+            thing as 'same book'. '''
         return self.title == other.title
 
 books = []
@@ -45,7 +45,7 @@ class BooksDataSource:
                 title,publication_year,author_description
             For example:
                 All Clear,2010,Connie Willis (1945-)
-                "Right Ho, Jeeves",1934,Pelham Grenville Wodehouse (1881-1975)
+                'Right Ho, Jeeves',1934,Pelham Grenville Wodehouse (1881-1975)
             This __init__ method parses the specified CSV file and creates
             suitable instance variables for the BooksDataSource object containing
             a collection of Author objects and a collection of Book objects.
@@ -60,14 +60,14 @@ class BooksDataSource:
                 book_authors = []
                 if 'and' in row[2]:
                     names = row[2].split()
-                    if "(" in names[6]:
+                    if '(' in names[6]:
                         given_name1 = names[4]
                         surname1 = names[5]
                     else:
-                        given_name1 = names[4] + " " + names[5]
+                        given_name1 = names[4] + ' ' + names[5]
                         surname1 = names[6]
 
-                    if row[2][-2] != "-":
+                    if row[2][-2] != '-':
                         birth_year1 = row[2][-10:-6]
                         death_year1 = row[2][-5:-1]
                     else:
@@ -76,19 +76,19 @@ class BooksDataSource:
                     tempAuthor = Author(surname1, given_name1, birth_year1, death_year1)
 
 
-                    if "(" in names[2]:
+                    if '(' in names[2]:
                         given_name2 = names[0]
                         surname2 = names[1]
-                        if names[2][-2] != "-":
+                        if names[2][-2] != '-':
                             birth_year2 = names[2][-10:-6]
                             death_year2 = names[2][-5:-1]
                         else:
                             birth_year2 = names[2][-6:-2]
                             death_year2 = None
                     else:
-                        given_name2 = names[0] + " " + names[1]
+                        given_name2 = names[0] + ' ' + names[1]
                         surname2 = names[2]
-                        if names[3][-2] != "-":
+                        if names[3][-2] != '-':
                             birth_year2 = names[3][-10:-6]
                             death_year2 = names[3][-5:-1]
                         else:
@@ -116,14 +116,14 @@ class BooksDataSource:
 
                 else:
                     names = row[2].split()
-                    if "(" in names[2]:
+                    if '(' in names[2]:
                         given_name = names[0]
                         surname = names[1]
                     else:
-                        given_name = names[0] + " " + names[1]
+                        given_name = names[0] + ' ' + names[1]
                         surname = names[2]
 
-                    if row[2][-2] != "-":
+                    if row[2][-2] != '-':
                         birth_year = row[2][-10:-6]
                         death_year = row[2][-5:-1]
                     else:

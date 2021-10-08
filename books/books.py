@@ -10,10 +10,10 @@ def parse():
     parser = argparse.ArgumentParser()
 
     #add parameters
-    parser.add_argument("-a", '--author', nargs="*", const=None, help="Given a string, prints the list of authors in the dataset whose names contains that string, sorted by last name.")
-    parser.add_argument("-b", "--book", nargs="*", const=None, help="Given a string, prints the list of books in the dataset whose titles contain that string.")
-    parser.add_argument('-s', '--sort', nargs=1, type=str, choices=['title','year'], default='title', help='Provide either "title" or "year" as the sorting method. The default it "title".' )
-    parser.add_argument("-y","--years", nargs="+", type=int, const=None, help="Given 2 integers, prints the list of books in the dataset which were published between the years of the integers inclusive.")
+    parser.add_argument('-a', '--author', nargs='*', const=None, help='Given a string, prints the list of authors in the dataset whose names contains that string, sorted by last name.')
+    parser.add_argument('-b', '--book', nargs='*', const=None, help='Given a string, prints the list of books in the dataset whose titles contain that string.')
+    parser.add_argument('-s', '--sort', nargs=1, type=str, choices=['title','year'], default='title', help='Provide either "title" or "year" as the sorting method. The default it 'title'.' )
+    parser.add_argument('-y','--years', nargs='+', type=int, const=None, help='Given 2 integers, prints the list of books in the dataset which were published between the years of the integers inclusive.')
 
     #parse the arguments
     args = parser.parse_args()
@@ -24,7 +24,7 @@ def print_books(args, filename):
     books = BooksDataSource(filename)
     #call booksdata source books function on parameter --book
     #print(args.s)
-    print("hi")
+    print('hi')
     book_list = books.books(args.book, args.sort[0])
     for book in book_list:
         authors = book.authors
@@ -58,9 +58,9 @@ def print_years(args, filename):
 def format_authors(author_list):
     for author in author_list:
         if author.death_year:
-            format_author = author.given_name + " " + author.surname + "(" + author.birth_year + "-" + author.death_year + ")"
+            format_author = author.given_name + ' ' + author.surname + '(' + author.birth_year + '-' + author.death_year + ')'
         else:
-            format_author = author.given_name + " " + author.surname + "(" + author.birth_year + "-)"
+            format_author = author.given_name + ' ' + author.surname + '(' + author.birth_year + '-)'
         return format_author
 
 def main():
@@ -69,7 +69,7 @@ def main():
     #^^maybe too trusting of the user, who knows
     print(args.book == True)
     if args.book:
-        print("hi")
+        print('hi')
         print_books(args, filename)
     elif args.author:
         print_authors(args, filename)
