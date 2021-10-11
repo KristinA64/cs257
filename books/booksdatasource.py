@@ -139,8 +139,8 @@ class BooksDataSource:
 
                     if already_added == False:
                         added_author = Author(given_name, surname, birth_year, death_year)
-                        self.all_authors.append(tempAuthor)
-                        book_authors.append(tempAuthor)
+                        self.all_authors.append(added_author)
+                        book_authors.append(added_author)
                 self.all_books.append(Book(title, year, book_authors))
 
         pass
