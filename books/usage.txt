@@ -12,18 +12,18 @@ In the command-line, provide one of the three options for searches in the synops
 Note that all searches will be case insensitive.
 
 	Ex: python3 books.py -b the year
-	Returns a list of books contating the word the in the title, sorted by publication year
+	Returns a list of books containing the word the in the title, sorted by publication year
 
 	Ex: python3 books.py -y 1800 2020
 	Returns a list of books published between 1800 and 2020 inclusive.
 
 	-b, --book Given a string, will print the list of books in the
-	    dataset whose titles contain that string. Provided a sort method of 
-			years or title, will sort also accordidly. 
-	
-	-s, --sort This optional flag only works with the book search. 
-		Given a string of either "title" or "years", the dataset will be sorted 
-		accordidly. If no sort method is provided, the default will be to sort by title.
+	    dataset whose titles contain that string. Provided a sort method of
+			years or title, will sort also accordingly.
+
+	-s, --sort This optional flag only works with the book search.
+		Given a string of either "title" or "years", the dataset will be sorted
+		accordingly. If no sort method is provided, the default will be to sort by title.
 
 	-a, --author Given a string, print the list of books in the
 	    dataset whose authors name contains that string.

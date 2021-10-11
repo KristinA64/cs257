@@ -2,15 +2,7 @@
    booksdatasourcetest.py
    Jeff Ondich, 24 September 2021
 
-   Jayti Arora, Kristin Albright, 2 October 2021
-'''
-
-'''
-IMPORTANT NOTICE:
-
-Test file creates copies of the csv file for reasons that Jayti, Kristin, nor
-a lab assistant were able to figure out. Jeff has been notified of this issue.
-
+   Jayti Arora, Kristin Albright, 11 October 2021
 
 '''
 
@@ -35,7 +27,7 @@ class BooksDataSourceTester(unittest.TestCase):
 
     def test_blank_author(self):
         authors = self.data_source.authors()
-        self.assertTrue(authors)
+        self.assertTrue(len(authors) == 8)
 
     def test_authors(self):
         authors = self.data_source.authors('Jane')

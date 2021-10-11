@@ -56,91 +56,45 @@ class BooksDataSource:
             for row in reader:
                 title = row[0]
                 year = int(row[1])
+
                 book_authors = []
-                if 'and' in row[2]:
-                    names = row[2].split()
-                    if '(' in names[6]:
-                        given_name1 = names[4]
-                        surname1 = names[5]
-                    else:
-                        given_name1 = names[4] + ' ' + names[5]
-                        surname1 = names[6]
-                    if row[2][-2] != '-':
-                        birth_year1 = row[2][-10:-6]
-                        death_year1 = row[2][-5:-1]
-                    else:
-                        birth_year1 = row[2][-6:-2]
-                        death_year1 = None
-                    tempAuthor = Author(surname1, given_name1, birth_year1, death_year1)
-
-
-                    if '(' in names[2]:
-                        given_name2 = names[0]
-                        surname2 = names[1]
-                        if names[2][-2] != '-':
-                            birth_year2 = names[2][-10:-6]
-                            death_year2 = names[2][-5:-1]
-                        else:
-                            birth_year2 = names[2][-6:-2]
-                            death_year2 = None
-                    else:
-                        given_name2 = names[0] + ' ' + names[1]
-                        surname2 = names[2]
-                        if names[3][-2] != '-':
-                            birth_year2 = names[3][-10:-6]
-                            death_year2 = names[3][-5:-1]
-                        else:
-                            birth_year2 = names[3][-6:-2]
-                            death_year2 = None
-                    tempAuthor2 = Author(surname2, given_name2, birth_year2, death_year2)
-
-                    already_added1 = False
-                    already_added2 = False
-                    for ex_author in self.all_authors:
-                        if ex_author == Author(surname1, given_name1):
-                            book_authors.append(tempAuthor)
-                            already_added1 = True
-                        if ex_author == Author(surname2, given_name2):
-                            book_authors.append(tempAuthor2)
-                            already_added2 = True
-                    if already_added1 == False:
-                        added_author = Author(surname1, given_name1, birth_year1, death_year1)
-                        self.all_authors.append(tempAuthor)
-                        book_authors.append(tempAuthor)
-                    if already_added2 == False:
-                        added_author = Author(surname2, given_name2, birth_year2, death_year2)
-                        self.all_authors.append(tempAuthor2)
-                        book_authors.append(tempAuthor2)
-
-                else:
-                    names = row[2].split()
-                    if '(' in names[2]:
-                        given_name = names[0]
-                        surname = names[1]
-                    else:
-                        given_name = names[0] + ' ' + names[1]
-                        surname = names[2]
-
-                    if row[2][-2] != '-':
-                        birth_year = row[2][-10:-6]
-                        death_year = row[2][-5:-1]
-                    else:
-                        birth_year = row[2][-6:-2]
-                        death_year = None
-
-                    tempAuthor = Author(surname, given_name, birth_year, death_year)
+                multiple_authors = row[2].split('and')
+                for each_author in multiple_authors:
+                    names = each_author.split()
+                    temp_author = self.parse_authors(names)
 
                     already_added = False
                     for ex_author in self.all_authors:
-                        if ex_author == Author(surname, given_name):
-                            book_authors.append(tempAuthor)
+                        if ex_author == temp_author:
+                            book_authors.append(temp_author)
                             already_added = True
 
                     if already_added == False:
-                        added_author = Author(surname, given_name, birth_year, death_year)
+                        added_author = temp_author
                         self.all_authors.append(added_author)
                         book_authors.append(added_author)
                 self.all_books.append(Book(title, year, book_authors))
+
+    def parse_authors(self, names):
+
+        if '(' in names[2]:
+            given_name = names[0]
+            surname = names[1]
+            years = names[2].split('-')
+        else:
+            given_name = names[0] + ' ' + names[1]
+            surname = names[2]
+            years = names[3].split('-')
+
+        if len(years) == 2:
+            birth_year = years[0].replace('(','')
+            death_year = years[1].replace(')','')
+        else:
+            birth_year = years[0].replace('(','')
+            death_year = None
+
+        temp_author = Author(surname, given_name, birth_year, death_year)
+        return temp_author
 
     def authors(self, search_text=None):
         ''' Returns a list of all the Author objects in this data source whose names contain
