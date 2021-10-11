@@ -1,26 +1,34 @@
+NAME
+  python3 books.py - finds specific books or authors from a given csv file
+	based on a search string or search years.
+
 SYNOPSIS
-	python3 books.py [-b | -a | -y | -u] [search-text ...]
+	python3 FILENAME books.py -b TITLE [-s SORT_METHOD]
+  python3 FILENAME books.py -a AUTHOR_NAME
+  python3 FILENAME books.py -y START_YEAR END_YEAR
 
 DESCRIPTION
-In the command-line, provide one of the the following with the proper 
-amount of parameters as described for each propmts. 
+In the command-line, provide one of the three options for searches in the synopsis.
+Note that all searches will be case insensitive.
 
-Ex: python3 books.py -b the year
-Returns a list of books contating the word the in the title, sorted by publication year
-Ex: python3 books.py -y 1800 2020
-Returns a list of books published between 1800 and 2020 inclusive.
+	Ex: python3 books.py -b the year
+	Returns a list of books contating the word the in the title, sorted by publication year
 
-	-b, --book  Takes 2 parameters; search-text and sort method.
-			Given a string, print the list of books in the
+	Ex: python3 books.py -y 1800 2020
+	Returns a list of books published between 1800 and 2020 inclusive.
+
+	-b, --book Given a string, will print the list of books in the
 	    dataset whose titles contain that string. Provided a sort method of 
-			years or title, will sort accordidly. 
+			years or title, will sort also accordidly. 
+	
+	-s, --sort This optional flag only works with the book search. 
+		Given a string of either "title" or "years", the dataset will be sorted 
+		accordidly. If no sort method is provided, the default will be to sort by title.
 
-	-a, --author Takes 1 parameter; search-text.
-			Given a string, print the list of books in the
+	-a, --author Given a string, print the list of books in the
 	    dataset whose authors name contains that string.
 
-	-y, --years  Takes 2 parameters; sstart-year and end-year.
-			Given 2 integers, print the list of books in the
+	-y, --years  Given 2 integers, print the list of books in the
 	    dataset which were published between the years of
 	    the integers.
 
