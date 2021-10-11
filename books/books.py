@@ -12,7 +12,7 @@ def parse():
     #add parameters
     parser.add_argument('-a', '--author', nargs='*', const=None, help='Given a string, prints the list of authors in the dataset whose names contains that string, sorted by last name.')
     parser.add_argument('-b', '--book', nargs='*', const=None, help='Given a string, prints the list of books in the dataset whose titles contain that string.')
-    parser.add_argument('-s', '--sort', nargs=1, type=str, choices=['title','year'], default='title', help='Provide either "title" or "year" as the sorting method. The default it 'title'.' )
+    parser.add_argument('-s', '--sort', nargs=1, type=str, choices=['title','year'], default='title', help='Provide either "title" or "year" as the sorting method. The default it "title".' )
     parser.add_argument('-y','--years', nargs='+', type=int, const=None, help='Given 2 integers, prints the list of books in the dataset which were published between the years of the integers inclusive.')
 
     #parse the arguments

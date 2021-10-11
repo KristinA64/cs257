@@ -142,8 +142,6 @@ class BooksDataSource:
                         book_authors.append(added_author)
                 self.all_books.append(Book(title, year, book_authors))
 
-        pass
-
     def authors(self, search_text=None):
         ''' Returns a list of all the Author objects in this data source whose names contain
             (case-insensitively) the search text. If search_text is None, then this method
@@ -152,12 +150,10 @@ class BooksDataSource:
         '''
         if search_text is not None:
             filtered_authors = list(filter(lambda author: (search_text.lower() in author.given_name.lower()) or (search_text.lower() in author.surname.lower()), self.all_authors))
-            filtered_authors = sorted(filtered_authors, key=lambda author: author.given_name)
-            filtered_authors = sorted(filtered_authors, key=lambda author: author.surname)
+            filtered_authors = sorted(filtered_authors, key=lambda author: (author.surname, author.given_name))
             return filtered_authors
         else:
-            filtered_authors = sorted(self.all_authors, key=lambda author: author.given_name)
-            filtered_authors = sorted(filtered_authors, key=lambda author: author.surname)
+            filtered_authors = sorted(self.all_authors, key=lambda author: (author.surname, author.given_name))
             return filtered_authors
 
     def books(self, search_text=None, sort_by='title'):
@@ -173,12 +169,11 @@ class BooksDataSource:
         if search_text is not None:
             filtered_books = list(filter(lambda book: search_text.lower() in book.title.lower(), self.all_books))
             if sort_by == 'year':
-                filtered_books = sorted(filtered_books, key=lambda book: book.title)
-                filtered_books = sorted(filtered_books, key=lambda book: book.publication_year)
+                filtered_books = sorted(filtered_books, key=lambda book: (book.publication_year, book.title))
             else:
-                filtered_books = sorted(filtered_books, key=lambda book: book.publication_year)
-                filtered_books = sorted(filtered_books, key=lambda book: book.title)
+                filtered_books = sorted(filtered_books, key=lambda book: (book.title, book.publication_year))
             return filtered_books
+
         else:
             return self.all_books
 
@@ -195,19 +190,18 @@ class BooksDataSource:
         '''
         if (start_year is not None) and (end_year is not None):
             filtered_books = list(filter(lambda book: (book.publication_year >= start_year) and (book.publication_year<= end_year), self.all_books))
-            filtered_books = sorted(filtered_books, key=lambda book: book.title)
-            filtered_books = sorted(filtered_books, key=lambda book: book.publication_year)
+            filtered_books = sorted(filtered_books, key=lambda book: (book.publication_year, book.title))
             return filtered_books
 
         elif start_year is not None:
             filtered_books = list(filter(lambda book: book.publication_year>= start_year, self.all_books))
-            filtered_books = sorted(filtered_books, key=lambda book: book.title)
-            filtered_books = sorted(filtered_books, key=lambda book: book.publication_year)
+            filtered_books = sorted(filtered_books, key=lambda book: (book.publication_year, book.title))
             return filtered_books
+
         elif end_year is not None:
             filtered_books = list(filter(lambda book: book.publication_year<= end_year, self.all_books))
-            filtered_books = sorted(filtered_books, key=lambda book: book.title)
-            filtered_books = sorted(filtered_books, key=lambda book: book.publication_year)
+            filtered_books = sorted(filtered_books, key=lambda book: (book.publication_year, book.title))
             return filtered_books
+
         else:
             return self.all_books
