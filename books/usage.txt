@@ -1,11 +1,14 @@
+Kristin and Jayti's usage statement
+October 11, 2021
+
 NAME
   python3 books.py - finds specific books or authors from a given csv file
 	based on a search string or search years.
 
 SYNOPSIS
-	python3 FILENAME books.py -b TITLE [-s SORT_METHOD]
-  python3 FILENAME books.py -a AUTHOR_NAME
-  python3 FILENAME books.py -y START_YEAR END_YEAR
+	python3 books.py -b TITLE [-s SORT_METHOD]
+  python3 books.py -a AUTHOR_NAME
+  python3 books.py -y START_YEAR END_YEAR
 
 DESCRIPTION
 In the command-line, provide one of the three options for searches in the synopsis.
@@ -30,6 +33,7 @@ Note that all searches will be case insensitive.
 
 	-y, --years  Given 2 integers, print the list of books in the
 	    dataset which were published between the years of
-	    the integers.
+	    the integers. If only integer provided, it will be assumed as the start year.
+			If you want to search by only end year, please input the start year as '0'.
 
 	-h, --help  Prints the usage statement.
