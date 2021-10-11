@@ -35,9 +35,6 @@ class Book:
             thing as 'same book'. '''
         return self.title == other.title
 
-books = []
-authors = []
-
 
 class BooksDataSource:
     def __init__(self, books_csv_file_name):
@@ -53,6 +50,8 @@ class BooksDataSource:
 
         with open(books_csv_file_name, 'r') as csv_file:
             reader = csv.reader(csv_file)
+            self.all_books = []
+            self.all_authors = []
 
             for row in reader:
                 title = row[0]
@@ -98,7 +97,7 @@ class BooksDataSource:
 
                     already_added1 = False
                     already_added2 = False
-                    for ex_author in authors:
+                    for ex_author in self.all_authors:
                         if ex_author == Author(given_name1, surname1):
                             book_authors.append(tempAuthor)
                             already_added1 = True
@@ -107,11 +106,11 @@ class BooksDataSource:
                             already_added2 = True
                     if already_added1 == False:
                         added_author = Author(given_name1, surname1, birth_year1, death_year1)
-                        authors.append(tempAuthor)
+                        self.all_authors.append(tempAuthor)
                         book_authors.append(tempAuthor)
                     if already_added2 == False:
                         added_author = Author(given_name2, surname2, birth_year2, death_year2)
-                        authors.append(tempAuthor2)
+                        self.all_authors.append(tempAuthor2)
                         book_authors.append(tempAuthor2)
 
                 else:
@@ -133,16 +132,16 @@ class BooksDataSource:
                     tempAuthor = Author(surname, given_name, birth_year, death_year)
 
                     already_added = False
-                    for ex_author in authors:
+                    for ex_author in self.all_authors:
                         if ex_author == Author(given_name, surname):
                             book_authors.append(tempAuthor)
                             already_added = True
 
                     if already_added == False:
                         added_author = Author(given_name, surname, birth_year, death_year)
-                        authors.append(tempAuthor)
+                        self.all_authors.append(tempAuthor)
                         book_authors.append(tempAuthor)
-                books.append(Book(title, year, book_authors))
+                self.all_books.append(Book(title, year, book_authors))
 
         pass
 
@@ -153,12 +152,12 @@ class BooksDataSource:
             by surname, breaking ties using given name (e.g. Ann Bronte comes before Charlotte Bronte).
         '''
         if search_text is not None:
-            filtered_authors = list(filter(lambda author: (search_text.lower() in author.given_name.lower()) or (search_text.lower() in author.surname.lower()), authors))
+            filtered_authors = list(filter(lambda author: (search_text.lower() in author.given_name.lower()) or (search_text.lower() in author.surname.lower()), self.all_authors))
             filtered_authors = sorted(filtered_authors, key=lambda author: author.given_name)
             filtered_authors = sorted(filtered_authors, key=lambda author: author.surname)
             return filtered_authors
         else:
-            filtered_authors = sorted(authors, key=lambda author: author.given_name)
+            filtered_authors = sorted(self.all_authors, key=lambda author: author.given_name)
             filtered_authors = sorted(filtered_authors, key=lambda author: author.surname)
             return filtered_authors
 
@@ -173,7 +172,7 @@ class BooksDataSource:
                             or 'title', just do the same thing you would do for 'title')
         '''
         if search_text is not None:
-            filtered_books = list(filter(lambda book: search_text.lower() in book.title.lower(), books))
+            filtered_books = list(filter(lambda book: search_text.lower() in book.title.lower(), self.all_books))
             if sort_by == 'year':
                 filtered_books = sorted(filtered_books, key=lambda book: book.title)
                 filtered_books = sorted(filtered_books, key=lambda book: book.publication_year)
@@ -182,7 +181,7 @@ class BooksDataSource:
                 filtered_books = sorted(filtered_books, key=lambda book: book.title)
             return filtered_books
         else:
-            return books
+            return self.all_books
 
 
     def books_between_years(self, start_year=None, end_year=None):
@@ -196,20 +195,20 @@ class BooksDataSource:
             should be included.
         '''
         if (start_year is not None) and (end_year is not None):
-            filtered_books = list(filter(lambda book: (book.publication_year >= start_year) and (book.publication_year<= end_year), books))
+            filtered_books = list(filter(lambda book: (book.publication_year >= start_year) and (book.publication_year<= end_year), self.all_books))
             filtered_books = sorted(filtered_books, key=lambda book: book.title)
             filtered_books = sorted(filtered_books, key=lambda book: book.publication_year)
             return filtered_books
 
         elif start_year is not None:
-            filtered_books = list(filter(lambda book: book.publication_year>= start_year, books))
+            filtered_books = list(filter(lambda book: book.publication_year>= start_year, self.all_books))
             filtered_books = sorted(filtered_books, key=lambda book: book.title)
             filtered_books = sorted(filtered_books, key=lambda book: book.publication_year)
             return filtered_books
         elif end_year is not None:
-            filtered_books = list(filter(lambda book: book.publication_year<= end_year, books))
+            filtered_books = list(filter(lambda book: book.publication_year<= end_year, self.all_books))
             filtered_books = sorted(filtered_books, key=lambda book: book.title)
             filtered_books = sorted(filtered_books, key=lambda book: book.publication_year)
             return filtered_books
         else:
-            return books
+            return self.all_books
