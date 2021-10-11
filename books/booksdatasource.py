@@ -65,7 +65,6 @@ class BooksDataSource:
                     else:
                         given_name1 = names[4] + ' ' + names[5]
                         surname1 = names[6]
-
                     if row[2][-2] != '-':
                         birth_year1 = row[2][-10:-6]
                         death_year1 = row[2][-5:-1]
@@ -98,18 +97,18 @@ class BooksDataSource:
                     already_added1 = False
                     already_added2 = False
                     for ex_author in self.all_authors:
-                        if ex_author == Author(given_name1, surname1):
+                        if ex_author == Author(surname1, given_name1):
                             book_authors.append(tempAuthor)
                             already_added1 = True
-                        if ex_author == Author(given_name2, surname2):
+                        if ex_author == Author(surname2, given_name2):
                             book_authors.append(tempAuthor2)
                             already_added2 = True
                     if already_added1 == False:
-                        added_author = Author(given_name1, surname1, birth_year1, death_year1)
+                        added_author = Author(surname1, given_name1, birth_year1, death_year1)
                         self.all_authors.append(tempAuthor)
                         book_authors.append(tempAuthor)
                     if already_added2 == False:
-                        added_author = Author(given_name2, surname2, birth_year2, death_year2)
+                        added_author = Author(surname2, given_name2, birth_year2, death_year2)
                         self.all_authors.append(tempAuthor2)
                         book_authors.append(tempAuthor2)
 
@@ -133,12 +132,12 @@ class BooksDataSource:
 
                     already_added = False
                     for ex_author in self.all_authors:
-                        if ex_author == Author(given_name, surname):
+                        if ex_author == Author(surname, given_name):
                             book_authors.append(tempAuthor)
                             already_added = True
 
                     if already_added == False:
-                        added_author = Author(given_name, surname, birth_year, death_year)
+                        added_author = Author(surname, given_name, birth_year, death_year)
                         self.all_authors.append(added_author)
                         book_authors.append(added_author)
                 self.all_books.append(Book(title, year, book_authors))

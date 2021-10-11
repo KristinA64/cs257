@@ -27,11 +27,10 @@ class BooksDataSourceTester(unittest.TestCase):
 
     def test_unique_author(self):
         authors = self.data_source.authors('Pratchett')
-        print(len(authors))
         for author in authors:
-            #print(author.given_name)
             self.assertEqual(author, booksdatasource.Author('Pratchett', 'Terry'))
         self.assertTrue(authors[0] == booksdatasource.Author('Pratchett', 'Terry'))
+        self.assertTrue(len(authors) == 1)
 
 
     def test_blank_author(self):
@@ -40,14 +39,13 @@ class BooksDataSourceTester(unittest.TestCase):
 
     def test_authors(self):
         authors = self.data_source.authors('Jane')
-        for author in authors:
-            print(author.given_name)
         self.assertTrue(booksdatasource.Author('Austen', 'Jane') in authors)
+        self.assertTrue(len(authors) == 1)
 
     def test_sorted_authors(self):
         authors = self.data_source.authors('te')
-
         self.assertTrue(authors[0] == booksdatasource.Author('Austen', 'Jane'))
+        self.assertTrue(len(authors) == 3)
 
     '''
        Book Tests
@@ -57,6 +55,7 @@ class BooksDataSourceTester(unittest.TestCase):
     def test_blank_books(self):
         books = self.data_source.books()
         self.assertTrue(books)
+        self.assertTrue(len(books) == 10)
 
     def test_books(self):
         books = self.data_source.books('Sula', 'year')
@@ -75,23 +74,25 @@ class BooksDataSourceTester(unittest.TestCase):
 
     '''
     def test_blank_years(self):
-        #self.data_source = booksdatasource.BooksDataSource('books_medium.csv')
-        allBooks = self.data_source.books()
         books = self.data_source.books_between_years()
-        self.assertEqual(books, allBooks)
+        self.assertTrue(len(books) == 10)
 
     def test_no_books(self):
         books = self.data_source.books_between_years(1500, 1550)
-        #print(books[0].title)
+        self.assertTrue(len(books) == 0)
         self.assertFalse(books)
 
     def test_inclusive(self):
         books = self.data_source.books_between_years(1700, 1759)
         self.assertTrue(books)
+        self.assertTrue(len(books) == 1)
 
     def test_sorted(self):
         books = self.data_source.books_between_years(1813, 1815)
         self.assertTrue(books[0] == booksdatasource.Book('Pride and Prejudice', 1813, [booksdatasource.Author('Austen', 'Jane')]))
+        self.assertTrue(books[1] == booksdatasource.Book('Sense and Sensibility', 1813, [booksdatasource.Author('Austen', 'Jane')]))
+        self.assertTrue(books[2] == booksdatasource.Book('Emma', 1815, [booksdatasource.Author('Austen', 'Jane')]))
+
 
 
 
