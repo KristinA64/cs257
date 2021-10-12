@@ -37,6 +37,7 @@ class Book:
 
 
 class BooksDataSource:
+    #Initalizes the books and authors lists by parsing through the csv file
     def __init__(self, books_csv_file_name):
         ''' The books CSV file format looks like this:
                 title,publication_year,author_description

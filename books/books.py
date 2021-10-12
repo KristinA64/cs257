@@ -5,6 +5,8 @@ CS 257
 '''
 import argparse
 from booksdatasource import BooksDataSource
+
+#parses through the command line and returns a list of arguements
 def parse():
     #initialize the parser
     parser = argparse.ArgumentParser()
@@ -19,35 +21,37 @@ def parse():
     args = parser.parse_args()
     return args
 
+#calls booksdata source books function to search by title, prints the result
 def print_books(args, filename):
-    #add third param for sorting
     books = BooksDataSource(filename)
-    #call booksdata source books function on parameter --book
-    print(args.sort[0])
     book_list = books.books(args.book[0], args.sort[0])
     for book in book_list:
         authors = book.authors
         format_author = format_authors(authors)
         print(book.title, book.publication_year, format_author)
 
+#calls booksdata source books function to search by author, prints the result
 def print_authors(args, filename):
-    #calls booksdata ource author function on parameter --author
     books = BooksDataSource(filename)
     author_list = books.authors(args.author[0])
     print(format_authors(author_list))
 
+#calls booksdata source books function to search by publication year, prints the result
 def print_years(args, filename):
-    #calls booksdatasource between_years function on parameter --years
     books = BooksDataSource(filename)
+    #checks if too many arguements provided, throws an error
     if len(args.years) > 2:
         raise ValueError('too many years given, please enter a maximum of 2 years')
     elif len(args.years) == 2:
+        #if start year < end year, throw an error
         if args.years[1] < args.years[0]:
             raise ValueError('end year can not be before the start year')
         else:
             book_list = books.books_between_years(args.years[0],args.years[1])
+    #if only 1 arg provided, will assume it is just the start year
     elif len(args.years) == 1:
         book_list = books.books_between_years(args.years[0])
+    #no args, prints all books
     elif len(args.years) == 0:
         book_list = books.books_between_years()
     for book in book_list:
@@ -55,6 +59,7 @@ def print_years(args, filename):
         format_author = format_authors(authors)
         print(book.title, book.publication_year, format_author)
 
+#helper function to help format the print statments of the authors
 def format_authors(author_list):
     for author in author_list:
         if author.death_year:
@@ -63,9 +68,12 @@ def format_authors(author_list):
             format_author = author.given_name + ' ' + author.surname + '(' + author.birth_year + '-)'
         return format_author
 
+#main function
 def main():
     args = parse()
+    #set default csv as books1.csv but could be used in the future as an input from the command line
     filename = 'books1.csv'
+    #calls the appropriate search method (title, author, or between year) based on the args from the command line
     if args.book:
         print_books(args, filename)
     elif args.author:
