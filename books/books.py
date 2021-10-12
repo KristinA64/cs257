@@ -23,7 +23,7 @@ def print_books(args, filename):
     #add third param for sorting
     books = BooksDataSource(filename)
     #call booksdata source books function on parameter --book
-    #print(args.sort)
+    print(args.sort[0])
     book_list = books.books(args.book[0], args.sort[0])
     for book in book_list:
         authors = book.authors
@@ -31,12 +31,13 @@ def print_books(args, filename):
         print(book.title, book.publication_year, format_author)
 
 def print_authors(args, filename):
-    #calls booksdata source author function on parameter --author
+    #calls booksdata ource author function on parameter --author
     books = BooksDataSource(filename)
     author_list = books.authors(args.author[0])
     print(format_authors(author_list))
 
 def print_years(args, filename):
+    #calls booksdatasource between_years function on parameter --years
     books = BooksDataSource(filename)
     if len(args.years) > 2:
         raise ValueError('too many years given, please enter a maximum of 2 years')
@@ -65,10 +66,7 @@ def format_authors(author_list):
 def main():
     args = parse()
     filename = 'books1.csv'
-    #^^maybe too trusting of the user, who knows
-    #print(args.book == True)
     if args.book:
-        print('hi')
         print_books(args, filename)
     elif args.author:
         print_authors(args, filename)

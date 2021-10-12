@@ -76,7 +76,10 @@ class BooksDataSource:
                 self.all_books.append(Book(title, year, book_authors))
 
     def parse_authors(self, names):
-
+        ''' Helper function which initializes the given name, surname, birth
+            year, and death year of an author given the list of strings: name.
+            Returns a temporary Author object.
+        '''
         if '(' in names[2]:
             given_name = names[0]
             surname = names[1]
@@ -127,10 +130,32 @@ class BooksDataSource:
             else:
                 filtered_books = sorted(filtered_books, key=lambda book: (book.title, book.publication_year))
             return filtered_books
-
         else:
             return self.all_books
 
+    def display_books(self, book_list):
+        ''' Prints all book titles, publication years, and author information
+            in a given list to the terminal window.
+        '''
+        if book_list is None:
+            return
+        for book in book_list:
+            format_book = book.title + ' ' + str(book.publication_year)
+            print(format_book)
+            self.display_authors(book.authors)
+
+    def display_authors(self, author_list):
+        ''' Prints all book author information for each author in a given
+            list to the terminal window.
+        '''
+        if author_list is None:
+            return
+        for author in author_list:
+            if author.death_year:
+                format_author = author.given_name + ' ' + author.surname + '(' + author.birth_year + '-' + author.death_year + ')'
+            else:
+                format_author = author.given_name + ' ' + author.surname + '(' + author.birth_year + '-)'
+            print(format_author)
 
     def books_between_years(self, start_year=None, end_year=None):
         ''' Returns a list of all the Book objects in this data source whose publication
