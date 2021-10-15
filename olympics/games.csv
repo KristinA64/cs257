@@ -1,0 +1,680 @@
+1,1992 Summer,1992,Summer,Barcelona
+2,2012 Summer,2012,Summer,London
+3,1920 Summer,1920,Summer,Antwerpen
+4,1900 Summer,1900,Summer,Paris
+5,1988 Winter,1988,Winter,Calgary
+6,1988 Winter,1988,Winter,Calgary
+7,1992 Winter,1992,Winter,Albertville
+8,1992 Winter,1992,Winter,Albertville
+9,1994 Winter,1994,Winter,Lillehammer
+10,1994 Winter,1994,Winter,Lillehammer
+11,1992 Winter,1992,Winter,Albertville
+12,1992 Winter,1992,Winter,Albertville
+13,1992 Winter,1992,Winter,Albertville
+14,1992 Winter,1992,Winter,Albertville
+15,1994 Winter,1994,Winter,Lillehammer
+16,1994 Winter,1994,Winter,Lillehammer
+17,1994 Winter,1994,Winter,Lillehammer
+18,1994 Winter,1994,Winter,Lillehammer
+19,1992 Winter,1992,Winter,Albertville
+20,1992 Winter,1992,Winter,Albertville
+21,1992 Winter,1992,Winter,Albertville
+22,1992 Winter,1992,Winter,Albertville
+23,1994 Winter,1994,Winter,Lillehammer
+24,1994 Winter,1994,Winter,Lillehammer
+25,1994 Winter,1994,Winter,Lillehammer
+26,1994 Winter,1994,Winter,Lillehammer
+27,1932 Summer,1932,Summer,Los Angeles
+28,1932 Summer,1932,Summer,Los Angeles
+29,2002 Winter,2002,Winter,Salt Lake City
+30,1952 Summer,1952,Summer,Helsinki
+31,1980 Winter,1980,Winter,Lake Placid
+32,2000 Summer,2000,Summer,Sydney
+33,1996 Summer,1996,Summer,Atlanta
+34,2000 Summer,2000,Summer,Sydney
+35,1994 Winter,1994,Winter,Lillehammer
+36,1912 Summer,1912,Summer,Stockholm
+37,1912 Summer,1912,Summer,Stockholm
+38,1920 Summer,1920,Summer,Antwerpen
+39,1920 Summer,1920,Summer,Antwerpen
+40,1924 Summer,1924,Summer,Paris
+41,2014 Winter,2014,Winter,Sochi
+42,1948 Summer,1948,Summer,London
+43,1948 Summer,1948,Summer,London
+44,1948 Summer,1948,Summer,London
+45,1948 Summer,1948,Summer,London
+46,1948 Summer,1948,Summer,London
+47,1948 Summer,1948,Summer,London
+48,1948 Summer,1948,Summer,London
+49,1948 Summer,1948,Summer,London
+50,1952 Summer,1952,Summer,Helsinki
+51,1952 Summer,1952,Summer,Helsinki
+52,1952 Summer,1952,Summer,Helsinki
+53,1952 Summer,1952,Summer,Helsinki
+54,1952 Summer,1952,Summer,Helsinki
+55,1952 Summer,1952,Summer,Helsinki
+56,1952 Summer,1952,Summer,Helsinki
+57,1952 Summer,1952,Summer,Helsinki
+58,2000 Summer,2000,Summer,Sydney
+59,1948 Summer,1948,Summer,London
+60,1992 Winter,1992,Winter,Albertville
+61,1992 Winter,1992,Winter,Albertville
+62,1992 Winter,1992,Winter,Albertville
+63,1992 Winter,1992,Winter,Albertville
+64,1994 Winter,1994,Winter,Lillehammer
+65,1994 Winter,1994,Winter,Lillehammer
+66,1994 Winter,1994,Winter,Lillehammer
+67,1994 Winter,1994,Winter,Lillehammer
+68,1994 Winter,1994,Winter,Lillehammer
+69,1998 Winter,1998,Winter,Nagano
+70,1998 Winter,1998,Winter,Nagano
+71,1998 Winter,1998,Winter,Nagano
+72,1998 Winter,1998,Winter,Nagano
+73,2002 Winter,2002,Winter,Salt Lake City
+74,2002 Winter,2002,Winter,Salt Lake City
+75,2002 Winter,2002,Winter,Salt Lake City
+76,2002 Winter,2002,Winter,Salt Lake City
+77,2002 Winter,2002,Winter,Salt Lake City
+78,2006 Winter,2006,Winter,Torino
+79,2006 Winter,2006,Winter,Torino
+80,2008 Summer,2008,Summer,Beijing
+81,2016 Summer,2016,Summer,Rio de Janeiro
+82,2000 Summer,2000,Summer,Sydney
+83,2004 Summer,2004,Summer,Athina
+84,1960 Winter,1960,Winter,Squaw Valley
+85,1960 Winter,1960,Winter,Squaw Valley
+86,1964 Winter,1964,Winter,Innsbruck
+87,1920 Summer,1920,Summer,Antwerpen
+88,1984 Winter,1984,Winter,Sarajevo
+89,1984 Summer,1984,Summer,Los Angeles
+90,1968 Summer,1968,Summer,Mexico City
+91,1972 Summer,1972,Summer,Munich
+92,1988 Summer,1988,Summer,Seoul
+93,1996 Summer,1996,Summer,Atlanta
+94,2000 Summer,2000,Summer,Sydney
+95,1936 Summer,1936,Summer,Berlin
+96,1912 Summer,1912,Summer,Stockholm
+97,1992 Summer,1992,Summer,Barcelona
+98,1996 Summer,1996,Summer,Atlanta
+99,2012 Summer,2012,Summer,London
+100,1998 Winter,1998,Winter,Nagano
+101,1996 Summer,1996,Summer,Atlanta
+102,1996 Summer,1996,Summer,Atlanta
+103,1996 Summer,1996,Summer,Atlanta
+104,2000 Summer,2000,Summer,Sydney
+105,2000 Summer,2000,Summer,Sydney
+106,1996 Summer,1996,Summer,Atlanta
+107,1920 Summer,1920,Summer,Antwerpen
+108,1912 Summer,1912,Summer,Stockholm
+109,1912 Summer,1912,Summer,Stockholm
+110,1912 Summer,1912,Summer,Stockholm
+111,1952 Winter,1952,Winter,Oslo
+112,1956 Winter,1956,Winter,Cortina d'Ampezzo
+113,1956 Winter,1956,Winter,Cortina d'Ampezzo
+114,1960 Winter,1960,Winter,Squaw Valley
+115,1960 Winter,1960,Winter,Squaw Valley
+116,1960 Winter,1960,Winter,Squaw Valley
+117,1920 Summer,1920,Summer,Antwerpen
+118,1912 Summer,1912,Summer,Stockholm
+119,1992 Summer,1992,Summer,Barcelona
+120,1998 Winter,1998,Winter,Nagano
+121,1998 Winter,1998,Winter,Nagano
+122,2002 Winter,2002,Winter,Salt Lake City
+123,2002 Winter,2002,Winter,Salt Lake City
+124,2002 Winter,2002,Winter,Salt Lake City
+125,1936 Summer,1936,Summer,Berlin
+126,1936 Summer,1936,Summer,Berlin
+127,1948 Summer,1948,Summer,London
+128,1952 Summer,1952,Summer,Helsinki
+129,1956 Summer,1956,Summer,Melbourne
+130,1960 Summer,1960,Summer,Roma
+131,1920 Summer,1920,Summer,Antwerpen
+132,1920 Summer,1920,Summer,Antwerpen
+133,1924 Summer,1924,Summer,Paris
+134,1928 Summer,1928,Summer,Amsterdam
+135,2012 Summer,2012,Summer,London
+136,2004 Summer,2004,Summer,Athina
+137,2008 Summer,2008,Summer,Beijing
+138,1992 Summer,1992,Summer,Barcelona
+139,1996 Summer,1996,Summer,Atlanta
+140,2016 Summer,2016,Summer,Rio de Janeiro
+141,2016 Summer,2016,Summer,Rio de Janeiro
+142,2016 Summer,2016,Summer,Rio de Janeiro
+143,2016 Summer,2016,Summer,Rio de Janeiro
+144,2016 Summer,2016,Summer,Rio de Janeiro
+145,2016 Summer,2016,Summer,Rio de Janeiro
+146,1976 Summer,1976,Summer,Montreal
+147,2000 Summer,2000,Summer,Sydney
+148,1948 Summer,1948,Summer,London
+149,2016 Summer,2016,Summer,Rio de Janeiro
+150,1956 Summer,1956,Summer,Melbourne
+151,1956 Summer,1956,Summer,Melbourne
+152,1988 Summer,1988,Summer,Seoul
+153,1924 Summer,1924,Summer,Paris
+154,1924 Summer,1924,Summer,Paris
+155,1956 Summer,1956,Summer,Melbourne
+156,1960 Summer,1960,Summer,Roma
+157,1960 Summer,1960,Summer,Roma
+158,1960 Summer,1960,Summer,Roma
+159,2016 Summer,2016,Summer,Rio de Janeiro
+160,2008 Summer,2008,Summer,Beijing
+161,1992 Summer,1992,Summer,Barcelona
+162,2016 Summer,2016,Summer,Rio de Janeiro
+163,1972 Summer,1972,Summer,Munich
+164,2008 Summer,2008,Summer,Beijing
+165,2012 Summer,2012,Summer,London
+166,2000 Summer,2000,Summer,Sydney
+167,2000 Summer,2000,Summer,Sydney
+168,2008 Summer,2008,Summer,Beijing
+169,2000 Summer,2000,Summer,Sydney
+170,1992 Summer,1992,Summer,Barcelona
+171,1992 Summer,1992,Summer,Barcelona
+172,2004 Summer,2004,Summer,Athina
+173,2008 Summer,2008,Summer,Beijing
+174,2008 Summer,2008,Summer,Beijing
+175,2012 Summer,2012,Summer,London
+176,2016 Summer,2016,Summer,Rio de Janeiro
+177,2012 Summer,2012,Summer,London
+178,2004 Summer,2004,Summer,Athina
+179,2000 Summer,2000,Summer,Sydney
+180,1968 Summer,1968,Summer,Mexico City
+181,1996 Summer,1996,Summer,Atlanta
+182,1924 Summer,1924,Summer,Paris
+183,1996 Summer,1996,Summer,Atlanta
+184,2004 Summer,2004,Summer,Athina
+185,2000 Summer,2000,Summer,Sydney
+186,1992 Summer,1992,Summer,Barcelona
+187,2004 Summer,2004,Summer,Athina
+188,1976 Summer,1976,Summer,Montreal
+189,1980 Summer,1980,Summer,Moskva
+190,1984 Summer,1984,Summer,Los Angeles
+191,1980 Summer,1980,Summer,Moskva
+192,1984 Summer,1984,Summer,Los Angeles
+193,1964 Summer,1964,Summer,Tokyo
+194,1980 Summer,1980,Summer,Moskva
+195,1984 Summer,1984,Summer,Los Angeles
+196,2004 Summer,2004,Summer,Athina
+197,2004 Summer,2004,Summer,Athina
+198,2012 Summer,2012,Summer,London
+199,2008 Summer,2008,Summer,Beijing
+200,2004 Summer,2004,Summer,Athina
+201,2008 Summer,2008,Summer,Beijing
+202,1984 Summer,1984,Summer,Los Angeles
+203,2004 Summer,2004,Summer,Athina
+204,2004 Summer,2004,Summer,Athina
+205,1976 Summer,1976,Summer,Montreal
+206,1968 Summer,1968,Summer,Mexico City
+207,1968 Summer,1968,Summer,Mexico City
+208,1968 Summer,1968,Summer,Mexico City
+209,1992 Summer,1992,Summer,Barcelona
+210,1936 Summer,1936,Summer,Berlin
+211,1936 Summer,1936,Summer,Berlin
+212,1972 Summer,1972,Summer,Munich
+213,1920 Summer,1920,Summer,Antwerpen
+214,1928 Summer,1928,Summer,Amsterdam
+215,1936 Summer,1936,Summer,Berlin
+216,1972 Summer,1972,Summer,Munich
+217,2012 Summer,2012,Summer,London
+218,2016 Summer,2016,Summer,Rio de Janeiro
+219,1988 Summer,1988,Summer,Seoul
+220,1996 Summer,1996,Summer,Atlanta
+221,2000 Summer,2000,Summer,Sydney
+222,1984 Summer,1984,Summer,Los Angeles
+223,1988 Summer,1988,Summer,Seoul
+224,1992 Summer,1992,Summer,Barcelona
+225,1996 Summer,1996,Summer,Atlanta
+226,1980 Summer,1980,Summer,Moskva
+227,1984 Summer,1984,Summer,Los Angeles
+228,1988 Summer,1988,Summer,Seoul
+229,1992 Summer,1992,Summer,Barcelona
+230,1976 Summer,1976,Summer,Montreal
+231,1976 Summer,1976,Summer,Montreal
+232,1980 Summer,1980,Summer,Moskva
+233,2016 Summer,2016,Summer,Rio de Janeiro
+234,1996 Summer,1996,Summer,Atlanta
+235,1964 Summer,1964,Summer,Tokyo
+236,2004 Summer,2004,Summer,Athina
+237,1980 Summer,1980,Summer,Moskva
+238,1992 Summer,1992,Summer,Barcelona
+239,1960 Summer,1960,Summer,Roma
+240,1964 Summer,1964,Summer,Tokyo
+241,1988 Summer,1988,Summer,Seoul
+242,1988 Summer,1988,Summer,Seoul
+243,2000 Summer,2000,Summer,Sydney
+244,1952 Summer,1952,Summer,Helsinki
+245,2004 Summer,2004,Summer,Athina
+246,2010 Winter,2010,Winter,Vancouver
+247,2004 Summer,2004,Summer,Athina
+248,2000 Summer,2000,Summer,Sydney
+249,2004 Summer,2004,Summer,Athina
+250,2012 Summer,2012,Summer,London
+251,1952 Summer,1952,Summer,Helsinki
+252,1984 Summer,1984,Summer,Los Angeles
+253,2014 Winter,2014,Winter,Sochi
+254,2004 Summer,2004,Summer,Athina
+255,2008 Summer,2008,Summer,Beijing
+256,2012 Summer,2012,Summer,London
+257,2012 Summer,2012,Summer,London
+258,2008 Summer,2008,Summer,Beijing
+259,2008 Summer,2008,Summer,Beijing
+260,2000 Summer,2000,Summer,Sydney
+261,2012 Summer,2012,Summer,London
+262,1900 Summer,1900,Summer,Paris
+263,2000 Summer,2000,Summer,Sydney
+264,2016 Summer,2016,Summer,Rio de Janeiro
+265,2000 Summer,2000,Summer,Sydney
+266,1964 Winter,1964,Winter,Innsbruck
+267,1968 Winter,1968,Winter,Grenoble
+268,2016 Summer,2016,Summer,Rio de Janeiro
+269,1906 Summer,1906,Summer,Athina
+270,1996 Summer,1996,Summer,Atlanta
+271,2000 Summer,2000,Summer,Sydney
+272,2016 Summer,2016,Summer,Rio de Janeiro
+273,2016 Summer,2016,Summer,Rio de Janeiro
+274,1928 Summer,1928,Summer,Amsterdam
+275,2008 Summer,2008,Summer,Beijing
+276,2008 Summer,2008,Summer,Beijing
+277,2010 Winter,2010,Winter,Vancouver
+278,2014 Winter,2014,Winter,Sochi
+279,2014 Winter,2014,Winter,Sochi
+280,1976 Summer,1976,Summer,Montreal
+281,1996 Summer,1996,Summer,Atlanta
+282,2008 Summer,2008,Summer,Beijing
+283,2016 Summer,2016,Summer,Rio de Janeiro
+284,1900 Summer,1900,Summer,Paris
+285,1900 Summer,1900,Summer,Paris
+286,2000 Summer,2000,Summer,Sydney
+287,2008 Summer,2008,Summer,Beijing
+288,2008 Summer,2008,Summer,Beijing
+289,2000 Summer,2000,Summer,Sydney
+290,2004 Summer,2004,Summer,Athina
+291,2012 Summer,2012,Summer,London
+292,2008 Summer,2008,Summer,Beijing
+293,2004 Summer,2004,Summer,Athina
+294,2008 Summer,2008,Summer,Beijing
+295,2008 Summer,2008,Summer,Beijing
+296,2008 Summer,2008,Summer,Beijing
+297,2008 Summer,2008,Summer,Beijing
+298,2012 Summer,2012,Summer,London
+299,2008 Summer,2008,Summer,Beijing
+300,2016 Summer,2016,Summer,Rio de Janeiro
+301,1992 Summer,1992,Summer,Barcelona
+302,1996 Summer,1996,Summer,Atlanta
+303,1960 Summer,1960,Summer,Roma
+304,1960 Summer,1960,Summer,Roma
+305,1960 Summer,1960,Summer,Roma
+306,1960 Summer,1960,Summer,Roma
+307,1960 Summer,1960,Summer,Roma
+308,1960 Summer,1960,Summer,Roma
+309,1960 Summer,1960,Summer,Roma
+310,1960 Summer,1960,Summer,Roma
+311,1992 Summer,1992,Summer,Barcelona
+312,2004 Summer,2004,Summer,Athina
+313,1964 Summer,1964,Summer,Tokyo
+314,1972 Summer,1972,Summer,Munich
+315,1952 Summer,1952,Summer,Helsinki
+316,1972 Summer,1972,Summer,Munich
+317,1984 Summer,1984,Summer,Los Angeles
+318,2016 Summer,2016,Summer,Rio de Janeiro
+319,2000 Summer,2000,Summer,Sydney
+320,2000 Summer,2000,Summer,Sydney
+321,1972 Summer,1972,Summer,Munich
+322,1960 Summer,1960,Summer,Roma
+323,1952 Summer,1952,Summer,Helsinki
+324,1960 Summer,1960,Summer,Roma
+325,2000 Summer,2000,Summer,Sydney
+326,1960 Summer,1960,Summer,Roma
+327,1968 Summer,1968,Summer,Mexico City
+328,1972 Summer,1972,Summer,Munich
+329,1972 Summer,1972,Summer,Munich
+330,2000 Summer,2000,Summer,Sydney
+331,2004 Summer,2004,Summer,Athina
+332,2000 Summer,2000,Summer,Sydney
+333,1992 Summer,1992,Summer,Barcelona
+334,1960 Summer,1960,Summer,Roma
+335,2004 Summer,2004,Summer,Athina
+336,1948 Summer,1948,Summer,London
+337,1948 Summer,1948,Summer,London
+338,1948 Summer,1948,Summer,London
+339,1952 Summer,1952,Summer,Helsinki
+340,1952 Summer,1952,Summer,Helsinki
+341,1960 Summer,1960,Summer,Roma
+342,1976 Summer,1976,Summer,Montreal
+343,1984 Summer,1984,Summer,Los Angeles
+344,1968 Summer,1968,Summer,Mexico City
+345,1948 Summer,1948,Summer,London
+346,1992 Summer,1992,Summer,Barcelona
+347,1972 Summer,1972,Summer,Munich
+348,1948 Summer,1948,Summer,London
+349,1948 Summer,1948,Summer,London
+350,1948 Summer,1948,Summer,London
+351,1952 Summer,1952,Summer,Helsinki
+352,1952 Summer,1952,Summer,Helsinki
+353,1960 Summer,1960,Summer,Roma
+354,1960 Summer,1960,Summer,Roma
+355,1952 Summer,1952,Summer,Helsinki
+356,1960 Summer,1960,Summer,Roma
+357,1976 Summer,1976,Summer,Montreal
+358,1988 Summer,1988,Summer,Seoul
+359,2008 Summer,2008,Summer,Beijing
+360,1984 Summer,1984,Summer,Los Angeles
+361,1988 Summer,1988,Summer,Seoul
+362,1992 Summer,1992,Summer,Barcelona
+363,2004 Summer,2004,Summer,Athina
+364,1972 Summer,1972,Summer,Munich
+365,1976 Summer,1976,Summer,Montreal
+366,2008 Summer,2008,Summer,Beijing
+367,2016 Summer,2016,Summer,Rio de Janeiro
+368,1996 Summer,1996,Summer,Atlanta
+369,1964 Summer,1964,Summer,Tokyo
+370,1960 Summer,1960,Summer,Roma
+371,1964 Summer,1964,Summer,Tokyo
+372,1936 Summer,1936,Summer,Berlin
+373,1948 Summer,1948,Summer,London
+374,1948 Summer,1948,Summer,London
+375,1952 Summer,1952,Summer,Helsinki
+376,1952 Summer,1952,Summer,Helsinki
+377,1952 Summer,1952,Summer,Helsinki
+378,1952 Summer,1952,Summer,Helsinki
+379,1952 Summer,1952,Summer,Helsinki
+380,1960 Summer,1960,Summer,Roma
+381,1984 Summer,1984,Summer,Los Angeles
+382,1960 Summer,1960,Summer,Roma
+383,1964 Summer,1964,Summer,Tokyo
+384,1964 Summer,1964,Summer,Tokyo
+385,2008 Summer,2008,Summer,Beijing
+386,2008 Summer,2008,Summer,Beijing
+387,2016 Summer,2016,Summer,Rio de Janeiro
+388,2016 Summer,2016,Summer,Rio de Janeiro
+389,1992 Summer,1992,Summer,Barcelona
+390,2004 Summer,2004,Summer,Athina
+391,2000 Summer,2000,Summer,Sydney
+392,2000 Summer,2000,Summer,Sydney
+393,2000 Summer,2000,Summer,Sydney
+394,1964 Summer,1964,Summer,Tokyo
+395,1960 Summer,1960,Summer,Roma
+396,1996 Summer,1996,Summer,Atlanta
+397,1976 Summer,1976,Summer,Montreal
+398,1948 Summer,1948,Summer,London
+399,1948 Summer,1948,Summer,London
+400,1948 Summer,1948,Summer,London
+401,1948 Summer,1948,Summer,London
+402,1948 Summer,1948,Summer,London
+403,1948 Summer,1948,Summer,London
+404,1948 Summer,1948,Summer,London
+405,1948 Summer,1948,Summer,London
+406,1948 Summer,1948,Summer,London
+407,2004 Summer,2004,Summer,Athina
+408,2008 Summer,2008,Summer,Beijing
+409,2016 Summer,2016,Summer,Rio de Janeiro
+410,1972 Summer,1972,Summer,Munich
+411,2016 Summer,2016,Summer,Rio de Janeiro
+412,2016 Summer,2016,Summer,Rio de Janeiro
+413,2016 Summer,2016,Summer,Rio de Janeiro
+414,1948 Summer,1948,Summer,London
+415,1948 Summer,1948,Summer,London
+416,1948 Summer,1948,Summer,London
+417,1948 Summer,1948,Summer,London
+418,1948 Summer,1948,Summer,London
+419,1948 Summer,1948,Summer,London
+420,1948 Summer,1948,Summer,London
+421,1948 Summer,1948,Summer,London
+422,2008 Summer,2008,Summer,Beijing
+423,2012 Summer,2012,Summer,London
+424,2016 Summer,2016,Summer,Rio de Janeiro
+425,2008 Summer,2008,Summer,Beijing
+426,2008 Summer,2008,Summer,Beijing
+427,1984 Summer,1984,Summer,Los Angeles
+428,2012 Summer,2012,Summer,London
+429,2016 Summer,2016,Summer,Rio de Janeiro
+430,1952 Summer,1952,Summer,Helsinki
+431,2004 Summer,2004,Summer,Athina
+432,2008 Summer,2008,Summer,Beijing
+433,2016 Summer,2016,Summer,Rio de Janeiro
+434,2016 Summer,2016,Summer,Rio de Janeiro
+435,2012 Summer,2012,Summer,London
+436,2016 Summer,2016,Summer,Rio de Janeiro
+437,2012 Summer,2012,Summer,London
+438,2000 Summer,2000,Summer,Sydney
+439,2000 Summer,2000,Summer,Sydney
+440,2000 Summer,2000,Summer,Sydney
+441,2000 Summer,2000,Summer,Sydney
+442,2000 Summer,2000,Summer,Sydney
+443,2008 Summer,2008,Summer,Beijing
+444,2016 Summer,2016,Summer,Rio de Janeiro
+445,1980 Summer,1980,Summer,Moskva
+446,1988 Summer,1988,Summer,Seoul
+447,1992 Summer,1992,Summer,Barcelona
+448,2008 Summer,2008,Summer,Beijing
+449,2012 Summer,2012,Summer,London
+450,2012 Summer,2012,Summer,London
+451,2016 Summer,2016,Summer,Rio de Janeiro
+452,2016 Summer,2016,Summer,Rio de Janeiro
+453,2016 Summer,2016,Summer,Rio de Janeiro
+454,2008 Summer,2008,Summer,Beijing
+455,2012 Summer,2012,Summer,London
+456,1992 Summer,1992,Summer,Barcelona
+457,1996 Summer,1996,Summer,Atlanta
+458,1988 Summer,1988,Summer,Seoul
+459,1992 Summer,1992,Summer,Barcelona
+460,1928 Summer,1928,Summer,Amsterdam
+461,1928 Summer,1928,Summer,Amsterdam
+462,1936 Summer,1936,Summer,Berlin
+463,1936 Summer,1936,Summer,Berlin
+464,1936 Summer,1936,Summer,Berlin
+465,1936 Summer,1936,Summer,Berlin
+466,1948 Summer,1948,Summer,London
+467,2000 Summer,2000,Summer,Sydney
+468,2004 Summer,2004,Summer,Athina
+469,2008 Summer,2008,Summer,Beijing
+470,2012 Summer,2012,Summer,London
+471,2000 Summer,2000,Summer,Sydney
+472,2004 Summer,2004,Summer,Athina
+473,2008 Summer,2008,Summer,Beijing
+474,2008 Summer,2008,Summer,Beijing
+475,1984 Summer,1984,Summer,Los Angeles
+476,1984 Summer,1984,Summer,Los Angeles
+477,1984 Summer,1984,Summer,Los Angeles
+478,1972 Summer,1972,Summer,Munich
+479,1976 Summer,1976,Summer,Montreal
+480,2012 Summer,2012,Summer,London
+481,1996 Summer,1996,Summer,Atlanta
+482,2000 Summer,2000,Summer,Sydney
+483,1984 Summer,1984,Summer,Los Angeles
+484,2004 Summer,2004,Summer,Athina
+485,1988 Summer,1988,Summer,Seoul
+486,1988 Summer,1988,Summer,Seoul
+487,1992 Summer,1992,Summer,Barcelona
+488,1992 Summer,1992,Summer,Barcelona
+489,1996 Summer,1996,Summer,Atlanta
+490,2016 Summer,2016,Summer,Rio de Janeiro
+491,1988 Summer,1988,Summer,Seoul
+492,1952 Summer,1952,Summer,Helsinki
+493,2016 Summer,2016,Summer,Rio de Janeiro
+494,2016 Summer,2016,Summer,Rio de Janeiro
+495,1980 Summer,1980,Summer,Moskva
+496,2000 Summer,2000,Summer,Sydney
+497,1996 Summer,1996,Summer,Atlanta
+498,2000 Summer,2000,Summer,Sydney
+499,2000 Summer,2000,Summer,Sydney
+500,2000 Summer,2000,Summer,Sydney
+501,2008 Summer,2008,Summer,Beijing
+502,1992 Summer,1992,Summer,Barcelona
+503,1996 Summer,1996,Summer,Atlanta
+504,2000 Summer,2000,Summer,Sydney
+505,2000 Summer,2000,Summer,Sydney
+506,1928 Summer,1928,Summer,Amsterdam
+507,1928 Summer,1928,Summer,Amsterdam
+508,1960 Summer,1960,Summer,Roma
+509,1964 Summer,1964,Summer,Tokyo
+510,1984 Summer,1984,Summer,Los Angeles
+511,1980 Summer,1980,Summer,Moskva
+512,1980 Summer,1980,Summer,Moskva
+513,1976 Summer,1976,Summer,Montreal
+514,1976 Summer,1976,Summer,Montreal
+515,1960 Summer,1960,Summer,Roma
+516,1992 Summer,1992,Summer,Barcelona
+517,1988 Summer,1988,Summer,Seoul
+518,2000 Summer,2000,Summer,Sydney
+519,1984 Summer,1984,Summer,Los Angeles
+520,1976 Summer,1976,Summer,Montreal
+521,1984 Summer,1984,Summer,Los Angeles
+522,1984 Summer,1984,Summer,Los Angeles
+523,1972 Summer,1972,Summer,Munich
+524,1968 Summer,1968,Summer,Mexico City
+525,1960 Summer,1960,Summer,Roma
+526,1964 Summer,1964,Summer,Tokyo
+527,2008 Summer,2008,Summer,Beijing
+528,2012 Summer,2012,Summer,London
+529,1960 Summer,1960,Summer,Roma
+530,1960 Summer,1960,Summer,Roma
+531,1960 Summer,1960,Summer,Roma
+532,1948 Summer,1948,Summer,London
+533,1980 Summer,1980,Summer,Moskva
+534,1936 Summer,1936,Summer,Berlin
+535,1948 Summer,1948,Summer,London
+536,1984 Summer,1984,Summer,Los Angeles
+537,1996 Summer,1996,Summer,Atlanta
+538,1988 Summer,1988,Summer,Seoul
+539,1980 Summer,1980,Summer,Moskva
+540,1980 Summer,1980,Summer,Moskva
+541,1952 Summer,1952,Summer,Helsinki
+542,2004 Summer,2004,Summer,Athina
+543,2004 Summer,2004,Summer,Athina
+544,2004 Summer,2004,Summer,Athina
+545,1968 Summer,1968,Summer,Mexico City
+546,1968 Summer,1968,Summer,Mexico City
+547,1972 Summer,1972,Summer,Munich
+548,1972 Summer,1972,Summer,Munich
+549,2008 Summer,2008,Summer,Beijing
+550,2012 Summer,2012,Summer,London
+551,1972 Summer,1972,Summer,Munich
+552,1968 Summer,1968,Summer,Mexico City
+553,1968 Summer,1968,Summer,Mexico City
+554,1968 Summer,1968,Summer,Mexico City
+555,1968 Summer,1968,Summer,Mexico City
+556,1968 Summer,1968,Summer,Mexico City
+557,2012 Summer,2012,Summer,London
+558,1992 Summer,1992,Summer,Barcelona
+559,1992 Summer,1992,Summer,Barcelona
+560,2008 Summer,2008,Summer,Beijing
+561,1988 Summer,1988,Summer,Seoul
+562,2004 Summer,2004,Summer,Athina
+563,1992 Summer,1992,Summer,Barcelona
+564,1992 Summer,1992,Summer,Barcelona
+565,1988 Summer,1988,Summer,Seoul
+566,1988 Summer,1988,Summer,Seoul
+567,1988 Summer,1988,Summer,Seoul
+568,1988 Summer,1988,Summer,Seoul
+569,1988 Summer,1988,Summer,Seoul
+570,1988 Summer,1988,Summer,Seoul
+571,1984 Summer,1984,Summer,Los Angeles
+572,1960 Summer,1960,Summer,Roma
+573,1992 Summer,1992,Summer,Barcelona
+574,1920 Summer,1920,Summer,Antwerpen
+575,1996 Summer,1996,Summer,Atlanta
+576,1996 Summer,1996,Summer,Atlanta
+577,1996 Summer,1996,Summer,Atlanta
+578,2000 Summer,2000,Summer,Sydney
+579,1992 Summer,1992,Summer,Barcelona
+580,1996 Summer,1996,Summer,Atlanta
+581,1968 Summer,1968,Summer,Mexico City
+582,1972 Summer,1972,Summer,Munich
+583,1988 Summer,1988,Summer,Seoul
+584,2016 Summer,2016,Summer,Rio de Janeiro
+585,1996 Summer,1996,Summer,Atlanta
+586,2000 Summer,2000,Summer,Sydney
+587,1996 Summer,1996,Summer,Atlanta
+588,2000 Summer,2000,Summer,Sydney
+589,2012 Summer,2012,Summer,London
+590,2016 Summer,2016,Summer,Rio de Janeiro
+591,1996 Summer,1996,Summer,Atlanta
+592,2000 Summer,2000,Summer,Sydney
+593,2004 Summer,2004,Summer,Athina
+594,2012 Summer,2012,Summer,London
+595,2008 Summer,2008,Summer,Beijing
+596,1972 Summer,1972,Summer,Munich
+597,2008 Summer,2008,Summer,Beijing
+598,2012 Summer,2012,Summer,London
+599,2012 Summer,2012,Summer,London
+600,2012 Summer,2012,Summer,London
+601,2008 Summer,2008,Summer,Beijing
+602,2012 Summer,2012,Summer,London
+603,2012 Summer,2012,Summer,London
+604,1980 Summer,1980,Summer,Moskva
+605,1988 Summer,1988,Summer,Seoul
+606,1992 Summer,1992,Summer,Barcelona
+607,2016 Summer,2016,Summer,Rio de Janeiro
+608,2008 Summer,2008,Summer,Beijing
+609,2012 Summer,2012,Summer,London
+610,2000 Summer,2000,Summer,Sydney
+611,2004 Summer,2004,Summer,Athina
+612,2008 Summer,2008,Summer,Beijing
+613,2012 Summer,2012,Summer,London
+614,2016 Summer,2016,Summer,Rio de Janeiro
+615,2016 Summer,2016,Summer,Rio de Janeiro
+616,2016 Summer,2016,Summer,Rio de Janeiro
+617,2004 Summer,2004,Summer,Athina
+618,2008 Summer,2008,Summer,Beijing
+619,2012 Summer,2012,Summer,London
+620,1980 Summer,1980,Summer,Moskva
+621,1992 Summer,1992,Summer,Barcelona
+622,2000 Summer,2000,Summer,Sydney
+623,1988 Summer,1988,Summer,Seoul
+624,1996 Summer,1996,Summer,Atlanta
+625,2004 Summer,2004,Summer,Athina
+626,1936 Summer,1936,Summer,Berlin
+627,1972 Winter,1972,Winter,Sapporo
+628,1972 Winter,1972,Winter,Sapporo
+629,1976 Winter,1976,Winter,Innsbruck
+630,1976 Winter,1976,Winter,Innsbruck
+631,1960 Summer,1960,Summer,Roma
+632,1992 Summer,1992,Summer,Barcelona
+633,1972 Summer,1972,Summer,Munich
+634,1988 Winter,1988,Winter,Calgary
+635,1988 Winter,1988,Winter,Calgary
+636,1992 Winter,1992,Winter,Albertville
+637,1994 Winter,1994,Winter,Lillehammer
+638,1994 Winter,1994,Winter,Lillehammer
+639,1968 Summer,1968,Summer,Mexico City
+640,1968 Summer,1968,Summer,Mexico City
+641,1936 Summer,1936,Summer,Berlin
+642,1972 Summer,1972,Summer,Munich
+643,1976 Summer,1976,Summer,Montreal
+644,2000 Summer,2000,Summer,Sydney
+645,2008 Summer,2008,Summer,Beijing
+646,1996 Summer,1996,Summer,Atlanta
+647,1984 Summer,1984,Summer,Los Angeles
+648,1988 Summer,1988,Summer,Seoul
+649,1992 Summer,1992,Summer,Barcelona
+650,1960 Summer,1960,Summer,Roma
+651,1984 Summer,1984,Summer,Los Angeles
+652,2000 Summer,2000,Summer,Sydney
+653,2004 Summer,2004,Summer,Athina
+654,1980 Summer,1980,Summer,Moskva
+655,1992 Summer,1992,Summer,Barcelona
+656,1992 Summer,1992,Summer,Barcelona
+657,1992 Summer,1992,Summer,Barcelona
+658,1992 Summer,1992,Summer,Barcelona
+659,1988 Summer,1988,Summer,Seoul
+660,2008 Summer,2008,Summer,Beijing
+661,2012 Summer,2012,Summer,London
+662,2016 Summer,2016,Summer,Rio de Janeiro
+663,1984 Summer,1984,Summer,Los Angeles
+664,1924 Summer,1924,Summer,Paris
+665,1928 Summer,1928,Summer,Amsterdam
+666,1972 Summer,1972,Summer,Munich
+667,1976 Summer,1976,Summer,Montreal
+668,2004 Summer,2004,Summer,Athina
+669,1972 Summer,1972,Summer,Munich
+670,1928 Summer,1928,Summer,Amsterdam
+671,1928 Summer,1928,Summer,Amsterdam
+672,2008 Summer,2008,Summer,Beijing
+673,1924 Winter,1924,Winter,Chamonix
+674,1952 Winter,1952,Winter,Oslo
+675,1976 Winter,1976,Winter,Innsbruck
+676,1980 Winter,1980,Winter,Lake Placid
+677,1972 Summer,1972,Summer,Munich
+678,1972 Summer,1972,Summer,Munich
+679,1972 Summer,1972,Summer,Munich
+680,1972 Summer,1972,Summer,Munich

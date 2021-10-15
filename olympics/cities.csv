@@ -1,0 +1,680 @@
+1,Barcelona
+2,London
+3,Antwerpen
+4,Paris
+5,Calgary
+6,Calgary
+7,Albertville
+8,Albertville
+9,Lillehammer
+10,Lillehammer
+11,Albertville
+12,Albertville
+13,Albertville
+14,Albertville
+15,Lillehammer
+16,Lillehammer
+17,Lillehammer
+18,Lillehammer
+19,Albertville
+20,Albertville
+21,Albertville
+22,Albertville
+23,Lillehammer
+24,Lillehammer
+25,Lillehammer
+26,Lillehammer
+27,Los Angeles
+28,Los Angeles
+29,Salt Lake City
+30,Helsinki
+31,Lake Placid
+32,Sydney
+33,Atlanta
+34,Sydney
+35,Lillehammer
+36,Stockholm
+37,Stockholm
+38,Antwerpen
+39,Antwerpen
+40,Paris
+41,Sochi
+42,London
+43,London
+44,London
+45,London
+46,London
+47,London
+48,London
+49,London
+50,Helsinki
+51,Helsinki
+52,Helsinki
+53,Helsinki
+54,Helsinki
+55,Helsinki
+56,Helsinki
+57,Helsinki
+58,Sydney
+59,London
+60,Albertville
+61,Albertville
+62,Albertville
+63,Albertville
+64,Lillehammer
+65,Lillehammer
+66,Lillehammer
+67,Lillehammer
+68,Lillehammer
+69,Nagano
+70,Nagano
+71,Nagano
+72,Nagano
+73,Salt Lake City
+74,Salt Lake City
+75,Salt Lake City
+76,Salt Lake City
+77,Salt Lake City
+78,Torino
+79,Torino
+80,Beijing
+81,Rio de Janeiro
+82,Sydney
+83,Athina
+84,Squaw Valley
+85,Squaw Valley
+86,Innsbruck
+87,Antwerpen
+88,Sarajevo
+89,Los Angeles
+90,Mexico City
+91,Munich
+92,Seoul
+93,Atlanta
+94,Sydney
+95,Berlin
+96,Stockholm
+97,Barcelona
+98,Atlanta
+99,London
+100,Nagano
+101,Atlanta
+102,Atlanta
+103,Atlanta
+104,Sydney
+105,Sydney
+106,Atlanta
+107,Antwerpen
+108,Stockholm
+109,Stockholm
+110,Stockholm
+111,Oslo
+112,Cortina d'Ampezzo
+113,Cortina d'Ampezzo
+114,Squaw Valley
+115,Squaw Valley
+116,Squaw Valley
+117,Antwerpen
+118,Stockholm
+119,Barcelona
+120,Nagano
+121,Nagano
+122,Salt Lake City
+123,Salt Lake City
+124,Salt Lake City
+125,Berlin
+126,Berlin
+127,London
+128,Helsinki
+129,Melbourne
+130,Roma
+131,Antwerpen
+132,Antwerpen
+133,Paris
+134,Amsterdam
+135,London
+136,Athina
+137,Beijing
+138,Barcelona
+139,Atlanta
+140,Rio de Janeiro
+141,Rio de Janeiro
+142,Rio de Janeiro
+143,Rio de Janeiro
+144,Rio de Janeiro
+145,Rio de Janeiro
+146,Montreal
+147,Sydney
+148,London
+149,Rio de Janeiro
+150,Melbourne
+151,Melbourne
+152,Seoul
+153,Paris
+154,Paris
+155,Melbourne
+156,Roma
+157,Roma
+158,Roma
+159,Rio de Janeiro
+160,Beijing
+161,Barcelona
+162,Rio de Janeiro
+163,Munich
+164,Beijing
+165,London
+166,Sydney
+167,Sydney
+168,Beijing
+169,Sydney
+170,Barcelona
+171,Barcelona
+172,Athina
+173,Beijing
+174,Beijing
+175,London
+176,Rio de Janeiro
+177,London
+178,Athina
+179,Sydney
+180,Mexico City
+181,Atlanta
+182,Paris
+183,Atlanta
+184,Athina
+185,Sydney
+186,Barcelona
+187,Athina
+188,Montreal
+189,Moskva
+190,Los Angeles
+191,Moskva
+192,Los Angeles
+193,Tokyo
+194,Moskva
+195,Los Angeles
+196,Athina
+197,Athina
+198,London
+199,Beijing
+200,Athina
+201,Beijing
+202,Los Angeles
+203,Athina
+204,Athina
+205,Montreal
+206,Mexico City
+207,Mexico City
+208,Mexico City
+209,Barcelona
+210,Berlin
+211,Berlin
+212,Munich
+213,Antwerpen
+214,Amsterdam
+215,Berlin
+216,Munich
+217,London
+218,Rio de Janeiro
+219,Seoul
+220,Atlanta
+221,Sydney
+222,Los Angeles
+223,Seoul
+224,Barcelona
+225,Atlanta
+226,Moskva
+227,Los Angeles
+228,Seoul
+229,Barcelona
+230,Montreal
+231,Montreal
+232,Moskva
+233,Rio de Janeiro
+234,Atlanta
+235,Tokyo
+236,Athina
+237,Moskva
+238,Barcelona
+239,Roma
+240,Tokyo
+241,Seoul
+242,Seoul
+243,Sydney
+244,Helsinki
+245,Athina
+246,Vancouver
+247,Athina
+248,Sydney
+249,Athina
+250,London
+251,Helsinki
+252,Los Angeles
+253,Sochi
+254,Athina
+255,Beijing
+256,London
+257,London
+258,Beijing
+259,Beijing
+260,Sydney
+261,London
+262,Paris
+263,Sydney
+264,Rio de Janeiro
+265,Sydney
+266,Innsbruck
+267,Grenoble
+268,Rio de Janeiro
+269,Athina
+270,Atlanta
+271,Sydney
+272,Rio de Janeiro
+273,Rio de Janeiro
+274,Amsterdam
+275,Beijing
+276,Beijing
+277,Vancouver
+278,Sochi
+279,Sochi
+280,Montreal
+281,Atlanta
+282,Beijing
+283,Rio de Janeiro
+284,Paris
+285,Paris
+286,Sydney
+287,Beijing
+288,Beijing
+289,Sydney
+290,Athina
+291,London
+292,Beijing
+293,Athina
+294,Beijing
+295,Beijing
+296,Beijing
+297,Beijing
+298,London
+299,Beijing
+300,Rio de Janeiro
+301,Barcelona
+302,Atlanta
+303,Roma
+304,Roma
+305,Roma
+306,Roma
+307,Roma
+308,Roma
+309,Roma
+310,Roma
+311,Barcelona
+312,Athina
+313,Tokyo
+314,Munich
+315,Helsinki
+316,Munich
+317,Los Angeles
+318,Rio de Janeiro
+319,Sydney
+320,Sydney
+321,Munich
+322,Roma
+323,Helsinki
+324,Roma
+325,Sydney
+326,Roma
+327,Mexico City
+328,Munich
+329,Munich
+330,Sydney
+331,Athina
+332,Sydney
+333,Barcelona
+334,Roma
+335,Athina
+336,London
+337,London
+338,London
+339,Helsinki
+340,Helsinki
+341,Roma
+342,Montreal
+343,Los Angeles
+344,Mexico City
+345,London
+346,Barcelona
+347,Munich
+348,London
+349,London
+350,London
+351,Helsinki
+352,Helsinki
+353,Roma
+354,Roma
+355,Helsinki
+356,Roma
+357,Montreal
+358,Seoul
+359,Beijing
+360,Los Angeles
+361,Seoul
+362,Barcelona
+363,Athina
+364,Munich
+365,Montreal
+366,Beijing
+367,Rio de Janeiro
+368,Atlanta
+369,Tokyo
+370,Roma
+371,Tokyo
+372,Berlin
+373,London
+374,London
+375,Helsinki
+376,Helsinki
+377,Helsinki
+378,Helsinki
+379,Helsinki
+380,Roma
+381,Los Angeles
+382,Roma
+383,Tokyo
+384,Tokyo
+385,Beijing
+386,Beijing
+387,Rio de Janeiro
+388,Rio de Janeiro
+389,Barcelona
+390,Athina
+391,Sydney
+392,Sydney
+393,Sydney
+394,Tokyo
+395,Roma
+396,Atlanta
+397,Montreal
+398,London
+399,London
+400,London
+401,London
+402,London
+403,London
+404,London
+405,London
+406,London
+407,Athina
+408,Beijing
+409,Rio de Janeiro
+410,Munich
+411,Rio de Janeiro
+412,Rio de Janeiro
+413,Rio de Janeiro
+414,London
+415,London
+416,London
+417,London
+418,London
+419,London
+420,London
+421,London
+422,Beijing
+423,London
+424,Rio de Janeiro
+425,Beijing
+426,Beijing
+427,Los Angeles
+428,London
+429,Rio de Janeiro
+430,Helsinki
+431,Athina
+432,Beijing
+433,Rio de Janeiro
+434,Rio de Janeiro
+435,London
+436,Rio de Janeiro
+437,London
+438,Sydney
+439,Sydney
+440,Sydney
+441,Sydney
+442,Sydney
+443,Beijing
+444,Rio de Janeiro
+445,Moskva
+446,Seoul
+447,Barcelona
+448,Beijing
+449,London
+450,London
+451,Rio de Janeiro
+452,Rio de Janeiro
+453,Rio de Janeiro
+454,Beijing
+455,London
+456,Barcelona
+457,Atlanta
+458,Seoul
+459,Barcelona
+460,Amsterdam
+461,Amsterdam
+462,Berlin
+463,Berlin
+464,Berlin
+465,Berlin
+466,London
+467,Sydney
+468,Athina
+469,Beijing
+470,London
+471,Sydney
+472,Athina
+473,Beijing
+474,Beijing
+475,Los Angeles
+476,Los Angeles
+477,Los Angeles
+478,Munich
+479,Montreal
+480,London
+481,Atlanta
+482,Sydney
+483,Los Angeles
+484,Athina
+485,Seoul
+486,Seoul
+487,Barcelona
+488,Barcelona
+489,Atlanta
+490,Rio de Janeiro
+491,Seoul
+492,Helsinki
+493,Rio de Janeiro
+494,Rio de Janeiro
+495,Moskva
+496,Sydney
+497,Atlanta
+498,Sydney
+499,Sydney
+500,Sydney
+501,Beijing
+502,Barcelona
+503,Atlanta
+504,Sydney
+505,Sydney
+506,Amsterdam
+507,Amsterdam
+508,Roma
+509,Tokyo
+510,Los Angeles
+511,Moskva
+512,Moskva
+513,Montreal
+514,Montreal
+515,Roma
+516,Barcelona
+517,Seoul
+518,Sydney
+519,Los Angeles
+520,Montreal
+521,Los Angeles
+522,Los Angeles
+523,Munich
+524,Mexico City
+525,Roma
+526,Tokyo
+527,Beijing
+528,London
+529,Roma
+530,Roma
+531,Roma
+532,London
+533,Moskva
+534,Berlin
+535,London
+536,Los Angeles
+537,Atlanta
+538,Seoul
+539,Moskva
+540,Moskva
+541,Helsinki
+542,Athina
+543,Athina
+544,Athina
+545,Mexico City
+546,Mexico City
+547,Munich
+548,Munich
+549,Beijing
+550,London
+551,Munich
+552,Mexico City
+553,Mexico City
+554,Mexico City
+555,Mexico City
+556,Mexico City
+557,London
+558,Barcelona
+559,Barcelona
+560,Beijing
+561,Seoul
+562,Athina
+563,Barcelona
+564,Barcelona
+565,Seoul
+566,Seoul
+567,Seoul
+568,Seoul
+569,Seoul
+570,Seoul
+571,Los Angeles
+572,Roma
+573,Barcelona
+574,Antwerpen
+575,Atlanta
+576,Atlanta
+577,Atlanta
+578,Sydney
+579,Barcelona
+580,Atlanta
+581,Mexico City
+582,Munich
+583,Seoul
+584,Rio de Janeiro
+585,Atlanta
+586,Sydney
+587,Atlanta
+588,Sydney
+589,London
+590,Rio de Janeiro
+591,Atlanta
+592,Sydney
+593,Athina
+594,London
+595,Beijing
+596,Munich
+597,Beijing
+598,London
+599,London
+600,London
+601,Beijing
+602,London
+603,London
+604,Moskva
+605,Seoul
+606,Barcelona
+607,Rio de Janeiro
+608,Beijing
+609,London
+610,Sydney
+611,Athina
+612,Beijing
+613,London
+614,Rio de Janeiro
+615,Rio de Janeiro
+616,Rio de Janeiro
+617,Athina
+618,Beijing
+619,London
+620,Moskva
+621,Barcelona
+622,Sydney
+623,Seoul
+624,Atlanta
+625,Athina
+626,Berlin
+627,Sapporo
+628,Sapporo
+629,Innsbruck
+630,Innsbruck
+631,Roma
+632,Barcelona
+633,Munich
+634,Calgary
+635,Calgary
+636,Albertville
+637,Lillehammer
+638,Lillehammer
+639,Mexico City
+640,Mexico City
+641,Berlin
+642,Munich
+643,Montreal
+644,Sydney
+645,Beijing
+646,Atlanta
+647,Los Angeles
+648,Seoul
+649,Barcelona
+650,Roma
+651,Los Angeles
+652,Sydney
+653,Athina
+654,Moskva
+655,Barcelona
+656,Barcelona
+657,Barcelona
+658,Barcelona
+659,Seoul
+660,Beijing
+661,London
+662,Rio de Janeiro
+663,Los Angeles
+664,Paris
+665,Amsterdam
+666,Munich
+667,Montreal
+668,Athina
+669,Munich
+670,Amsterdam
+671,Amsterdam
+672,Beijing
+673,Chamonix
+674,Oslo
+675,Innsbruck
+676,Lake Placid
+677,Munich
+678,Munich
+679,Munich
+680,Munich
