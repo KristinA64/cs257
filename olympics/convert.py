@@ -46,10 +46,8 @@ the appropriate list and calls writeFile on each list in order to make it
 into a new csv file
 '''
 def parseFile():
-    #open_file = open('mini_athlete_events.csv')
-    #athletes_file = open('athletes.csv', 'w', newline='')
 
-    with open('mini_athlete_events.csv', 'r') as open_file:
+    with open('athlete_events.csv', 'r') as open_file:
         next(open_file)
 
         reader = csv.reader(open_file)
