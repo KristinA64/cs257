@@ -1,44 +1,10 @@
 '''
 convert.py
 Kristin Albright
-14 October 2021
+19 October 2021
 '''
 import csv
 from itertools import islice
-
-
-'''
-1 - CREATE TABLE statements are in olympics-schema.sql
-3 - Quality of database design (based on principles in readings and videos)
-1 - author names are in a comment at the top of convert.py
-3 - convert.py converts the raw CSV files (athlete_events.csv and noc_regions.csv)
-	into CSV files matching the tables in olympics-schema.sql
-3 - the output files from convert.py load successfully into the tables
-	specified in olympics-schema.sql
-4 - the SQL queries in queries.sql run correctly against the resulting
-	populated database (1 point apiece)
-'''
-
-'''
-This method creates a new csv file and copies information from athlete_events.csv
-into the new csv file.
-
-inputs
--------
-lines: all the information to be copied into the new csv file
-filename: the name of the new csv file that will be made
-'''
-def writeFile(lines, filename):
-    format_name = filename + '.csv'
-    file_out = open(format_name, 'w', newline='')
-    if type(lines) is dict:
-        for line in lines:
-            file_out.write(lines[line] + '\n')
-    else:
-        for line in lines:
-            file_out.write(str(line) + '\n')
-    file_out.close()
-
 
 '''
 This method opens athlete_events.csv and parses all the information into
@@ -47,104 +13,166 @@ into a new csv file
 '''
 def parseFile():
 
-    with open('athlete_events.csv', 'r') as open_file:
-        next(open_file)
+	sports = {}
+	cities = {}
+	teams = {}
+	games = {}
+	noc = {}
+	events = {}
+	athletes = {}
+	athletes_info = []
 
-        reader = csv.reader(open_file)
+	open_file = open('athlete_events.csv')
+	reader = csv.reader(open_file)
 
-        #creating empty lists
-        database = [[],{},{},[],[],{},{},[]]
-        athletes = database[0]
-        sports = database[1]
-        cities = database[2]
-        games = database[3]
-        noc = database[4]
-        teams = database[5]
-        events = database[6]
-        athlete_info = database[7]
-        filenames = ['athletes', 'sports', 'cities', 'games', 'noc', 'teams', 'events', 'athletes_info']
+	#sports
+	sports_csv = open('sports.csv','w')
+	writer = csv.writer(sports_csv)
 
-        #starting all ids
-        sport_id = 0
-        city_id = 0
-        game_id = 0
-        noc_id = 0
-        team_id = 0
-        event_id = 0
+	next(reader)
+	for row in reader:
+		sport = row[12]
+		if sport not in sports:
+			sport_id = len(sports)+1
+			sports[sport] = sport_id
+			writer.writerow([sport_id, sport])
+	open_file.close()
+	sports_csv.close()
 
+	#cities
+	cities_csv = open('cities.csv','w')
+	writer = csv.writer(cities_csv)
 
-        for row in reader:
-            #parsing all the information
-            athlete_id = row[0]
-            name = row[1]
-            sex = row[2]
-            height = row[4]
-            weight = row[5]
-            team = row[6]
-            noc_abbrv = row[7]
-            game_string = row[8]
-            year = row[9]
-            season = row[10]
-            city = row[11]
-            sport = row[12]
-            event = row[13]
-            medal = row[14]
+	open_file = open('athlete_events.csv')
+	reader = csv.reader(open_file)
 
-            athlete = [athlete_id, name, sex, height, weight, medal]
+	next(reader)
+	for row in reader:
+		city = row[11]
+		if city not in cities:
+			city_id = len(cities)+1
+			cities[city] = city_id
+			writer.writerow([city_id, city])
+	open_file.close()
+	cities_csv.close()
 
-            #Athletes table:
-            athlete_string = ','.join(athlete)
-            if athlete_string not in athletes:
-                athletes.append(athlete_string)
+	#teams
+	teams_csv = open('teams.csv','w')
+	writer = csv.writer(teams_csv)
 
-            #Sports table:
-            if sport not in sports:
-                sport_id = sport_id + 1
-                sport_string = str(sport_id) + ',' + sport
-                sports[sport_id] = sport_string
+	open_file = open('athlete_events.csv')
+	reader = csv.reader(open_file)
 
-            #Cities table:
-            if city not in cities:
-                city_id = city_id + 1
-                city_string = str(city_id) + ',' + city
-                cities[city_id] = city_string
+	next(reader)
+	for row in reader:
+		team = row[6]
+		if team not in teams:
+			team_id = len(teams)+1
+			teams[team] = team_id
+			writer.writerow([team_id, team])
+	open_file.close()
+	teams_csv.close()
 
-            #Games table:
-            game = [game_id, game_string, year, season, city]
-            if game not in games:
-                game_id = game_id + 1
-                game = [str(game_id), game_string, str(year), season, city]
-                game_string = ','.join(game)
-                games.append(game_string)
+	#games
+	open_file = open('athlete_events.csv')
+	reader = csv.reader(open_file)
 
-            #NOC table:
-            cur_noc = [noc_id, noc_abbrv, team]
-            if cur_noc not in noc:
-                noc_id = noc_id + 1
-                cur_noc = [str(noc_id), noc_abbrv, team]
-                noc_string = ','.join(cur_noc)
-                noc.append(cur_noc)
+	games_csv = open('games.csv','w')
+	writer = csv.writer(games_csv)
 
-            #Teams table:
-            if team not in teams:
-                team_id = team_id + 1
-                team_string = str(team_id) + ',' + team
-                teams[team_id] = team_string
+	next(reader)
+	for row in reader:
+		games_name = row[8]
+		if games_name not in games:
+			games_id = len(games)+1
+			games[games_name] = games_id
+			writer.writerow([games_id, games_name])
 
-            #Events table
-            if event not in events:
-                event_id = event_id + 1
-                no_commas = event.replace(',','')
-                event_string = str(event_id) + ',' + no_commas
-                events[event_id] = event_string
+	open_file.close()
+	games_csv.close()
 
-            all_id = [str(athlete_id), str(sport_id), str(city_id), str(game_id), str(noc_id), str(team_id), str(event_id)]
-            athlete_info_string = ','.join(all_id)
-            athlete_info.append(athlete_info_string)
+	#noc
+	open_file = open('athlete_events.csv')
+	reader = csv.reader(open_file)
 
+	noc_csv = open('noc.csv','w')
+	writer = csv.writer(noc_csv)
 
-        for item in range(len(filenames)):
-            writeFile(database[item], filenames[item])
+	next(reader)
+	for row in reader:
+		abbrv = row[7]
+		if abbrv not in noc:
+			noc_id = len(noc)+1
+			noc[abbrv] = noc_id
+			writer.writerow([noc_id, abbrv])
+
+	open_file.close()
+	noc_csv.close()
+
+	#event
+	open_file = open('athlete_events.csv')
+	reader = csv.reader(open_file)
+
+	events_csv = open('events.csv','w')
+	writer = csv.writer(events_csv)
+
+	next(reader)
+	for row in reader:
+		event = row[13]
+		if event not in events:
+			event_id = len(events)+1
+			events[event] = event_id
+			writer.writerow([event_id, event])
+
+	open_file.close()
+	events_csv.close()
+
+	#athletes
+	open_file = open('athlete_events.csv')
+	reader = csv.reader(open_file)
+
+	athletes_csv = open('athletes.csv','w')
+	writer = csv.writer(athletes_csv)
+
+	next(reader)
+	for row in reader:
+		athlete_id = row[0]
+		athlete_name = row[1]
+		if athlete_name not in athletes:
+			athletes[athlete_name] = athlete_id
+			writer.writerow([athlete_id, athlete_name])
+
+	open_file.close()
+	athletes_csv.close()
+
+	#athletes_info
+	open_file = open('athlete_events.csv')
+	reader = csv.reader(open_file)
+
+	athletes_info_csv = open('athletes_info.csv','w')
+	writer = csv.writer(athletes_info_csv)
+
+	next(reader)
+	for row in reader:
+		athlete_id = row[0]
+		sport = row[12]
+		sport_id = sports[sport]
+		city = row[11]
+		city_id = cities[city]
+		game = row[8]
+		game_id = games[game]
+		abbrv = row[7]
+		noc_id = noc[abbrv]
+		team = row[6]
+		team_id = teams[team]
+		event = row[13]
+		event_id = events[event]
+		medal = row[14]
+		year = row[9]
+		writer.writerow([athlete_id, sport_id, city_id, game_id, noc_id, team_id, event_id, year, medal])
+
+	open_file.close()
+	athletes_info_csv.close()
 
 
 #main function

@@ -1,17 +1,13 @@
 '''
 olympics-schema.sql
 Kristin Albright
-14 October 2021
+19 October 2021
 '''
 
 /*Athletes table:*/
 CREATE TABLE athletes (
     id INTEGER,
-    name text,
-    sex text,
-    height text,
-    weight text,
-    medal text
+    name text
 );
 
 /*Sports table:*/
@@ -28,18 +24,14 @@ CREATE TABLE cities (
 
 /*Games table:*/
 CREATE TABLE games (
-    id text,
-    games text,
-    year integer,
-    season text,
-    city text
+    id INTEGER,
+    games text
 );
 
 /*NOC table:*/
 CREATE TABLE noc (
-    id text,
-    abbrv text,
-    region text
+    id INTEGER,
+    abbrv text
 );
 
 /*Teams table:*/
@@ -59,8 +51,10 @@ CREATE TABLE athletes_info (
     athlete_id INTEGER,
     sport_id INTEGER,
     city_id INTEGER,
-    game_id text,
-    noc_id text,
+    game_id INTEGER,
+    noc_id INTEGER,
     team_id INTEGER,
-    event_id INTEGER
+    event_id INTEGER,
+    year INTEGER,
+    medal text
 );
