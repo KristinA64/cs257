@@ -6,12 +6,12 @@ Kristin Albright
 import csv
 from itertools import islice
 
-'''
-This method opens athlete_events.csv and parses all the information into
-the appropriate list and calls writeFile on each list in order to make it
-into a new csv file
-'''
 def parseFile():
+	'''
+	This method opens athlete_events.csv and parses all the information into
+	the appropriate list and calls writeFile on each list in order to make it
+	into a new csv file
+	'''
 
 	sports = {}
 	cities = {}
@@ -175,8 +175,9 @@ def parseFile():
 	athletes_info_csv.close()
 
 
-#main function
 def main():
+	'''main function
+	'''
     parseFile()
 
 

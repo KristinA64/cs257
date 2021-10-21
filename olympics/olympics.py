@@ -7,6 +7,7 @@ import argparse
 
 def parse():
     parser = argparse.ArgumentParser()
+
     #list the names of all athletes from a specified NOC
     parser.add_argument('-n', '--noc', nargs=1, const=None, help='Lists the names of all athletes from a specified NOC.')
 
@@ -21,8 +22,9 @@ def parse():
     return args
 
 def queryNOC(cursor, query, query_string):
-    #Query the database with the noc provided
-        #requires string from parse to be used in the query
+    '''this function performs the sql query that will list all the athletes
+       from a specified NOC
+    '''
     query = '''SELECT athletes.name
        FROM athletes, athletes_info, noc
        WHERE noc.id = athletes_info.noc_id
@@ -34,14 +36,14 @@ def queryNOC(cursor, query, query_string):
     except Exception as e:
         print(e)
         exit()
-    #Iterate over the rows and print the results of the cursor
     for row in cursor:
         print(row[0])
         print()
 
 def queryMedals(cursor, query):
-    #Query the database
-        #make sure the medals are counted and in decreasing order
+    '''this function performs the sql query that will list all the nocs and
+       the gold medals that they've won in descending order
+    '''
     query = '''SELECT noc.abbrv, COUNT(athletes_info.medal)
         FROM noc, athletes_info, events
         WHERE noc.id = athletes_info.noc_id
@@ -53,13 +55,14 @@ def queryMedals(cursor, query):
     except Exception as e:
         print(e)
         exit()
-    #Iterate over the rows and print the results of the cursor
     for row in cursor:
         print(row[0], row[1])
         print()
 
 def queryGold(cursor, query, query_string):
-    #Query the database with the noc provided
+    '''this function performs the sql query that will list all the athletes
+       that have won gold medals from a specified NOC
+    '''
     query = '''SELECT athletes.name
         FROM noc, athletes_info, athletes
         WHERE noc.id = athletes_info.noc_id
@@ -72,7 +75,6 @@ def queryGold(cursor, query, query_string):
     except Exception as e:
         print(e)
         exit()
-    #Iterate over the rows and print the results of the cursor
     for row in cursor:
         print(row[0])
         print()
