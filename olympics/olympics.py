@@ -15,7 +15,7 @@ def parse():
     parser.add_argument('-m', '--medals', action='store_true', help='List all the NOCs and the number of gold medals they have won in decreasing order.')
 
     #list all gold medal winners from a specified NOC
-    parser.add_argument('-gm', '--goldmedals', nargs=1, const=None, help='')
+    parser.add_argument('-gm', '--goldmedals', nargs=1, const=None, help='List all gold medal winners from a specified NOC.')
 
     args = parser.parse_args()
 
@@ -48,6 +48,7 @@ def queryMedals(cursor, query):
         FROM noc, athletes_info, events
         WHERE noc.id = athletes_info.noc_id
         AND events.id = athletes_info.event_id
+        AND athletes_info.medal LIKE 'G%'
         GROUP BY noc.abbrv
         ORDER BY COUNT(athletes_info.medal) DESC'''
     try:
@@ -56,7 +57,7 @@ def queryMedals(cursor, query):
         print(e)
         exit()
     for row in cursor:
-        print(row[0], row[1])
+        print(row[0])
         print()
 
 def queryGold(cursor, query, query_string):
@@ -101,6 +102,7 @@ def main():
     if args.medals:
         queryMedals(cursor, query)
     if args.goldmedals:
+        print("hi")
         queryGold(cursor, query, args.goldmedals[0])
 
     connection.close()
