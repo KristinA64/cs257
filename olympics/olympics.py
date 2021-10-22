@@ -2,8 +2,8 @@
 Kristin Albright
 19 October 2021
 '''
-import psycopg2
 import argparse
+import psycopg2
 
 def parse():
     parser = argparse.ArgumentParser()
@@ -57,7 +57,7 @@ def queryMedals(cursor, query):
         print(e)
         exit()
     for row in cursor:
-        print(row[0])
+        print(row[0], row[1])
         print()
 
 def queryGold(cursor, query, query_string):
@@ -102,7 +102,6 @@ def main():
     if args.medals:
         queryMedals(cursor, query)
     if args.goldmedals:
-        print("hi")
         queryGold(cursor, query, args.goldmedals[0])
 
     connection.close()

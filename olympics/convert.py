@@ -178,7 +178,7 @@ def parseFile():
 def main():
 	'''main function
 	'''
-    parseFile()
+	parseFile()
 
 
 if __name__ == '__main__':
