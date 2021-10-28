@@ -33,6 +33,12 @@ CREATE TABLE noc (
     id INTEGER,
     abbrv text
 );
+/*Regions table:*/
+CREATE TABLE noc_regions (
+    abbrv text,
+    region text,
+    notes text
+);
 
 /*Teams table:*/
 CREATE TABLE teams (
@@ -56,5 +62,6 @@ CREATE TABLE athletes_info (
     team_id INTEGER,
     event_id INTEGER,
     year INTEGER,
+    sex text,
     medal text
 );

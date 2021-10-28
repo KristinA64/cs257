@@ -169,7 +169,8 @@ def parseFile():
 		event_id = events[event]
 		medal = row[14]
 		year = row[9]
-		writer.writerow([athlete_id, sport_id, city_id, game_id, noc_id, team_id, event_id, year, medal])
+		sex = row[2]
+		writer.writerow([athlete_id, sport_id, city_id, game_id, noc_id, team_id, event_id, year, sex, medal])
 
 	open_file.close()
 	athletes_info_csv.close()
