@@ -5,7 +5,6 @@ Kristin Albright
 import sys
 import argparse
 import flask
-from flask import request
 import json
 import psycopg2
 
@@ -165,7 +164,7 @@ def get_medals(games_id):
         for row in cursor:
             medal_dict = {}
             medal_dict = {'athlete_id':row[0], 'athlete_name':row[1], 'athlete_sex':row[2],
-                         'sport':row[3], 'event':row[4], 'medal':row[5], 'noc':row[6]}
+                         'sport':row[3], 'event':row[4], 'medal':row[5]}
             medals_list.append(medal_dict)
             print(medal_dict)
             print()
