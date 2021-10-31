@@ -1,0 +1,26 @@
+Kristin Albright and Xinyan Xiang
+31 October 2021
+
+This dataset includes the results of every Grammy awards show between the years
+of 1958 and 2019. It includes information such as the title of the award, the name
+of the work nominated, the people who contributed to the piece, a url to an image
+on the grammy awards website, and the category of the award.
+
+The dataset can be found by opening the link below in a web browser and scrolling
+down to the table-formatted dataset:
+https://www.kaggle.com/unanimad/grammy-awards
+
+STORY: A music lover can get a list of all the winners of the album of the year
+in their favorite genre (Country), so that they can find new albums to listen to
+that they might like.
+
+IMPLEMENTATION: The data can be formatted such that there's a drop-down list for
+award category. The user can select "Best Country Album" out of the categories
+and then the list of awards will filter through award category such that only
+albums that won that award will show up. This drop-down feature can be available
+for other columns as well (year, Grammy title, etc.).
+
+
+STORY:
+
+IMPLEMENTATION:
