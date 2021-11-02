@@ -10,6 +10,7 @@ The dataset can be found by opening the link below in a web browser and scrollin
 down to the table-formatted dataset:
 https://www.kaggle.com/unanimad/grammy-awards
 
+
 STORY: A music lover can get a list of all the winners of the album of the year
 in their favorite genre (Country), so that they can find new albums to listen to
 that they might like.
@@ -21,6 +22,25 @@ albums that won that award will show up. This drop-down feature can be available
 for other columns as well (year, Grammy title, etc.).
 
 
-STORY:
+STORY: A music lover wants to know if his or her interested singer has been nominated by 
+and won Grammy awards before. Additionally, he or she wants to show several singers's 
+information about winning Grammy awards on the same webpage.
 
-IMPLEMENTATION:
+IMPLEMENTATION: We could have a search box, and the user could type the singer's name 
+or some key strings in his or her name. To search another singer at the same time, 
+the user could add another search box by clicking on the plus sign shown on the right 
+bottom of the first search box. After the user finishes selecting his or her interested singers, 
+the user needs to click on the search button. This search button will send the user to another webpage 
+which shows relevant information about the interested singers, sorted by the times this singer 
+won the Grammy award. The user would be able to see all awards the singer has won with these awards'
+categories, nominees, years. 
+
+
+STORY: A employee from an album shop wants to figure out what records or albums he or she should purchase. 
+To narrow down his or her choices this employee could use our website to view the top 15 nominees 
+which have the most total nominations throughout the history of Grammy.  
+
+IMPLEMENTATION: We could have sliders for the user to adjust the year. For each year, our website
+would render a graph whose horizontal axis is labeled as nominees and the vertical axis is labeled as times
+of awards. Each graph will show the top 15 nominees and their nominated times for a chosen year.
+
