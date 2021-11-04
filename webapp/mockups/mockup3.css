@@ -38,3 +38,7 @@ ul.vertical-navbar li a:hover {
     background-color: rgb(247, 175, 32);
     color: white;
 }  
+
+img {
+    border-radius: 50%;
+  }

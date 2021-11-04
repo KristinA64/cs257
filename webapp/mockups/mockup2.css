@@ -48,10 +48,11 @@ body {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    width: 15%;
+    width: 10%;
     background-color: #fef3b5;
     position: fixed;
-    height: 100%;
+    top:20%;
+    height: 80%;
     overflow: auto;
   }
   
@@ -73,3 +74,13 @@ body {
     background-color: rgb(247, 175, 32);
     color: white;
   } 
+
+/* img {
+    border-radius: 50%;
+    position:fixed;
+    right: 10px
+  } */
+/* 
+div{
+      position:fixed;
+  } */
