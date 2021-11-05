@@ -53,6 +53,15 @@ body {
   display: block;
 
 }
+
+.table_pic {
+  margin-right: 10px;
+  margin-top: 10px;
+  margin-left: auto;
+  margin-bottom: auto;
+  display: block;
+
+}
 /*
 div{
       position:fixed;
