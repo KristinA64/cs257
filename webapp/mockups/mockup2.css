@@ -1,90 +1,93 @@
+
+
 /*
 Kristin Albright and Xinyan Xiang
 4 November 2021
  */
-body {
-    margin: 0;
-  }
+ body {
+  margin: 0;
+}
 
-  ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    width: 10%;
-    background-color: #fef3b5;
-    position: fixed;
-    top:20%;
-    height: 80%;
-    overflow: auto;
-  }
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 10%;
+  background-color: #fef3b5;
+  position: fixed;
+  top:20%;
+  height: 80%;
+  overflow: auto;
+}
 
-  li a {
-    display: block;
-    color: #000;
-    padding: 8px 16px;
-    text-decoration: none;
-  }
+li a {
+  display: block;
+  color: #000;
+  padding: 8px 16px;
+  text-decoration: none;
+}
 
-  li a.active {
-    background-color: #fef3b5;
-    font-size: 120%;
-    font-weight: bold;
-    font-style: italic;
-  }
+li a.active {
+  background-color: #fef3b5;
+  font-size: 120%;
+  font-weight: bold;
+  font-style: italic;
+}
 
-  li a:hover:not(.active) {
-    background-color: rgb(247, 175, 32);
-    color: white;
-  }
+li a:hover:not(.active) {
+  background-color: rgb(247, 175, 32);
+  color: white;
+}
 
 .img {
 
-    position:fixed;
-    width: 120px;
-    height:120px;
+  position:fixed;
+  width: 120px;
+  height:120px;
 
-  }
+}
 
 .vinyl_table {
-  display: inline-block;
-  margin-right: auto;
-  margin-top: 100px;
-  margin-left: 150px;
-  margin-bottom: auto;
+display: inline-block;
+margin-right: auto;
+margin-top: 100px;
+margin-left: 150px;
+margin-bottom: auto;
 }
 
 .slidecontainer {
-  width: 50%;
-  margin-top: 20px;
+width: 50%;
 }
 
 .slider {
-  -webkit-appearance: none;
-  width: 50%;
-  height: 25px;
-  background: #d3d3d3;
-  outline: none;
-  opacity: 0.7;
-  -webkit-transition: .2s;
-  transition: opacity .2s;
+-webkit-appearance: none;
+width: 50%;
+height: 20px;
+margin-top:0px;
+margin-left:500px;
+background: #d3d3d3;
+outline: none;
+opacity: 0.7;
+-webkit-transition: .2s;
+transition: opacity .2s;
 }
 
 .slider:hover {
-  opacity: 1;
+opacity: 1;
 }
 
 .slider::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 25px;
-  height: 25px;
-  background: #04AA6D;
-  cursor: pointer;
+-webkit-appearance: none;
+appearance: none;
+width: 25px;
+height: 25px;
+background: #04AA6D;
+cursor: pointer;
 }
 
 .slider::-moz-range-thumb {
-  width: 25px;
-  height: 25px;
-  background: #04AA6D;
-  cursor: pointer;
+width: 25px;
+height: 25px;
+background: #04AA6D;
+cursor: pointer;
 }
