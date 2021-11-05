@@ -46,20 +46,20 @@ body {
   }
 
 .vinyl_record {
-  margin-right: 600px;
+  margin-right:550px;
   margin-top: auto;
   margin-left: auto;
   margin-bottom: auto;
-  display: block;
+  display:inline-block;
 
 }
 
 .table_pic {
-  margin-right: 10px;
+  margin-right: 30px;
   margin-top: 10px;
   margin-left: auto;
-  margin-bottom: auto;
-  display: block;
+  margin-bottom: 500px;
+  display:inline-block;
 
 }
 /*
