@@ -1,24 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <title>Grammy Awards</title>
-    <link rel="stylesheet" href="mockup3.css" type="text/css" />
+    <link rel="stylesheet" href="mockup2.css" type="text/css" />
 </head>
 
-
 <body>
-    <img src="Grammy.png">
-    <ul class="vertical-navbar">
-        <p>Search by</p>
-        <li ><a href="https://duckduckgo.com/">Year</a></li>
-        <li><a href="https://www.google.com/">Category</a></li>
-        <li><a href="https://www.bing.com/">Artist</a></li>
-        <li><a href="https://www.carleton.edu/">Nominee</a></li>
-        <p >Analytics</p>
-        <li ><a href="https://duckduckgo.com/">Top Nominations</a></li>
-        <li><a href="https://www.google.com/">Top Wins</a></li>
-    </ul>
+    <input type="image" src="Grammy.png" name="home_buttom" class="img" id="home_buttom" />
+<ul>
+  <h4>Search by</h4>
+  <li><a href="#Year">Year</a></li>
+  <li><a href="#Category">Category</a></li>
+  <li><a href="#Artist">Artist</a></li>
+  <li><a href="#Nominee">Nominee</a></li>
+  <h4>Analytics</h4>
+  <li><a href="#Nominations">Top Nominations</a></li>
+  <li><a href="#Wins">Top Wins</a></li>
+</ul>
+
+<form action="/form/submit" method="GET">
+  <input type="text" name="text" class="search" placeholder="Search here!">
+  <input type="submit" name="submit" class="submit" value="+">
+</form>
+
+<div>
+  <img class="vinyl_table" src="vinyl.png" width="700" height="700">
+  <img class="vinyl_table" src="table_pic.png" width="375" height="450">
+</div>
 
 </body>
-</html>  
+</html>

@@ -1,0 +1,56 @@
+Kristin Albright and Xinyan Xiang
+31 October 2021
+
+This dataset includes the results of every Grammy awards show between the years
+of 1958 and 2019. It includes information such as the title of the award, the name
+of the work nominated, the people who contributed to the piece, a url to an image
+on the grammy awards website, and the category of the award.
+
+The dataset can be found by opening the link below in a web browser and scrolling
+down to the table-formatted dataset:
+https://www.kaggle.com/unanimad/grammy-awards
+
+
+STORY: A music lover can get a list of all the winners of the album of the year
+in their favorite genre (Country), so that they can find new albums to listen to
+that they might like.
+
+IMPLEMENTATION: The data can be formatted such that there's a drop-down list for
+award category. The user can select "Best Country Album" out of the categories
+and then the list of awards will filter through award category such that only
+albums that won that award will show up. This drop-down feature can be available
+for other columns as well (year, Grammy title, etc.).
+
+
+STORY: A music lover wants to know if his or her interested singer has been nominated by
+and won Grammy awards before. Additionally, he or she wants to show several singers's
+information about winning Grammy awards on the same webpage.
+
+IMPLEMENTATION: We could have a search box, and the user could type the singer's name
+or some key strings in his or her name. To search another singer at the same time,
+the user could add another search box by clicking on the plus sign shown on the right
+bottom of the first search box. After the user finishes selecting his or her interested singers,
+a table will show relevant information about the interested singers, 
+sorted by the times this singer won the Grammy award. The user would be able to see all awards the singer has won with these awards'
+categories, nominees, and years.
+
+
+STORY: A employee from an album shop wants to figure out what records or albums he or she should purchase.
+To narrow down his or her choices this employee could use our website to view the top 15 nominees
+which have the most total nominations throughout the history of Grammy.
+
+IMPLEMENTATION: We could have sliders for the user to adjust the year. For each year, our website
+would render a graph whose horizontal axis is labeled as nominees and the vertical axis is labeled as times
+of awards. Each graph will show the top 15 nominees and their nominated times for a chosen year.
+
+
+STORY: A Spotify employee wants to make a playlist with all the songs nominated 
+for the Song of the Year Grammy for each decade that the Grammy Awards have been
+given out.
+
+IMPLEMENTATION: The employee can specify in the search drop-down menu that they
+specifically want the nominees of the “Song of the Year” category. Then they can
+choose the years that they want to see. For example, they could set the beginning
+year as 1980 and the end year as 1989 in order to only see the “Song of the Year”
+category nominees during those years. Then they can make their playlist and adjust
+the years to get the nominees in the next decade.

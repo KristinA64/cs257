@@ -1,44 +1,74 @@
-/* /*
-    sample4.css
-    2 May 2018
+/*
+Kristin Albright and Xinyan Xiang
+4 November 2021
+ */
+body {
+    margin: 0;
+  }
 
-    This sample tries to illustrate
-    - Separation of content from presentation
-    - More complicated CSS selector syntax
-        than we've seen before (e.g. contrast
-        ul versus ul.vertical-navbar)
-*/
-
-/* Vertical navigation */
- ul.vertical-navbar {
+  ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    width: 20px;
-    height: 100%;
+    width: 10%;
     background-color: #fef3b5;
-}
+    position: fixed;
+    top:20%;
+    height: 80%;
+    overflow: auto;
+  }
 
-ul.vertical-navbar li a {
+  li a {
     display: block;
-    color: black;
+    color: #000;
     padding: 8px 16px;
     text-decoration: none;
-}
+  }
 
-ul.vertical-navbar p {
-    display: block;
-    color: black;
-    padding: 8px 16px;
-    text-decoration: none;
+  li a.active {
+    background-color: #fef3b5;
     font-size: 120%;
-}
+    font-weight: bold;
+    font-style: italic;
+  }
 
-ul.vertical-navbar li a:hover {
+  li a:hover:not(.active) {
     background-color: rgb(247, 175, 32);
     color: white;
-}  
-
-img {
-    border-radius: 50%;
   }
+
+.img {
+
+    position:fixed;
+    width: 120px;
+    height:120px;
+
+  }
+
+.vinyl_table {
+  display: inline-block;
+  margin-right: auto;
+  margin-top: 100px;
+  margin-left: 150px;
+  margin-bottom: auto;
+}
+
+input {
+  padding: 4px 10px;
+  border: 0;
+  font-size: 16px;
+  margin-right: auto;
+  margin-top: 100px;
+  margin-left: 150px;
+  margin-bottom: auto;
+}
+
+.search {
+  width: 75%;
+}
+
+.submit {
+  width: 70px;
+  background-color: #1c87c9;
+  color: #ffffff;
+}
