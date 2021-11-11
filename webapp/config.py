@@ -1,3 +1,3 @@
 database = "grammy"
-user = "apple"
-password = "apple"
+user = "kristinalbright"
+password = ""

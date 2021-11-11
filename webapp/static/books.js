@@ -61,25 +61,26 @@ function loadAuthorsSelector() {
 }
 
 function onAuthorsSelectionChanged() {
-    let authorID = this.value;
-    let url = getAPIBaseURL() + '/books/author/' + authorID;
+    let grammyID = this.value;
+    let url = getAPIBaseURL() + '/grammys/' + grammyID;
 
     fetch(url, {method: 'get'})
 
     .then((response) => response.json())
 
-    .then(function(books) {
+    .then(function(nominees) {
         let tableBody = '';
-        for (let k = 0; k < books.length; k++) {
-            let book = books[k];
+        for (let k = 0; k < nominees.length; k++) {
+            let nominee = nominees[k];
             tableBody += '<tr>'
-                            + '<td>' + book['title'] + '</td>'
-                            + '<td>' + book['publication_year'] + '</td>'
+                            + '<td>' + nominee['title'] + '</td>'
+                            + '<td>' + nominee['category'] + '</td>'
+                            + '<td>' + nominee['nominee'] + '</td>'
                             + '</tr>\n';
         }
 
         // Put the table body we just built inside the table that's already on the page.
-        let booksTable = document.getElementById('books_table');
+        let booksTable = document.getElementById('nominee_table');
         if (booksTable) {
             booksTable.innerHTML = tableBody;
         }
