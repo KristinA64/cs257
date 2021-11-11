@@ -1,13 +1,15 @@
-<!--
+<!-- 
 Kristin Albright and Xinyan Xiang
 9 November 2021
--->
+
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='books.css') }}" />
+    <script type="text/javascript" src="{{ url_for('static', filename='books.js') }}" ></script>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" />
     <title>Grammy Awards</title>
-    <link rel="stylesheet" href="index.css" type="text/css" />
 </head>
 
 <body>
@@ -29,5 +31,28 @@ Kristin Albright and Xinyan Xiang
   <img class="vinyl_record" src="vinyl.png" width="700" height="700">
 </div>
 
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='books.css') }}" />
+    <script type="text/javascript" src="{{ url_for('static', filename='books.js') }}" ></script>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" />
+    <title>CS 257: Software Design</title>
+</head>
+
+<body>
+    <h1>CS 257: Books Sample Web App</h1>
+    <p>The appearance of this user interface is completely bare-bones, and
+    not suitable for a final product. The point here is only to illustrate a
+    handful of techniques in Javascript and Flask and PostgreSQL.</p>
+
+    <p>Authors <select id="author_selector"></select></p>
+
+    <p><table id="books_table"></table></p>
 </body>
 </html>
