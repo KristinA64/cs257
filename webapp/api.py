@@ -21,6 +21,48 @@ def get_connection():
                             user=config.user,
                             password=config.password)
 
+
+@api.route('/titles/') 
+def get_titles():
+    ''' Returns a list of all the authors in our database. See
+        get_author_by_id below for description of the author
+        resource representation.
+
+        By default, the list is presented in alphabetical order
+        by surname, then given_name. You may, however, use
+        the GET parameter sort to request sorting by birth year.
+
+            http://.../authors/?sort=birth_year
+
+        Returns an empty list if there's any database failure.
+    '''
+    query = '''SELECT award_year.award_title
+               FROM award_year ORDER BY award_year.award_title '''
+
+    # sort_argument = flask.request.args.get('sort')
+    # if sort_argument == 'birth_year':
+    #     query += 'birth_year'
+    # else:
+    #     query += 'surname, given_name'
+
+    title_list = []
+    try:
+        connection = get_connection()
+        cursor = connection.cursor()
+        cursor.execute(query)
+        for row in cursor:
+            title_list.append({"title":row[0]})
+        cursor.close()
+        connection.close()
+    except Exception as e:
+        print(e, file=sys.stderr)
+
+    return json.dumps(title_list)
+
+
+
+
+
 @api.route('/authors/') 
 def get_authors():
     ''' Returns a list of all the authors in our database. See

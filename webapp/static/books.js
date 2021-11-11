@@ -28,7 +28,7 @@ function getAPIBaseURL() {
 }
 
 function loadAuthorsSelector() {
-    let url = getAPIBaseURL() + '/authors/';
+    let url = getAPIBaseURL() + '/titles/';
 
     // Send the request to the books API /authors/ endpoint
     fetch(url, {method: 'get'})
@@ -39,17 +39,16 @@ function loadAuthorsSelector() {
 
     // Once you have your list of author dictionaries, use it to build
     // an HTML table displaying the author names and lifespan.
-    .then(function(authors) {
+    .then(function(titles) {
         // Add the <option> elements to the <select> element
         let selectorBody = '';
-        for (let k = 0; k < authors.length; k++) {
-            let author = authors[k];
-            selectorBody += '<option value="' + author['id'] + '">'
-                                + author['surname'] + ', ' + author['given_name']
+        for (let k = 0; k < titles.length; k++) {
+            let title = titles[k];
+            selectorBody += '<option value="' + title['title'] + '">'
                                 + '</option>\n';
         }
 
-        let selector = document.getElementById('author_selector');
+        let selector = document.getElementById('grammy_selector');
         if (selector) {
             selector.innerHTML = selectorBody;
         }
