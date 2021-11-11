@@ -36,8 +36,9 @@ def get_titles():
 
         Returns an empty list if there's any database failure.
     '''
-    query = '''SELECT award_year.award_title
-               FROM award_year ORDER BY award_year.award_title '''
+    query = '''SELECT award_year.id, award_year.award_title
+               FROM award_year
+               ORDER BY award_year.id '''
 
     # sort_argument = flask.request.args.get('sort')
     # if sort_argument == 'birth_year':
@@ -51,7 +52,8 @@ def get_titles():
         cursor = connection.cursor()
         cursor.execute(query)
         for row in cursor:
-            title_list.append({"title":row[0]})
+            title = {'id':row[0], 'title':row[1]}
+            title_list.append(title)
         cursor.close()
         connection.close()
     except Exception as e:

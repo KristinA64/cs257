@@ -15,8 +15,8 @@ CREATE TABLE award_year (
 CREATE TABLE nominee_award (
 	id INTEGER,
 	award_year_id INTEGER,
-    category_id INTEGER,
-    nominee_id INTEGER
+  category_id INTEGER,
+  nominee_id INTEGER
 );
 -- \copy nominee_award FROM 'nominee_award.csv' DELIMITER ',' CSV NULL AS 'NULL'
 
@@ -30,4 +30,3 @@ CREATE TABLE nominee_information (
     img TEXT
 );
 -- \copy nominee_information FROM 'nominee_information.csv' DELIMITER ',' CSV NULL AS 'NULL'
-

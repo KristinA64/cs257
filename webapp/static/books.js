@@ -44,7 +44,8 @@ function loadAuthorsSelector() {
         let selectorBody = '';
         for (let k = 0; k < titles.length; k++) {
             let title = titles[k];
-            selectorBody += '<option value="' + title['title'] + '">'
+            selectorBody += '<option value="' + title['id'] + '">'
+                                + title['title']
                                 + '</option>\n';
         }
 
