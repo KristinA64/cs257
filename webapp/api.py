@@ -136,6 +136,7 @@ def get_books_for_author(grammy_id):
     query = '''SELECT award_year.award_title, category.category, nominee_information.nominee_name
     FROM award_year, category, nominee_information, nominee_award
     WHERE nominee_award.award_year_id = %s
+    AND award_year.id = nominee_award.award_year_id
     AND category.id = nominee_award.category_id
     AND nominee_information.id = nominee_award.nominee_id
     ORDER BY category.category
