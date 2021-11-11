@@ -1,5 +1,5 @@
 /*
- * index.js
+ * books.js
  * Kristin Albright and Xinyan Xiang
  * 10 November 2021
  * this code was modified from previous

@@ -1,9 +1,9 @@
 '''
     books_webapp.py
-    Jeff Ondich, 25 April 2016
-    Updated 4 November 2020
-
-    Tiny Flask API to support the tiny books web application.
+    Kristin Albright and Xinyan Xiang
+    10 November 2021
+    this code was modified from previous
+    code written by Jeff Ondich
 '''
 import sys
 import flask

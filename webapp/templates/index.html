@@ -1,38 +1,7 @@
 <!--
 Kristin Albright and Xinyan Xiang
-9 November 2021
-
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='books.css') }}" />
-    <script type="text/javascript" src="{{ url_for('static', filename='books.js') }}" ></script>
-    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" />
-    <title>Grammy Awards</title>
-</head>
-
-<body>
-    <input type="image" src="Grammy.png" name="home_buttom" class="img" id="home_buttom" />
-<ul>
-  <h4>Search by</h4>
-  <li><a href="#Year">Year</a></li>
-  <li><a href="#Category">Category</a></li>
-  <li><a href="#Artist">Artist</a></li>
-  <li><a href="#Nominee">Nominee</a></li>
-  <h4>Analytics</h4>
-  <li><a href="#Nominations">Top Nominations</a></li>
-  <li><a href="#Wins">Top Wins</a></li>
-</ul>
-
-
-
-<div style="margin-left:10%;padding:1px 16px;height:1000px;">
-  <img class="vinyl_record" src="vinyl.png" width="700" height="700">
-</div>
-
-</body>
-</html> -->
+10 November 2021
+-->
 
 
 <!DOCTYPE html>
@@ -41,13 +10,13 @@ Kristin Albright and Xinyan Xiang
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='books.css') }}" />
     <script type="text/javascript" src="{{ url_for('static', filename='books.js') }}" ></script>
-    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" />
+    <link rel="shortcut icon" href="{{ url_for('static', filename='grammy.png') }}" />
     <title>Grammy Awards</title>
 </head>
 
 <body>
     <h1>Grammy Awards</h1>
-    <p>The drop down menu below will allow you to select a specific Grammy Awards (i.e. The 1963 Grammy Awards)
+    <p>The drop down menu below will allow you to select a specific Grammy Awards (i.e. The 22nd Grammy Awards)
        and a table will show all the nominations for that year.</p>
 
     <p>Grammy Awards<select id="grammy_selector"></select></p>
