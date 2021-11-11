@@ -11,7 +11,7 @@ window.onload = initialize;
 function initialize() {
     loadAuthorsSelector();
 
-    let element = document.getElementById('author_selector');
+    let element = document.getElementById('grammy_selector');
     if (element) {
         element.onchange = onAuthorsSelectionChanged;
     }
