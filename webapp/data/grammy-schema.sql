@@ -1,3 +1,8 @@
+--  grammy-schema.sql
+-- Kristin Albright and Xinyan Xiang
+-- 10 November 2021
+-- The schema for grammy database
+
 CREATE TABLE category (
     id INTEGER,
 	category TEXT
