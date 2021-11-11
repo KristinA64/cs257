@@ -1,7 +1,9 @@
 /*
- * books.js
- * Jeff Ondich, 27 April 2016
- * Updated, 5 November 2020
+ * index.js
+ * Kristin Albright and Xinyan Xiang
+ * 10 November 2021
+ * this code was modified from previous
+ * code written by Jeff Ondich
  */
 
 window.onload = initialize;
@@ -60,7 +62,7 @@ function loadAuthorsSelector() {
 }
 
 function onAuthorsSelectionChanged() {
-    let authorID = this.value; 
+    let authorID = this.value;
     let url = getAPIBaseURL() + '/books/author/' + authorID;
 
     fetch(url, {method: 'get'})
@@ -88,4 +90,3 @@ function onAuthorsSelectionChanged() {
         console.log(error);
     });
 }
-
