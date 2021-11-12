@@ -54,7 +54,7 @@ with open(grammy_information, 'r') as grammy_information_file:
     award_year_file.close()
 grammy_information_file.close()
 
-# Create nominee_information.csv with columns: 'id','year','award_title'
+# Create nominee_information.csv with columns: 'id','nominee_name','artist ','workers','img'
 with open(grammy_information, 'r') as grammy_information_file:
     grammy_information_reader = csv.reader(grammy_information_file)
     header = next(grammy_information_reader)
@@ -82,7 +82,7 @@ nominee_information_list = list(nominee_information_dictionary)
 category_list = list(category_dictionary)
 award_year_list = list(award_year_dictionary) 
 
-# Create nominee_award.csv with columns: 'id','year','award_title'
+# Create nominee_award.csv with columns: 'id','award_year_id','category_id','nominee_id'
 with open(grammy_information, 'r') as grammy_information_file:
     grammy_information_reader = csv.reader(grammy_information_file)
     header = next(grammy_information_reader)
