@@ -28,18 +28,18 @@ def get_titles():
         By default, the list is presented in the decreasing order of year.
         Returns an empty list if there's any database failure.
     '''
-    query = '''SELECT award_year.id, award_year.award_title
+    query = '''SELECT award_year.id, award_year.award_title, award_year.year
                FROM award_year
                ORDER BY award_year.id '''
 
-  
+
     title_list = []
     try:
         connection = get_connection()
         cursor = connection.cursor()
         cursor.execute(query)
         for row in cursor:
-            title = {'id':row[0], 'title':row[1]}
+            title = {'id':row[0], 'title':row[1], 'year':row[2]}
             title_list.append(title)
         cursor.close()
         connection.close()
@@ -65,6 +65,110 @@ def get_awards_for_grammy_id(grammy_id):
         connection = get_connection()
         cursor = connection.cursor()
         cursor.execute(query, (grammy_id,))
+        for row in cursor:
+            nominee = {'title':row[0], 'category':row[1], 'nominee':row[2]}
+            nominee_list.append(nominee)
+        cursor.close()
+        connection.close()
+    except Exception as e:
+        print(e, file=sys.stderr)
+
+    return json.dumps(nominee_list)
+
+@api.route('/categories/')
+def get_categories():
+    ''' Returns a list of all the Grammy categories in our database.
+        By default, the list is presented in the decreasing order of year.
+        Returns an empty list if there's any database failure.
+    '''
+    query = '''SELECT category.id, category.category
+               FROM category
+               ORDER BY category.id '''
+
+
+    category_list = []
+    try:
+        connection = get_connection()
+        cursor = connection.cursor()
+        cursor.execute(query)
+        for row in cursor:
+            category = {'id':row[0], 'category':row[1]}
+            category_list.append(category)
+        cursor.close()
+        connection.close()
+    except Exception as e:
+        print(e, file=sys.stderr)
+
+    return json.dumps(category_list)
+
+@api.route('/categories/<search>')
+def get_categories_for_search(search):
+    query = '''SELECT award_year.award_title, category.category, nominee_information.nominee_name
+    FROM award_year, category, nominee_information, nominee_award
+    WHERE award_year.id = nominee_award.award_year_id
+    AND category.id = nominee_award.category_id
+    AND category.category = %s
+    AND nominee_information.id = nominee_award.nominee_id
+    ORDER BY award_year.year
+    '''
+
+    nominee_list = []
+    try:
+        connection = get_connection()
+        cursor = connection.cursor()
+        cursor.execute(query, (search,))
+        for row in cursor:
+            nominee = {'title':row[0], 'category':row[1], 'nominee':row[2]}
+            nominee_list.append(nominee)
+        cursor.close()
+        connection.close()
+    except Exception as e:
+        print(e, file=sys.stderr)
+
+    return json.dumps(nominee_list)
+
+@api.route('/artists/')
+def get_categories():
+    ''' Returns a list of all the Grammy categories in our database.
+        By default, the list is presented in the decreasing order of year.
+        Returns an empty list if there's any database failure.
+    '''
+    query = '''SELECT nominee_information.id, nominee_information.category
+               FROM category
+               ORDER BY category.id '''
+
+
+    category_list = []
+    try:
+        connection = get_connection()
+        cursor = connection.cursor()
+        cursor.execute(query)
+        for row in cursor:
+            category = {'id':row[0], 'category':row[1]}
+            category_list.append(category)
+        cursor.close()
+        connection.close()
+    except Exception as e:
+        print(e, file=sys.stderr)
+
+    return json.dumps(category_list)
+
+@api.route('/categories/<search>')
+def get_categories_for_search(search):
+    query = '''SELECT award_year.award_title, category.category, nominee_information.nominee_name
+    FROM award_year, category, nominee_information, nominee_award
+    WHERE award_year.id = nominee_award.award_year_id
+    AND category.id = nominee_award.category_id
+    AND category.category = %s
+    AND nominee_information.id = nominee_award.nominee_id
+    ORDER BY award_year.year
+    '''
+
+    nominee_list = []
+    try:
+        connection = get_connection()
+        cursor = connection.cursor()
+        cursor.execute(query, (search,))
         for row in cursor:
             nominee = {'title':row[0], 'category':row[1], 'nominee':row[2]}
             nominee_list.append(nominee)
