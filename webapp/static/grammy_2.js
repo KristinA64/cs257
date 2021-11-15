@@ -15,6 +15,16 @@ function initialize() {
      var navigation_category= document.getElementById('category');
      navigation_category.onclick = loadCategorySearch;
 
+     var navigation_artist= document.getElementById('artist');
+     navigation_artist.onclick = loadArtistSearch;
+
+     var navigation_nominee = document.getElementById('nominee');
+     navigation_nominee.onclick = loadNomineeSearch;
+
+
+
+
+
 
     let element = document.getElementById('grammy_selector');
 
@@ -26,6 +36,18 @@ function initialize() {
 
     if (cat_element) {
         cat_element.onchange = onCategorySearchChanged;
+    }
+
+    let artist_element = document.getElementById('artist_search');
+
+    if (artist_element) {
+        artist_element.onchange = onArtistSearchChanged;
+    }
+
+    let nominee_element = document.getElementById('nominee_search');
+
+    if (nominee_element) {
+        nominee_element.onchange = onNomineeSearchChanged;
     }
 }
 
@@ -241,3 +263,156 @@ function onGrammySelectionChanged() {
 //         console.log(error);
 //     });
 // }
+
+
+
+
+
+
+
+
+
+function loadArtistSearch() {
+    let url = getAPIBaseURL() + '/artists/';
+  
+    // Send the request to the grammy API /titles/ endpoint
+    fetch(url, {method: 'get'})
+  
+    // When the results come back, transform them from a JSON string into
+    // a Javascript object (in this case, a list of Grammy title dictionaries).
+    .then((response) => response.json())
+  
+    // Once you have your list of title dictionaries, use it to build
+    // an HTML table displaying the Grammy title names.
+    .then(function(artists) {
+        // Add the <option> elements to the <select> element
+        let selectorBody = '';
+        // selectorBody += '<select id="see">\n';
+  
+        // <select id="grammy_selector"></select>
+  
+        for (let k = 0; k < artists.length; k++) {
+            let artist = artists[k];
+            selectorBody += '<option value="' + artist['id'] + '">'
+                                + artist['artist']
+                                + '</option>\n';
+        }
+        // selectorBody += '</select>';
+        document.getElementById("search2").style.display = "inline"
+        let selector = document.getElementById('artist_search');
+        if (selector) {
+            selector.innerHTML = selectorBody;
+        }
+    })
+  
+    // Log the error if anything went wrong during the fetch.
+    .catch(function(error) {
+        console.log(error);
+    });
+  }
+  
+  function onArtistSearchChanged() {
+      let search = this.value;
+      let url = getAPIBaseURL() + '/artists/' + search;
+  
+      fetch(url, {method: 'get'})
+  
+      .then((response) => response.json())
+  
+      .then(function(nominees) {
+          let tableBody = '';
+          for (let k = 0; k < nominees.length; k++) {
+              let nominee = nominees[k];
+              tableBody += '<tr>'
+                              + '<td>' + nominee['title'] + '</td>'
+                              + '<td>' + nominee['category'] + '</td>'
+                              + '<td>' + nominee['nominee'] + '</td>'
+                              + '<td>' + nominee['artist'] + '</td>'
+                              + '</tr>\n';
+          }
+  
+          // Put the table body we just built inside the table that's already on the page.
+          let grammysTable = document.getElementById('nominee_table');
+          if (grammysTable) {
+              grammysTable.innerHTML = tableBody;
+          }
+      })
+  
+      .catch(function(error) {
+          console.log(error);
+      });
+  }
+
+
+
+
+function loadNomineeSearch() {
+    let url = getAPIBaseURL() + '/nominees/';
+  
+    // Send the request to the grammy API /titles/ endpoint
+    fetch(url, {method: 'get'})
+  
+    // When the results come back, transform them from a JSON string into
+    // a Javascript object (in this case, a list of Grammy title dictionaries).
+    .then((response) => response.json())
+  
+    // Once you have your list of title dictionaries, use it to build
+    // an HTML table displaying the Grammy title names.
+    .then(function(nominees) {
+        // Add the <option> elements to the <select> element
+        let selectorBody = '';
+        // selectorBody += '<select id="see">\n';
+  
+        // <select id="grammy_selector"></select>
+  
+        for (let k = 0; k < nominees.length; k++) {
+            let nominee = nominees[k];
+            selectorBody += '<option value="' + nominee['id'] + '">'
+                                + nominee['nominee_name']
+                                + '</option>\n';
+        }
+        // selectorBody += '</select>';
+        document.getElementById("search3").style.display = "inline"
+        let selector = document.getElementById('nominee_search');
+        if (selector) {
+            selector.innerHTML = selectorBody;
+        }
+    })
+  
+    // Log the error if anything went wrong during the fetch.
+    .catch(function(error) {
+        console.log(error);
+    });
+  }
+  
+  function onNomineeSearchChanged() {
+      let search = this.value;
+      let url = getAPIBaseURL() + '/nominees/' + search;
+  
+      fetch(url, {method: 'get'})
+  
+      .then((response) => response.json())
+  
+      .then(function(nominees) {
+          let tableBody = '';
+          for (let k = 0; k < nominees.length; k++) {
+              let nominee = nominees[k];
+              tableBody += '<tr>'
+                              + '<td>' + nominee['title'] + '</td>'
+                              + '<td>' + nominee['category'] + '</td>'
+                              + '<td>' + nominee['nominee'] + '</td>'
+                              + '<td>' + nominee['artist'] + '</td>'
+                              + '</tr>\n';
+          }
+  
+          // Put the table body we just built inside the table that's already on the page.
+          let grammysTable = document.getElementById('nominee_table');
+          if (grammysTable) {
+              grammysTable.innerHTML = tableBody;
+          }
+      })
+  
+      .catch(function(error) {
+          console.log(error);
+      });
+  }
