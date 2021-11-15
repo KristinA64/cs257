@@ -15,6 +15,7 @@ function initialize() {
      var navigation_category= document.getElementById('category');
      navigation_category.onclick = loadCategorySearch;
 
+
      var navigation_artist= document.getElementById('artist');
      navigation_artist.onclick = loadArtistSearch;
 
@@ -49,6 +50,21 @@ function initialize() {
     if (nominee_element) {
         nominee_element.onchange = onNomineeSearchChanged;
     }
+}
+
+function checkURL() {
+  if (window.location.href.indexOf('#Year') == -1) {
+    document.getElementById("grammy_selector").style.display = "none";
+  }
+  if (window.location.href.indexOf('#Category') == -1) {
+    document.getElementById("search1").style.display = "none";
+  }
+  if (window.location.href.indexOf('#Artist') == -1) {
+    document.getElementById("search2").style.display = "none";
+  }
+  if (window.location.href.indexOf('#Nominee') == -1) {
+    document.getElementById("search3").style.display = "none";
+  }
 }
 
 // Returns the base URL of the API, onto which endpoint
@@ -87,6 +103,7 @@ function loadCategorySearch() {
                               + '</option>\n';
       }
       // selectorBody += '</select>';
+      checkURL()
       document.getElementById("search1").style.display = "inline"
       let selector = document.getElementById('category_search');
       if (selector) {
@@ -157,6 +174,7 @@ function loadGrammysSelector() {
                                 + '</option>\n';
         }
         // selectorBody += '</select>';
+        checkURL()
         document.getElementById("grammy_selector").style.display = "inline"
         let selector = document.getElementById('grammy_selector');
         if (selector) {
@@ -274,23 +292,23 @@ function onGrammySelectionChanged() {
 
 function loadArtistSearch() {
     let url = getAPIBaseURL() + '/artists/';
-  
+
     // Send the request to the grammy API /titles/ endpoint
     fetch(url, {method: 'get'})
-  
+
     // When the results come back, transform them from a JSON string into
     // a Javascript object (in this case, a list of Grammy title dictionaries).
     .then((response) => response.json())
-  
+
     // Once you have your list of title dictionaries, use it to build
     // an HTML table displaying the Grammy title names.
     .then(function(artists) {
         // Add the <option> elements to the <select> element
         let selectorBody = '';
         // selectorBody += '<select id="see">\n';
-  
+
         // <select id="grammy_selector"></select>
-  
+
         for (let k = 0; k < artists.length; k++) {
             let artist = artists[k];
             selectorBody += '<option value="' + artist['id'] + '">'
@@ -298,27 +316,28 @@ function loadArtistSearch() {
                                 + '</option>\n';
         }
         // selectorBody += '</select>';
+        checkURL()
         document.getElementById("search2").style.display = "inline"
         let selector = document.getElementById('artist_search');
         if (selector) {
             selector.innerHTML = selectorBody;
         }
     })
-  
+
     // Log the error if anything went wrong during the fetch.
     .catch(function(error) {
         console.log(error);
     });
   }
-  
+
   function onArtistSearchChanged() {
       let search = this.value;
       let url = getAPIBaseURL() + '/artists/' + search;
-  
+
       fetch(url, {method: 'get'})
-  
+
       .then((response) => response.json())
-  
+
       .then(function(nominees) {
           let tableBody = '';
           for (let k = 0; k < nominees.length; k++) {
@@ -330,14 +349,14 @@ function loadArtistSearch() {
                               + '<td>' + nominee['artist'] + '</td>'
                               + '</tr>\n';
           }
-  
+
           // Put the table body we just built inside the table that's already on the page.
           let grammysTable = document.getElementById('nominee_table');
           if (grammysTable) {
               grammysTable.innerHTML = tableBody;
           }
       })
-  
+
       .catch(function(error) {
           console.log(error);
       });
@@ -348,23 +367,23 @@ function loadArtistSearch() {
 
 function loadNomineeSearch() {
     let url = getAPIBaseURL() + '/nominees/';
-  
+
     // Send the request to the grammy API /titles/ endpoint
     fetch(url, {method: 'get'})
-  
+
     // When the results come back, transform them from a JSON string into
     // a Javascript object (in this case, a list of Grammy title dictionaries).
     .then((response) => response.json())
-  
+
     // Once you have your list of title dictionaries, use it to build
     // an HTML table displaying the Grammy title names.
     .then(function(nominees) {
         // Add the <option> elements to the <select> element
         let selectorBody = '';
         // selectorBody += '<select id="see">\n';
-  
+
         // <select id="grammy_selector"></select>
-  
+
         for (let k = 0; k < nominees.length; k++) {
             let nominee = nominees[k];
             selectorBody += '<option value="' + nominee['id'] + '">'
@@ -372,27 +391,28 @@ function loadNomineeSearch() {
                                 + '</option>\n';
         }
         // selectorBody += '</select>';
+        checkURL()
         document.getElementById("search3").style.display = "inline"
         let selector = document.getElementById('nominee_search');
         if (selector) {
             selector.innerHTML = selectorBody;
         }
     })
-  
+
     // Log the error if anything went wrong during the fetch.
     .catch(function(error) {
         console.log(error);
     });
   }
-  
+
   function onNomineeSearchChanged() {
       let search = this.value;
       let url = getAPIBaseURL() + '/nominees/' + search;
-  
+
       fetch(url, {method: 'get'})
-  
+
       .then((response) => response.json())
-  
+
       .then(function(nominees) {
           let tableBody = '';
           for (let k = 0; k < nominees.length; k++) {
@@ -404,14 +424,14 @@ function loadNomineeSearch() {
                               + '<td>' + nominee['artist'] + '</td>'
                               + '</tr>\n';
           }
-  
+
           // Put the table body we just built inside the table that's already on the page.
           let grammysTable = document.getElementById('nominee_table');
           if (grammysTable) {
               grammysTable.innerHTML = tableBody;
           }
       })
-  
+
       .catch(function(error) {
           console.log(error);
       });
