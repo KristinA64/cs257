@@ -15,5 +15,5 @@ FEATURES NOT YET WORKING:
 - Analytics pages
 - Filtering results by range of years
 - rotating vinyl record
-- show the image of a nominee when the user click on
+- show the image of a nominee when the user clicks on
 the nominee's name on the chart
