@@ -8,39 +8,29 @@ Kristin Albright and Xinyan Xiang
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='grammy_2.css') }}" />
-    <script type="text/javascript" src="{{ url_for('static', filename='grammy_2.js') }}" ></script>
-    <!-- <script src="https://cdn.anychart.com/releases/8.9.0/js/anychart-core.min.js"></script>
-    <script src="https://cdn.anychart.com/releases/8.9.0/js/anychart-sunburst.min.js"></script>
-    <script src="https://cdn.anychart.com/releases/8.9.0/js/anychart-data-adapter.min.js"></script> -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='grammy.css') }}" />
+    <script type="text/javascript" src="{{ url_for('static', filename='grammy.js') }}" ></script>
+    <script src="https://cdn.anychart.com/releases/8.10.0/js/anychart-core.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.10.0/js/anychart-pie.min.js"></script>
     <link rel="shortcut icon" href="{{ url_for('static', filename='grammy.png') }}" />
     <title>Grammy Awards</title>
 </head>
 
 <body>
-    <!-- <h1>Grammy Awards</h1>
-    <p>The drop down menu below will allow you to select a specific Grammy Awards (i.e. The 22nd Grammy Awards)
-       and a table will show all the nominations for that year.</p>
-
-    <p>Grammy Awards<select id="grammy_selector"></select></p>
-
-    <p><table id="nominee_table"></table></p> -->
-
-
-
     <input type="image" src="{{ url_for('static', filename='grammy.png') }}" name="home_buttom" class="img" id="home_buttom" />
     <ul>
       <h4>Search by</h4>
       <li><a href= "#Year" id='year'>Award Year</a></li>
       <select class="selector" id="grammy_selector" style="display:none"></select>
-      <!-- <li><a href="/api/titles">Category</a></li> -->
+      
       <li><a href="#Category" id='category'>Category</a></li>
       <div class="wrap" style="display:none" id='search1'>
          <div class="search">
-            <input type="text" class="searchTerm" id='category_search' placeholder="Song of the Year...">
+            <input type="text" class="searchTerm" id='category_search' placeholder="Song Of The Year">
             <button type="submit" class="searchButton">+</button>
          </div>
       </div>
+
       <li><a href="#Artist" id = "artist">Artist</a></li>
       <div class="wrap" style="display:none" id='search2'>
          <div class="search">
@@ -50,7 +40,6 @@ Kristin Albright and Xinyan Xiang
       </div>
 
       <li><a href="#Nominee" id = "nominee">Nominee</a></li>
-
       <div class="wrap" style="display:none" id='search3'>
          <div class="search">
             <input type="text" class="searchTerm" id='nominee_search' placeholder="Nominee Name ...">
@@ -60,25 +49,16 @@ Kristin Albright and Xinyan Xiang
 
 
       <h4>Analytics</h4>
-      <li><a href="#Nominations">Top Nominations</a></li>
-      <li><a href="#Wins">Top Wins</a></li>
+      <li><a href="#Nominations">Top Nominations (Implement this Later...) </a></li>
+      <li><a href="#Wins">Top Wins (Implement this Later...)</a></li>
     </ul>
 
 
-
-    <div style="margin-left:10%;padding:1px 16px;height:1000px;">
-      <img class="vinyl_record" src="{{ url_for('static', filename='vinyl.png') }}" width="700" height="700">
-      <!-- <p id="grammy_s"></p> -->
-      <!-- <div id="container"></div> -->
-
-      <table id="nominee_table"></table>
+    <div style="margin-left:10%;padding:1px 6px;height:700px;">
+      <p id="searchKey"></p>
+      <table id="displayTable"></table>
+      <div id="container"> </div> 
     </div>
-
-
-
-
-
-
 
 </body>
 </html>

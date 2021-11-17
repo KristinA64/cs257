@@ -21,6 +21,10 @@ def get_connection():
                             user=config.user,
                             password=config.password)
 
+@api.route('/help/')
+def get_help():
+    return flask.render_template('help.html')
+
 
 @api.route('/titles/')
 def get_titles():
@@ -103,7 +107,7 @@ def get_categories():
 
 @api.route('/categories/<search>')
 def get_categories_for_search(search):
-    query = '''SELECT award_year.award_title, category.category, nominee_information.nominee_name
+    query = '''SELECT award_year.award_title, category.category, nominee_information.nominee_name,nominee_information.img
     FROM award_year, category, nominee_information, nominee_award
     WHERE award_year.id = nominee_award.award_year_id
     AND category.id = nominee_award.category_id
@@ -118,7 +122,7 @@ def get_categories_for_search(search):
         cursor = connection.cursor()
         cursor.execute(query, (search,))
         for row in cursor:
-            nominee = {'title':row[0], 'category':row[1], 'nominee':row[2]}
+            nominee = {'title':row[0], 'category':row[1], 'nominee':row[2],'img':row[3]}
             nominee_list.append(nominee)
         cursor.close()
         connection.close()
@@ -129,7 +133,7 @@ def get_categories_for_search(search):
 
 @api.route('/artists/')
 def get_artists():
-    ''' Returns a list of all the Grammy categories in our database.
+    ''' Returns a list of all the artists in our database.
         By default, the list is presented in the decreasing order of year.
         Returns an empty list if there's any database failure.
     '''
@@ -183,7 +187,7 @@ ORDER BY award_year.year
 
 @api.route('/nominees/')
 def get_nominees():
-    ''' Returns a list of all the Grammy categories in our database.
+    ''' Returns a list of all the Grammy nominees in our database.
         By default, the list is presented in the decreasing order of year.
         Returns an empty list if there's any database failure.
     '''

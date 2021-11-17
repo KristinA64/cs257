@@ -1,0 +1,27 @@
+/*
+    grammy.css
+    Kristin Albright and Xinyan Xiang
+    11 November 2021
+    Modified from code originally by
+    Jeff Ondich
+*/
+
+table {
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 15px;
+}
+
+a {
+  color: #0B86B5;
+  text-decoration: underline;
+}
+
+a:hover {
+  background-color: #D8D8D8;
+  text-decoration: none;
+  cursor: pointer;
+}
