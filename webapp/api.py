@@ -107,12 +107,11 @@ def get_categories():
 
 @api.route('/categories/<search>')
 def get_categories_for_search(search):
-    search = search.lower()
     query = '''SELECT award_year.award_title, category.category, nominee_information.nominee_name,nominee_information.img
     FROM award_year, category, nominee_information, nominee_award
     WHERE award_year.id = nominee_award.award_year_id
     AND category.id = nominee_award.category_id
-    AND LOWER(category.category) LIKE %s
+    AND category.category ILIKE CONCAT('%%',%s,'%%')
     AND nominee_information.id = nominee_award.nominee_id
     ORDER BY award_year.year
     '''
@@ -160,13 +159,12 @@ def get_artists():
 
 @api.route('/artists/<search>')
 def get_artists_for_search(search):
-    search = search.lower()
     query = '''SELECT award_year.award_title, category.category, nominee_information.nominee_name,nominee_information.artist
 FROM award_year, category, nominee_information, nominee_award
 WHERE award_year.id = nominee_award.award_year_id
 AND category.id = nominee_award.category_id
 AND nominee_information.id = nominee_award.nominee_id
-AND LOWER(nominee_information.artist) LIKE %s
+AND nominee_information.artist iLIKE CONCAT('%%',%s,'%%')
 ORDER BY award_year.year
     '''
 
@@ -215,13 +213,12 @@ def get_nominees():
 
 @api.route('/nominees/<search>')
 def get_nominees_for_search(search):
-    search = search.lower()
     query = '''SELECT award_year.award_title, category.category, nominee_information.nominee_name,nominee_information.artist
 FROM award_year, category, nominee_information, nominee_award
 WHERE award_year.id = nominee_award.award_year_id
 AND category.id = nominee_award.category_id
 AND nominee_information.id = nominee_award.nominee_id
-AND LOWER(nominee_information.nominee_name) LIKE %s
+AND nominee_information.nominee_name ILIKE CONCAT('%%',%s,'%%')
 ORDER BY award_year.year
     '''
 
