@@ -27,8 +27,8 @@ function initialize() {
         element.onchange = onGrammySelectionChanged;
     }
 
-    let cat_element = document.getElementById('category_search');  
-    if (cat_element) {   
+    let cat_element = document.getElementById('category_search');
+    if (cat_element) {
         cat_element.onchange = onCategorySearchChanged;
     }
 
@@ -125,6 +125,7 @@ function onGrammySelectionChanged() {
         let displayTable = document.getElementById('displayTable');
         if (nomineesYear.length == 0){
             if (searchKey) {
+              //change error message to be more specific
                 searchKey.innerHTML = "Your search input is not valid! Please use following years!";
             }
               if (displayTable) {
@@ -159,15 +160,15 @@ function onGrammySelectionChanged() {
             anychart.onDocumentReady(function () {
             // set container id for the chart
             var stage = anychart.graphics.create('container');
-            
+
             // create pie chart with passed data
             var chart = anychart.pie(nomineeValue);
 
-            // creates palette   
+            // creates palette
             var palette = anychart.palettes.rangeColors();
             palette.items(['#eb9b34', '#f5e48e']);
             palette.count(nomineesYear.length);
-      
+
             // set chart radius
             chart
               .radius('60%')
@@ -175,7 +176,7 @@ function onGrammySelectionChanged() {
               .innerRadius('40%')
               // set chart palette
               .palette(palette);
-      
+
             // set outline settings
             chart
               .outline()
@@ -186,13 +187,13 @@ function onGrammySelectionChanged() {
 
             // set inner stroke
             chart.stroke({color: '#FFF', thickness: 0.5});
-      
+
             // format tooltip
             chart.tooltip().format('Category: ' + '{%z}');
-            
+
             // disable the legend
             chart.legend(false);
-            
+
             // set the position of labels and labels'appearances
             chart.labels().format('{%short}').fontSize(16);
             chart.labels().position("outside");
@@ -222,7 +223,7 @@ function onGrammySelectionChanged() {
               .anchor('center')
               .hAlign('center')
               .vAlign('middle');
-      
+
             // set label to center content of chart
             chart.center().content(label);
             let yearChart = document.getElementById('container');
@@ -255,7 +256,7 @@ function loadCategorySearch() {
   .then((response) => response.json())
 
   .then(function(categories) {
-     
+
       for (let k = 0; k < categories.length; k++) {
           let category = categories[k];
           selectorCategory += '<option value="' + category['id'] + '">'
@@ -310,21 +311,21 @@ function onCategorySearchChanged() {
         // remove the previous donut chart
         let categoryChart = document.getElementById('container');
         categoryChart.innerHTML = "";
-        
+
         // Draw the pie chart
         if (nomineesCategory.length != 0){
             anychart.onDocumentReady(function () {
             // set container id for the chart
             var stage = anychart.graphics.create('container');
-            
+
             // create pie chart with passed data
             var chart = anychart.pie(nomineeValue);
 
-            // creates palette   
+            // creates palette
             var palette = anychart.palettes.rangeColors();
             palette.items(['#eb9b34', '#f5e48e']);
             palette.count(nomineesCategory.length);
-      
+
             // set chart radius
             chart
               .radius('60%')
@@ -332,7 +333,7 @@ function onCategorySearchChanged() {
               .innerRadius('40%')
               // set chart palette
               .palette(palette);
-      
+
             // set outline settings
             chart
               .outline()
@@ -343,13 +344,13 @@ function onCategorySearchChanged() {
 
             // set inner stroke
             chart.stroke({color: '#FFF', thickness: 0.5});
-      
+
             // format tooltip
             chart.tooltip().format('Year ' + "{%z}");
-            
+
             // disable the legend
             chart.legend(false);
-            
+
             // set the position of labels and labels'appearances
             chart.labels().format('{%z}').fontSize(16);
             chart.labels().position("outside");
@@ -379,7 +380,7 @@ function onCategorySearchChanged() {
               .anchor('center')
               .hAlign('center')
               .vAlign('middle');
-      
+
             // set label to center content of chart
             chart.center().content(label);
             let categoryChart = document.getElementById('container');
@@ -419,10 +420,10 @@ function loadArtistSearch() {
                                 + artist['artist']
                                 + '</option>\n';
         }
-        
+
         checkURL()
         document.getElementById("search2").style.display = "inline"
-        
+
         let selector = document.getElementById('artist_search');
         if (selector) {
             selector.innerHTML = selectorArtist;
@@ -463,7 +464,7 @@ function loadArtistSearch() {
                   displayTable.innerHTML = "";
               }
         }
-          
+
           for (let k = 0; k < nomineesArtist.length; k++) {
               let nominee = nomineesArtist[k];
               const nomineeObject = {x:nominee['artist'],value:1,category:nominee['category'],year:nominee['title'].slice(-5,-1),nominee:nominee['nominee']};
@@ -479,15 +480,15 @@ function loadArtistSearch() {
               anychart.onDocumentReady(function () {
               // set container id for the chart
               var stage = anychart.graphics.create('container');
-              
+
               // create pie chart with passed data
               var chart = anychart.pie(nomineeValue);
-  
-              // creates palette   
+
+              // creates palette
               var palette = anychart.palettes.rangeColors();
               palette.items(['#eb9b34', '#f5e48e']);
               palette.count(nomineesArtist.length);
-        
+
               // set chart radius
               chart
                 .radius('60%')
@@ -495,7 +496,7 @@ function loadArtistSearch() {
                 .innerRadius('40%')
                 // set chart palette
                 .palette(palette);
-        
+
               // set outline settings
               chart
                 .outline()
@@ -503,18 +504,18 @@ function loadArtistSearch() {
                 .fill(function () {
                   return anychart.color.darken(this.sourceColor, 0.25);
                 });
-  
+
               // set inner stroke
               chart.stroke({color: '#FFF', thickness: 0.5});
-        
+
               // format tooltip
              chart.tooltip().format('Nominee: {%nominee}\n Category: {%category}\n Grammy Year: {%year}');
-    
+
               // disable the legend
               chart.legend(false);
-              
+
               // set the position of labels and labels'appearances
-             
+
               chart.labels().format('{%nominee}').fontSize(16);
               chart.labels().position("outside");
               chart.outsideLabelsCriticalAngle(60);
@@ -524,10 +525,10 @@ function loadArtistSearch() {
               chart.labels().fontDecoration("underline");
               chart.labels().fontWeight(900);
               chart.labels().fontColor("black");
-  
+
               // set chart's background
               chart.background().fill("transparent");
-  
+
               // create standalone label and set label settings
               var label = anychart.standalones.label();
               label
@@ -543,7 +544,7 @@ function loadArtistSearch() {
                 .anchor('center')
                 .hAlign('center')
                 .vAlign('middle');
-        
+
               // set label to center content of chart
               chart.center().content(label);
               let artistChart = document.getElementById('container');
@@ -641,15 +642,15 @@ function loadNomineeSearch() {
               anychart.onDocumentReady(function () {
               // set container id for the chart
               var stage = anychart.graphics.create('container');
-              
+
               // create pie chart with passed data
               var chart = anychart.pie(nomineeValue);
-  
-              // creates palette   
+
+              // creates palette
               var palette = anychart.palettes.rangeColors();
               palette.items(['#eb9b34', '#f5e48e']);
               palette.count(nominees.length);
-        
+
               // set chart radius
               chart
                 .radius('60%')
@@ -657,7 +658,7 @@ function loadNomineeSearch() {
                 .innerRadius('40%')
                 // set chart palette
                 .palette(palette);
-        
+
               // set outline settings
               chart
                 .outline()
@@ -665,18 +666,18 @@ function loadNomineeSearch() {
                 .fill(function () {
                   return anychart.color.darken(this.sourceColor, 0.25);
                 });
-  
+
               // set inner stroke
               chart.stroke({color: '#FFF', thickness: 0.5});
-        
+
               // format tooltip
              chart.tooltip().format('Artist(s): {%artist}\n Category: {%category}\n Grammy Year: {%year}');
-    
+
               // disable the legend
               chart.legend(false);
-              
+
               // set the position of labels and labels'appearances
-             
+
               chart.labels().format('{%category}').fontSize(16);
               chart.labels().position("outside");
               chart.outsideLabelsCriticalAngle(60);
@@ -686,10 +687,10 @@ function loadNomineeSearch() {
               chart.labels().fontDecoration("underline");
               chart.labels().fontWeight(900);
               chart.labels().fontColor("black");
-  
+
               // set chart's background
               chart.background().fill("transparent");
-  
+
               // create standalone label and set label settings
               var label = anychart.standalones.label();
               label
@@ -705,7 +706,7 @@ function loadNomineeSearch() {
                 .anchor('center')
                 .hAlign('center')
                 .vAlign('middle');
-        
+
               // set label to center content of chart
               chart.center().content(label);
               let nomineeChart = document.getElementById('container');
@@ -727,4 +728,3 @@ function loadNomineeSearch() {
           console.log(error);
       });
   }
-
