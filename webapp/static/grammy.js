@@ -15,7 +15,7 @@ function initialize() {
 
     homeBar();
 
-    
+
      var navigation_award_year = document.getElementById('year');
      navigation_award_year.onclick = loadGrammysSelector;
 
@@ -91,7 +91,7 @@ function homeBar() {
   let homeBar = document.getElementById('home');
   if(homeBar) {
     homeBar.innerHTML = '<a href=\"' + homeURL + '\">Home</a>';
-    
+
 }}
 
 
@@ -305,6 +305,9 @@ function onCategorySearchChanged() {
     let search = this.value;
     let url = getAPIBaseURL() + '/categories/' + search;
 
+    // clears the search bar
+    document.getElementById('category_search').value='';
+
     fetch(url, {method: 'get'})
 
     .then((response) => response.json())
@@ -467,6 +470,9 @@ function loadArtistSearch() {
       let search = this.value;
       let url = getAPIBaseURL() + '/artists/' + search;
 
+      // clears the search bar
+      document.getElementById('artist_search').value='';
+
       fetch(url, {method: 'get'})
 
       .then((response) => response.json())
@@ -628,6 +634,9 @@ function loadNomineeSearch() {
   function onNomineeSearchChanged() {
       let search = this.value;
       let url = getAPIBaseURL() + '/nominees/' + search;
+
+      // clears the search bar
+      document.getElementById('nominee_search').value='';
 
       fetch(url, {method: 'get'})
 
