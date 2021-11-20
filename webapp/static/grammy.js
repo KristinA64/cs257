@@ -9,6 +9,13 @@
 window.onload = initialize;
 
 function initialize() {
+
+    //  var navigation_award_home = document.getElementById('home');
+    //  navigation_award_home.onclick = fillNavbar();
+
+    homeBar();
+
+    
      var navigation_award_year = document.getElementById('year');
      navigation_award_year.onclick = loadGrammysSelector;
 
@@ -68,6 +75,27 @@ function getAPIBaseURL() {
                     + '/api';
     return baseURL;
 }
+
+function getBaseURL() {
+  baseURL = window.location.protocol
+          + '//' + window.location.hostname
+          + ':' + window.location.port;
+  return baseURL;
+}
+
+function homeBar() {
+  let homeURL = getBaseURL() + '/';
+  console.log(homeURL);
+  // let aboutPageURL = getBaseURL() + '/about/';
+
+  let homeBar = document.getElementById('home');
+  if(homeBar) {
+    homeBar.innerHTML = '<a href=\"' + homeURL + '\">Home</a>';
+    
+}}
+
+
+
 
 // Search by Year (Award titles)
 let selectorTitle = '';
