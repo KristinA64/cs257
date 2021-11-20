@@ -65,6 +65,17 @@ function checkURL() {
   }
 }
 
+function undisplayContent(){
+
+  let grammysChart = document.getElementById('container');
+  grammysChart.innerHTML = "";
+
+  let grammysText = document.getElementById('text');
+  grammysText.innerHTML = "";
+
+
+}
+
 
 // Returns the base URL of the API, onto which endpoint
 // components can be appended.
@@ -101,8 +112,8 @@ function homeBar() {
 let selectorTitle = '';
 function loadGrammysSelector() {
     let url = getAPIBaseURL() + '/titles/';
-    let grammysChart = document.getElementById('container');
-        grammysChart.innerHTML = "";
+
+   
 
     // Send the request to the grammy API /titles/ endpoint
     fetch(url, {method: 'get'})
@@ -138,6 +149,8 @@ function loadGrammysSelector() {
 }
 
 function onGrammySelectionChanged() {
+
+    undisplayContent()
     let grammyID = this.value;
     let grammyIDInt = parseInt (grammyID);
     let url = getAPIBaseURL() + '/grammys/' + grammyID;
@@ -276,8 +289,7 @@ function onGrammySelectionChanged() {
 let selectorCategory = '';
 function loadCategorySearch() {
   let url = getAPIBaseURL() + '/categories/';
-  let grammysChart = document.getElementById('container');
-  grammysChart.innerHTML = "";
+  
 
   fetch(url, {method: 'get'})
 
@@ -302,6 +314,8 @@ function loadCategorySearch() {
 }
 
 function onCategorySearchChanged() {
+    undisplayContent()
+
     let search = this.value;
     let url = getAPIBaseURL() + '/categories/' + search;
 
@@ -437,8 +451,6 @@ function onCategorySearchChanged() {
 let selectorArtist = '';
 function loadArtistSearch() {
     let url = getAPIBaseURL() + '/artists/';
-    let grammysChart = document.getElementById('container');
-    grammysChart.innerHTML = "";
 
     fetch(url, {method: 'get'})
 
@@ -467,6 +479,8 @@ function loadArtistSearch() {
   }
 
   function onArtistSearchChanged() {
+
+      undisplayContent();
       let search = this.value;
       let url = getAPIBaseURL() + '/artists/' + search;
 
@@ -605,8 +619,6 @@ function loadArtistSearch() {
 let selectorNominee = '';
 function loadNomineeSearch() {
     let url = getAPIBaseURL() + '/nominees/';
-    let grammysChart = document.getElementById('container');
-    grammysChart.innerHTML = "";
 
     fetch(url, {method: 'get'})
 
@@ -632,6 +644,9 @@ function loadNomineeSearch() {
   }
 
   function onNomineeSearchChanged() {
+
+      undisplayContent()
+      
       let search = this.value;
       let url = getAPIBaseURL() + '/nominees/' + search;
 

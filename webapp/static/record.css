@@ -1,0 +1,81 @@
+
+.record {
+  position: relative;
+  margin: auto;
+  /* left: 35px; */
+  /* top: 35px; */
+  width: 500px;
+  height: 500px;
+  background: black;
+  border-radius: 50%;
+  animation: spin 3s infinite linear;
+}
+
+@keyframes spin {
+  0% {
+    transform: none;
+  }
+  
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.record::before {
+  content: '';
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  width: 480px;
+  height: 480px;
+  /* background: repeating-radial-gradient(#fff3b2, #f2dc5f 10px, #f9f6e2 8px); */
+  background: repeating-radial-gradient(black, black 5px, #1C1C1C 6px, #1C1C1C 7px);
+  border-radius: 50%;
+}
+
+.overlay {
+    content: '';
+    margin: auto;
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: linear-gradient(45deg, transparent, 40%, rgba(255,255,255,0.35), 60%, transparent);
+    border-radius: 50%;
+  }
+
+.inner {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  height: 200px;
+  background: linear-gradient(white, white 50%, #fff3b2 50%, #f7e796ca);
+  border-radius: 50%;
+}
+
+.inner::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 55px;
+  height: 55px;
+  background: black;
+  border-radius: 50%;
+}
+
+.inner::after {
+  content: 'Welcome\n to\n Our Website!';
+  width: 55px;
+  text-align: center;
+  font-family: sans-serif;
+  font-size: 15px;
+  position: absolute;
+  left: 50%;
+  top: 10px;
+  transform: translateX(-50%);
+}
+
