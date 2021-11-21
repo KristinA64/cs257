@@ -18,6 +18,8 @@ function initialize() {
     // var tutorial = document.getElementById('tutorial');
     
   
+    var navigation_help = document.getElementById('helpMe');
+    navigation_help.onclick = loadHelpSelector;
 
 
 
@@ -87,6 +89,9 @@ function undisplayContent(){
   let grammysTutorial = document.getElementById('tutorial');
   grammysTutorial.innerHTML = "";
 
+  let helpSelector = document.getElementById('helpDoc');
+  helpSelector.innerHTML = "";
+
 
 
 
@@ -121,6 +126,13 @@ function homeBar() {
 
 }}
 
+function loadHelpSelector(){
+  undisplayContent();
+  // checkURL();
+  let helpSelector = document.getElementById('helpDoc');
+  helpSelector.innerHTML = "Hello";
+
+}
 
 
 
