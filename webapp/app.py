@@ -17,6 +17,10 @@ app.register_blueprint(api.api, url_prefix='/api')
 def home():
     return flask.render_template('index.html')
 
+@app.route('/tutorial/') 
+def tutorial():
+    return flask.render_template('tutorial.html')
+
 
 
 if __name__ == '__main__':

@@ -15,6 +15,11 @@ function initialize() {
 
     homeBar();
 
+    // var tutorial = document.getElementById('tutorial');
+    
+  
+
+
 
      var navigation_award_year = document.getElementById('year');
      navigation_award_year.onclick = loadGrammysSelector;
@@ -49,6 +54,10 @@ function initialize() {
         nominee_element.onchange = onNomineeSearchChanged;
     }
 }
+
+// function loadTutorialTemplate() {
+//  location.replace("https://www.w3schools.com")
+// }
 
 function checkURL() {
   if (window.location.href.indexOf('#Year') == -1) {
