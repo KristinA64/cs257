@@ -34,6 +34,7 @@ def get_titles():
     '''
     query = '''SELECT award_year.id, award_year.award_title, award_year.year
                FROM award_year
+               WHERE award_year.year != 2019
                ORDER BY award_year.id '''
 
 
@@ -59,6 +60,7 @@ def get_awards_for_grammy_id(grammy_id):
     FROM award_year, category, nominee_information, nominee_award
     WHERE nominee_award.award_year_id = %s
     AND award_year.id = nominee_award.award_year_id
+    AND award_year.year != 2019
     AND category.id = nominee_award.category_id
     AND nominee_information.id = nominee_award.nominee_id
     ORDER BY category.category
@@ -86,7 +88,10 @@ def get_categories():
         Returns an empty list if there's any database failure.
     '''
     query = '''SELECT category.id, category.category
-               FROM category
+               FROM category,award_year,nominee_award
+               WHERE category.id = nominee_award.category_id
+               AND award_year.id =  nominee_award.award_year_id
+               AND award_year.year != 2019
                ORDER BY category.id '''
 
 
@@ -110,6 +115,7 @@ def get_categories_for_search(search):
     query = '''SELECT award_year.award_title, category.category, nominee_information.nominee_name,nominee_information.img
     FROM award_year, category, nominee_information, nominee_award
     WHERE award_year.id = nominee_award.award_year_id
+    AND award_year.year != 2019
     AND category.id = nominee_award.category_id
     AND category.category ILIKE CONCAT('%%',%s,'%%')
     AND nominee_information.id = nominee_award.nominee_id
@@ -138,7 +144,10 @@ def get_artists():
         Returns an empty list if there's any database failure.
     '''
     query = '''SELECT nominee_information.id, nominee_information.artist
-               FROM nominee_information
+               FROM nominee_information,award_year,nominee_award
+               WHERE award_year.id =  nominee_award.award_year_id
+               AND nominee_information.id = nominee_award.nominee_id
+               AND award_year.year != 2019
                ORDER BY nominee_information.artist'''
 
 
@@ -162,6 +171,7 @@ def get_artists_for_search(search):
     query = '''SELECT award_year.award_title, category.category, nominee_information.nominee_name,nominee_information.artist
 FROM award_year, category, nominee_information, nominee_award
 WHERE award_year.id = nominee_award.award_year_id
+AND award_year.year != 2019
 AND category.id = nominee_award.category_id
 AND nominee_information.id = nominee_award.nominee_id
 AND nominee_information.artist iLIKE CONCAT('%%',%s,'%%')
@@ -192,7 +202,10 @@ def get_nominees():
         Returns an empty list if there's any database failure.
     '''
     query = '''SELECT nominee_information.id, nominee_information.nominee_name
-               FROM nominee_information
+               FROM nominee_information,award_year,nominee_award
+               WHERE award_year.id =  nominee_award.award_year_id
+               AND nominee_information.id = nominee_award.nominee_id
+               AND award_year.year != 2019
                ORDER BY nominee_information.nominee_name'''
 
 
@@ -216,6 +229,7 @@ def get_nominees_for_search(search):
     query = '''SELECT award_year.award_title, category.category, nominee_information.nominee_name,nominee_information.artist
 FROM award_year, category, nominee_information, nominee_award
 WHERE award_year.id = nominee_award.award_year_id
+AND award_year.year != 2019
 AND category.id = nominee_award.category_id
 AND nominee_information.id = nominee_award.nominee_id
 AND nominee_information.nominee_name ILIKE CONCAT('%%',%s,'%%')
