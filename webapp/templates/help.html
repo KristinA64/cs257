@@ -1,119 +1,118 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Movie API reference</title>
+    <title>Grammy API reference</title>
 </head>
 <body>
-    <pre>Movie API: endpoint reference
+    <pre>Grammy API: endpoint reference
 All responses are in JSON
 
 REQUEST: /help
 RESPONSE:
     This message
- 
+
 
 REQUEST: /titles/
-RESPONSE: A JSON list of dictionaries, each of which represents one year, sorthed by 
-year in decreasing order. Each dicitionary in this list will have the following fields.
+RESPONSE: A JSON list of dictionaries, each of which represents one year, sorted by
+year in decreasing order. Each dictionary in this list will have the following fields.
 
-id -- (INTEGER) 
-title -- (TEXT) the Grammy Award title 
+id -- (INTEGER)
+title -- (TEXT) the Grammy Award title
 year -- (TEXT)  the year of the Grammy Award
 
 
 REQUEST: /grammys/&ltgrammy_id&gt
 RESPONSE: A JSON list of dictionaries, each of which represents one winner of a certain Grammy Award
-in a specified year, sorthed alphabetically by award category. Returns an empty list if there's any 
-database failure. Each dicitionary in this list will have the following fields.
+in a specified year, sorted alphabetically by award category. Returns an empty list if there's any
+database failure. Each dictionary in this list will have the following fields.
 
-title -- (TEXT) the Grammy Award title 
+title -- (TEXT) the Grammy Award title
 category -- (TEXT) the Grammy Award category
 nominee -- (TEXT)  the winner of a certain Grammy Award category in a certain year
 
 Example:
        /grammys/3
-       [{"title": "60th Annual GRAMMY Awards (2017)", "category": "Album Of The Year", 
+       [{"title": "60th Annual GRAMMY Awards (2017)", "category": "Album Of The Year",
        "nominee": "24K Magic"}, ...]
 
 
 REQUEST: /categories/
-RESPONSE: Returns a JSON list of all the Grammy categories in our database. By default, the list 
-is presented in the decreasing order of year. Returns an empty list if there's any database 
-failure. Each dicitionary in this list will have the following field.
+RESPONSE: Returns a JSON list of all the Grammy categories in our database. By default, the list
+is presented in the decreasing order of year. Returns an empty list if there's any database
+failure. Each dictionary in this list will have the following field.
 
-id -- (INTEGER) 
+id -- (INTEGER)
 category -- (TEXT) the Grammy Award category
 
 
 REQUEST: /categories/&ltsearch&gt
-    RESPONSE: A JSON list of dictionaries, each of which represents one winner of a specifed Grammy 
-    Award. By default, the list is presented in the decreasing order of year. Returns an empty list 
-    if there's any database failure. Each dicitionary in this list will have the following fields.
-    
-    title -- (TEXT) the Grammy Award title 
+    RESPONSE: A JSON list of dictionaries, each of which represents one winner of a specifed Grammy
+    Award. By default, the list is presented in the increasing order of year. Returns an empty list
+    if there's any database failure. Each dictionary in this list will have the following fields.
+
+    title -- (TEXT) the Grammy Award title
     category -- (TEXT) the Grammy Award category
-    nominee -- (TEXT) the winner of a certain Grammy Award category 
+    nominee -- (TEXT) the winner of a certain Grammy Award category
     img -- (TEXT) the url for the picture of the nominee
-    
+
     Example:
            /categories/Album%20Of%20The%20Year
-           [{"title": "1st Annual GRAMMY Awards (1958)", "category": "Album Of The Year", "nominee": 
+           [{"title": "1st Annual GRAMMY Awards (1958)", "category": "Album Of The Year", "nominee":
            "The Music From Peter Gunn", "img": "https://www.grammy.com/sites/com/files/styles/artist
            _circle/public/muzooka/Henry%2BMancini/Henry%2520Mancini_1_1_1581553583.jpg?itok=oMIyl-mj",...}
-    
+
 
 REQUEST: /artists/
-RESPONSE: Returns a JSON list of all artists in our database, sorted alphabetically by 
-artist's first name. Returns an empty list if there's any database failure. Each 
+RESPONSE: Returns a JSON list of all artists in our database, sorted alphabetically by
+artist's first name. Returns an empty list if there's any database failure. Each
 dicitionary in this list will have the following field.
 
-id -- (INTEGER) 
+id -- (INTEGER)
 artist -- (TEXT) the artist's name
 
 
 REQUEST: /artists/&ltsearch&gt
-    RESPONSE: A JSON list of dictionaries, each of which represents one winner work by a specified 
-    artist. By default, the list is presented in the decreasing order of year. Returns an empty list 
-    if there's any database failure. Each dicitionary in this list will have the following fields.
-    
-    title -- (TEXT) the Grammy Award title 
+    RESPONSE: A JSON list of dictionaries, each of which represents one award won by a specified
+    artist. By default, the list is presented in the decreasing order of year. Returns an empty list
+    if there's any database failure. Each dictionary in this list will have the following fields.
+
+    title -- (TEXT) the Grammy Award title
     category -- (TEXT) the Grammy Award category
-    nominee -- (TEXT) the winner of a certain Grammy Award category 
+    nominee -- (TEXT) the winner of a certain Grammy Award category
     artist -- (TEXT) the artist's name
-    
+
     Example:
            /artists/Bee%20Gees
-           [{"title": "21st Annual GRAMMY Awards (1978)", "category": "Best Pop Vocal Performance By A 
+           [{"title": "21st Annual GRAMMY Awards (1978)", "category": "Best Pop Vocal Performance By A
            Duo, Group Or Chorus", "nominee": "Saturday Night Fever", "artist": "Bee Gees"}]
 
 
 REQUEST: /nominees/
-RESPONSE: Returns a JSON list of all Grammy winners in our database, sorted alphabetically by 
-Grammy winner's name. Returns an empty list if there's any database failure. Each 
-dicitionary in this list will have the following field.
+RESPONSE: Returns a JSON list of all the Grammy award winning works in our database.
+Returns an empty list if there's any database failure. Each
+dictionary in this list will have the following field.
 
-id -- (INTEGER) 
-nominne -- (TEXT) the nominne's (winner) name
+id -- (INTEGER)
+nominne -- (TEXT) the nominee's (winning work) name
 
 
 REQUEST: /nominees/&ltsearch&gt
-    RESPONSE: A JSON list of dictionaries, each of which represents one award category by a specified 
-    nominee. By default, the list is presented in the decreasing order of year. Returns an empty list 
+    RESPONSE: A JSON list of dictionaries, each of which represents one award category won by a specified
+    nominee. By default, the list is presented in the increasing order of year. Returns an empty list
     if there's any database failure. Each dicitionary in this list will have the following fields.
-    
-    title -- (TEXT) the Grammy Award title 
+
+    title -- (TEXT) the Grammy Award title
     category -- (TEXT) the Grammy Award category
-    nominee -- (TEXT) the winner of a certain Grammy Award category 
+    nominee -- (TEXT) the winner of a certain Grammy Award category
     artist -- (TEXT) the artist's name
-    
+
     Example:
            /nominees/'Round%20Midnight
-           [{"title": "29th Annual GRAMMY Awards (1986)", "category": "Best Jazz Vocal Performance, Male", 
-           "nominee": "'Round Midnight", "artist": "Bobby McFerrin"}, {"title": "35th Annual GRAMMY Awards (1992)", 
+           [{"title": "29th Annual GRAMMY Awards (1986)", "category": "Best Jazz Vocal Performance, Male",
+           "nominee": "'Round Midnight", "artist": "Bobby McFerrin"}, {"title": "35th Annual GRAMMY Awards (1992)",
            "category": "Best Jazz Vocal Performance", "nominee": "'Round Midnight", "artist": "Bobby McFerrin"}]
 
 
     </pre>
 </body>
 </html>
-

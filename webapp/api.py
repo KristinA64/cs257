@@ -35,6 +35,7 @@ def get_titles():
     query = '''SELECT award_year.id, award_year.award_title, award_year.year
                FROM award_year
                WHERE award_year.year != 2019
+               GROUP BY award_year.id, award_year.award_title, award_year.year
                ORDER BY award_year.id '''
 
 
@@ -92,6 +93,7 @@ def get_categories():
                WHERE category.id = nominee_award.category_id
                AND award_year.id =  nominee_award.award_year_id
                AND award_year.year != 2019
+               GROUP BY category.id, category.category
                ORDER BY category.id '''
 
 
@@ -148,6 +150,7 @@ def get_artists():
                WHERE award_year.id =  nominee_award.award_year_id
                AND nominee_information.id = nominee_award.nominee_id
                AND award_year.year != 2019
+               GROUP BY nominee_information.id, nominee_information.artist
                ORDER BY nominee_information.artist'''
 
 
@@ -206,6 +209,7 @@ def get_nominees():
                WHERE award_year.id =  nominee_award.award_year_id
                AND nominee_information.id = nominee_award.nominee_id
                AND award_year.year != 2019
+               GROUP BY nominee_information.id, nominee_information.nominee_name
                ORDER BY nominee_information.nominee_name'''
 
 
