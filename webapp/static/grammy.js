@@ -81,6 +81,13 @@ function undisplayContent(){
 
   let grammysText = document.getElementById('text');
   grammysText.innerHTML = "";
+  let grammysRecord = document.getElementById('record');
+  grammysRecord.innerHTML = "";
+
+  let grammysTutorial = document.getElementById('tutorial');
+  grammysTutorial.innerHTML = "";
+
+
 
 
 }
