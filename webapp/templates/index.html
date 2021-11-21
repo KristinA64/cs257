@@ -20,14 +20,12 @@ Kristin Albright and Xinyan Xiang
 </head>
 
     <a id="home_button" href="/">
-      <img class="home_b" src="{{ url_for('static', filename='grammy.png') }}" alt="home button with the grammy symbol">
+      <img width='120px' height='120px' class="home_b" src="{{ url_for('static', filename='grammy.png') }}" alt="home button with the grammy symbol">
     </a>
 
 <body>
-    <!-- <input type="image" src="{{ url_for('static', filename='grammy.png') }}" name="home_buttom" class="img" id="home_buttom" /> -->
     <ul>
-      <!-- <li id = 'home'></li> -->
-      <li id = 'help'></li>
+      <li><a href="#Help" id='help'>Help</a></li>
       <h4>Search by</h4>
       <li><a href= "#Year" id='year'>Award Year</a></li>
       <select class="selector" id="grammy_selector" style="display:none"></select>
@@ -70,15 +68,6 @@ Kristin Albright and Xinyan Xiang
          <div class="overlay"></div>
       </div>
       </div>
-      <p id  = "text"> </p>
-
-      <div id = "tutorial">
-      <button class="btn" id = "tutorial">Click here for tutorial</button>
-      </div>
-
-
-
-
 
       <p id="searchKey"></p>
       <table id="displayTable"></table>

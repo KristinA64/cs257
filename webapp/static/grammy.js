@@ -16,8 +16,8 @@ function initialize() {
     homeBar();
 
     // var tutorial = document.getElementById('tutorial');
-    
-  
+
+
 
 
 
@@ -84,9 +84,6 @@ function undisplayContent(){
   let grammysRecord = document.getElementById('record');
   grammysRecord.innerHTML = "";
 
-  let grammysTutorial = document.getElementById('tutorial');
-  grammysTutorial.innerHTML = "";
-
 
 
 
@@ -129,7 +126,7 @@ let selectorTitle = '';
 function loadGrammysSelector() {
     let url = getAPIBaseURL() + '/titles/';
 
-   
+
 
     // Send the request to the grammy API /titles/ endpoint
     fetch(url, {method: 'get'})
@@ -305,7 +302,7 @@ function onGrammySelectionChanged() {
 let selectorCategory = '';
 function loadCategorySearch() {
   let url = getAPIBaseURL() + '/categories/';
-  
+
 
   fetch(url, {method: 'get'})
 
@@ -662,7 +659,7 @@ function loadNomineeSearch() {
   function onNomineeSearchChanged() {
 
       undisplayContent()
-      
+
       let search = this.value;
       let url = getAPIBaseURL() + '/nominees/' + search;
 
