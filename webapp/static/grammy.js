@@ -115,7 +115,7 @@ function homeBar() {
   console.log(homeURL);
   // let aboutPageURL = getBaseURL() + '/about/';
 
-  let homeBar = document.getElementById('home');
+  let homeBar = document.getElementById('home_buttom');
   if(homeBar) {
     homeBar.innerHTML = '<a href=\"' + homeURL + '\">Home</a>';
 
