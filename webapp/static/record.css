@@ -15,7 +15,7 @@
   0% {
     transform: none;
   }
-  
+
   100% {
     transform: rotate(360deg);
   }
@@ -68,7 +68,7 @@
 }
 
 .inner::after {
-  content: 'Welcome\n to\n Our Website!';
+  content: 'Grammy History Database';
   width: 55px;
   text-align: center;
   font-family: sans-serif;
@@ -78,4 +78,3 @@
   top: 10px;
   transform: translateX(-50%);
 }
-

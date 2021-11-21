@@ -1,6 +1,6 @@
 <!--
 Kristin Albright and Xinyan Xiang
-10 November 2021
+20 November 2021
 -->
 
 
@@ -19,14 +19,19 @@ Kristin Albright and Xinyan Xiang
     <title>Grammy Awards</title>
 </head>
 
+    <a id="home_button" href="#">
+      <img class="home_b" src="{{ url_for('static', filename='grammy.png') }}" alt="home button with the grammy symbol">
+    </a>
+
 <body>
-    <input type="image" src="{{ url_for('static', filename='grammy.png') }}" name="home_buttom" class="img" id="home_buttom" />
+    <!-- <input type="image" src="{{ url_for('static', filename='grammy.png') }}" name="home_buttom" class="img" id="home_buttom" /> -->
     <ul>
       <li id = 'home'></li>
+      <li id = 'help'></li>
       <h4>Search by</h4>
       <li><a href= "#Year" id='year'>Award Year</a></li>
       <select class="selector" id="grammy_selector" style="display:none"></select>
-      
+
       <li><a href="#Category" id='category'>Category</a></li>
       <div class="wrap" style="display:none" id='search1'>
          <div class="search">
@@ -51,15 +56,14 @@ Kristin Albright and Xinyan Xiang
          </div>
       </div>
 
-
+<!--
       <h4>Analytics</h4>
       <li><a href="#Nominations">Top Nominations (Implement this Later...) </a></li>
-      <li><a href="#Wins">Top Wins (Implement this Later...)</a></li>
+      <li><a href="#Wins">Top Wins (Implement this Later...)</a></li> -->
     </ul>
 
 
     <div style="margin-left:15%;padding:1px 6px;height:700px;top:10%;">
-      <p id  = "text">You are awasome</p>
       <div id = "record">
       <div class="record">
          <div class="inner" ></div>
@@ -71,15 +75,15 @@ Kristin Albright and Xinyan Xiang
       <div id = "tutorial">
       <button class="btn" id = "tutorial">Click here for tutorial</button>
       </div>
-   
-      
-       
+
+
+
 
 
       <p id="searchKey"></p>
       <table id="displayTable"></table>
-      <div id="container"> </div> 
-      
+      <div id="container"> </div>
+
     </div>
     <footer>
       <p>Footer</p>
