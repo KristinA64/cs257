@@ -1,19 +1,15 @@
 AUTHORS: Kristin Albright and Xinyan Xiang
 
-DATA: Our data shows the grammy winners for each category and the nominees for the 2019 grammy awards.
+DATA: Our data shows the Grammy award winners for each category. 
+This dataset was found on Kaggle (link below) and was published with the CC0: Public Domain license.
+https://www.kaggle.com/unanimad/grammy-awards
 
-FEATURES CURRENTLY WORKING:
-- Selecting 1 grammy award show (i.e. the 22nd Annual Grammy Awards) and seeing all the winners from that show.
+STATUS:
+Through this website, you can search the history of Grammy winners by looking at winners from a specific year through a drop down menu that appears after clicking “Year” in the navigation bar. You can also search by Category, the Artist, or the piece that was Nominated by clicking the appropriate link in the navigation bar (Category, Artist, or Nominee) and typing in your query. If you get lost, you can click on the “Help” link for a description of the website.
+This website only includes Grammy award data up until 2018 because the 2019 and 2020 Grammy awards had not yet occurred when this dataset was made.
 
-FEATURES NOT YET WORKING:
-- Searching by award (i.e. Best Pop Album)
-- Searching by nominee(also winner of a certain year) (i.e. Bad Guy)
-- Searching by artist (i.e. Donna Summer)
-- Searching by year (i.e. 2018)
+***We should add in some stuff that isn’t working****
 
-FEATURES NOT YET WORKING:
-- Analytics pages
-- Filtering results by range of years
-- rotating vinyl record
-- show the image of a nominee when the user clicks on
-the nominee's name on the chart
+NOTES: 
+As opposed to our mockups, we decided not to do range of years and to include a drop down menu as opposed to a slider because we thought that might be easier for a user to navigate.
+Also opposed to our mockups, we decided that the analytics pages might be better suited for a future continuation of this website rather than include it for this project.
