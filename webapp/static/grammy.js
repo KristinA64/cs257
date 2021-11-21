@@ -16,8 +16,8 @@ function initialize() {
     homeBar();
 
     // var tutorial = document.getElementById('tutorial');
-
-
+    
+  
 
 
 
@@ -77,10 +77,15 @@ function checkURL() {
 function undisplayContent(){
 
   let grammysChart = document.getElementById('container');
-  grammysChart.style.display = "none";
+  grammysChart.innerHTML = "";
 
+  let grammysText = document.getElementById('text');
+  grammysText.innerHTML = "";
   let grammysRecord = document.getElementById('record');
-  grammysRecord.style.display = "none";
+  grammysRecord.innerHTML = "";
+
+  let grammysTutorial = document.getElementById('tutorial');
+  grammysTutorial.innerHTML = "";
 
 
 
@@ -124,7 +129,7 @@ let selectorTitle = '';
 function loadGrammysSelector() {
     let url = getAPIBaseURL() + '/titles/';
 
-
+   
 
     // Send the request to the grammy API /titles/ endpoint
     fetch(url, {method: 'get'})
@@ -161,7 +166,7 @@ function loadGrammysSelector() {
 
 function onGrammySelectionChanged() {
 
-    undisplayContent();
+    undisplayContent()
     let grammyID = this.value;
     let grammyIDInt = parseInt (grammyID);
     let url = getAPIBaseURL() + '/grammys/' + grammyID;
@@ -186,10 +191,10 @@ function onGrammySelectionChanged() {
         }
         else {
             if (searchKey) {
-                searchKey.style.display = "none";
+                searchKey.innerHTML = "";
             }
               if (displayTable) {
-                  displayTable.style.display = "none";
+                  displayTable.innerHTML = "";
               }
         }
         // Create data list for drawing the donut chat
@@ -205,7 +210,7 @@ function onGrammySelectionChanged() {
 
         //Update the chart when the searching value is changed
         let titleChart = document.getElementById('container');
-        titleChart.style.display = "none";
+        titleChart.innerHTML = "";
 
         // Draw the pie chart
         if (nomineesYear.length != 0){
@@ -278,7 +283,6 @@ function onGrammySelectionChanged() {
 
             // set label to center content of chart
             chart.center().content(label);
-            document.getElementById('container').style.display = "inline";
             let yearChart = document.getElementById('container');
             if (yearChart) {
                 chart.container(stage);
@@ -301,7 +305,7 @@ function onGrammySelectionChanged() {
 let selectorCategory = '';
 function loadCategorySearch() {
   let url = getAPIBaseURL() + '/categories/';
-
+  
 
   fetch(url, {method: 'get'})
 
@@ -353,10 +357,10 @@ function onCategorySearchChanged() {
         }
         else {
             if (searchKey) {
-                searchKey.style.display = "none";
+                searchKey.innerHTML = "";
             }
               if (displayTable) {
-                  displayTable.style.display = "none";
+                  displayTable.innerHTML = "";
               }
         }
         // Create data list for drawing the donut chat
@@ -367,7 +371,7 @@ function onCategorySearchChanged() {
 
         // remove the previous donut chart
         let categoryChart = document.getElementById('container');
-        categoryChart.style.display = "none";
+        categoryChart.innerHTML = "";
 
         // Draw the pie chart
         if (nomineesCategory.length != 0){
@@ -440,7 +444,6 @@ function onCategorySearchChanged() {
 
             // set label to center content of chart
             chart.center().content(label);
-            document.getElementById("container").style.display = "inline";
             let categoryChart = document.getElementById('container');
             if (categoryChart) {
                 chart.container(stage);
@@ -519,10 +522,10 @@ function loadArtistSearch() {
         }
         else {
             if (searchKey) {
-                searchKey.style.display = "none";
+                searchKey.innerHTML = "";
             }
               if (displayTable) {
-                  displayTable.style.display = "none";
+                  displayTable.innerHTML = "";
               }
         }
 
@@ -534,7 +537,7 @@ function loadArtistSearch() {
           }
 
           let artistChart = document.getElementById('container');
-          artistChart.style.display = "none";
+          artistChart.innerHTML = "";
 
           // Draw the pie chart
           if (nomineesArtist.length != 0){
@@ -608,7 +611,6 @@ function loadArtistSearch() {
 
               // set label to center content of chart
               chart.center().content(label);
-              document.getElementById("container").style.display = "inline";
               let artistChart = document.getElementById('container');
               if (artistChart) {
                   chart.container(stage);
@@ -660,7 +662,7 @@ function loadNomineeSearch() {
   function onNomineeSearchChanged() {
 
       undisplayContent()
-
+      
       let search = this.value;
       let url = getAPIBaseURL() + '/nominees/' + search;
 
@@ -686,10 +688,10 @@ function loadNomineeSearch() {
         }
         else {
             if (searchKey) {
-                searchKey.style.display = "none";
+                searchKey.innerHTML = "";
             }
               if (displayTable) {
-                  displayTable.style.display = "none";
+                  displayTable.innerHTML = "";
               }
         }
 
@@ -701,7 +703,7 @@ function loadNomineeSearch() {
           }
 
           let nomineeChart = document.getElementById('container');
-          nomineeChart.style.display = "none";
+          nomineeChart.innerHTML = "";
 
           // Draw the pie chart
           if (nominees.length != 0){
@@ -775,7 +777,6 @@ function loadNomineeSearch() {
 
               // set label to center content of chart
               chart.center().content(label);
-              document.getElementById("container").style.display = "inline";
               let nomineeChart = document.getElementById('container');
               if (nomineeChart) {
                   chart.container(stage);

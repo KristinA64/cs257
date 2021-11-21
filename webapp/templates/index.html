@@ -20,12 +20,14 @@ Kristin Albright and Xinyan Xiang
 </head>
 
     <a id="home_button" href="/">
-      <img width='120px' height='120px' class="home_b" src="{{ url_for('static', filename='grammy.png') }}" alt="home button with the grammy symbol">
+      <img class="home_b" src="{{ url_for('static', filename='grammy.png') }}" alt="home button with the grammy symbol">
     </a>
 
 <body>
+    <!-- <input type="image" src="{{ url_for('static', filename='grammy.png') }}" name="home_buttom" class="img" id="home_buttom" /> -->
     <ul>
-      <li><a href="#Help" id='help'>Help</a></li>
+      <!-- <li id = 'home'></li> -->
+      <li id = 'help'></li>
       <h4>Search by</h4>
       <li><a href= "#Year" id='year'>Award Year</a></li>
       <select class="selector" id="grammy_selector" style="display:none"></select>
@@ -61,17 +63,26 @@ Kristin Albright and Xinyan Xiang
     </ul>
 
 
-    <div id="record-container" style="margin-left:15%;padding:1px 6px;height:700px;top:10%;">
-      <div id = "record" style="display:inline">
+    <div style="margin-left:15%;padding:1px 6px;height:700px;top:10%;">
+      <div id = "record">
       <div class="record">
          <div class="inner" ></div>
          <div class="overlay"></div>
       </div>
       </div>
+      <p id  = "text"> </p>
 
-      <p id="searchKey" style="display:none"></p>
-      <table id="displayTable" style="display:none"></table>
-      <div id="container" style="display:none"> </div>
+      <div id = "tutorial">
+      <button class="btn" id = "tutorial">Click here for tutorial</button>
+      </div>
+
+
+
+
+
+      <p id="searchKey"></p>
+      <table id="displayTable"></table>
+      <div id="container"> </div>
 
     </div>
     <footer>
