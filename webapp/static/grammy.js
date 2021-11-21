@@ -16,8 +16,8 @@ function initialize() {
     homeBar();
 
     // var tutorial = document.getElementById('tutorial');
-    
-  
+
+
     var navigation_help = document.getElementById('helpMe');
     navigation_help.onclick = loadHelpSelector;
 
@@ -130,7 +130,17 @@ function loadHelpSelector(){
   undisplayContent();
   // checkURL();
   let helpSelector = document.getElementById('helpDoc');
-  helpSelector.innerHTML = "Hello";
+  const help_doc = `
+  <div>
+    <p>Hello! Welcome to the help page – this website has 4 main functions for you to choose from:<br><br>
+    Search the Grammy award winners database by year.<br>
+    Search the database by Category (like who has won "Album of the Year" before?).<br>
+    Search the database by Artist (like what awards has "Adele" won?).<br>
+    Search the database by Nominee (like which awards did the album "Fly" win?).<br>
+    To get started, click on the type of search you would like to do in the lefthand column (Year, Category, Artist, Nominee)</p>
+  </div>
+`;
+  helpSelector.innerHTML = help_doc;
 
 }
 
@@ -141,7 +151,7 @@ let selectorTitle = '';
 function loadGrammysSelector() {
     let url = getAPIBaseURL() + '/titles/';
 
-   
+
 
     // Send the request to the grammy API /titles/ endpoint
     fetch(url, {method: 'get'})
@@ -317,7 +327,7 @@ function onGrammySelectionChanged() {
 let selectorCategory = '';
 function loadCategorySearch() {
   let url = getAPIBaseURL() + '/categories/';
-  
+
 
   fetch(url, {method: 'get'})
 
@@ -674,7 +684,7 @@ function loadNomineeSearch() {
   function onNomineeSearchChanged() {
 
       undisplayContent()
-      
+
       let search = this.value;
       let url = getAPIBaseURL() + '/nominees/' + search;
 
