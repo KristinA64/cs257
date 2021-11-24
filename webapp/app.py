@@ -24,7 +24,7 @@ def tutorial():
 
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser('A books-and-authors application, including API & DB')
+    parser = argparse.ArgumentParser('A Grammy Award searching application, including API & DB')
     parser.add_argument('host', help='the host to run on')
     parser.add_argument('port', type=int, help='the port to listen on')
     arguments = parser.parse_args()
