@@ -292,13 +292,6 @@ function onGrammySelectionChanged() {
             if (yearChart) {
                 chart.container(stage);
                 chart.draw();
-                // // We will these codes later ...
-                // var innerRadius = chart.getPixelInnerRadius();
-                // var pieCenter = chart.center().getPoint();
-                // var customCircle = anychart.graphics.circle(pieCenter.x, pieCenter.y, innerRadius);
-                // customCircle.fill("black");
-                // customCircle.stroke('none')
-                // customCircle.parent(stage);
             }
           });}
     })
