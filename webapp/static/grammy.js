@@ -1,40 +1,32 @@
 /*
  * grammy.js
  * Kristin Albright and Xinyan Xiang
- * 10 November 2021
+ * 24 November 2021
  * this code was modified from previous
  * code written by Jeff Ondich
  */
 
 window.onload = initialize;
 
+
 function initialize() {
 
-    //  var navigation_award_home = document.getElementById('home');
-    //  navigation_award_home.onclick = fillNavbar();
-
     homeBar();
-
-    // var tutorial = document.getElementById('tutorial');
-
 
     var navigation_help = document.getElementById('helpMe');
     navigation_help.onclick = loadHelpSelector;
 
+    var navigation_award_year = document.getElementById('year');
+    navigation_award_year.onclick = loadGrammysSelector;
 
+    var navigation_category= document.getElementById('category');
+    navigation_category.onclick = loadCategorySearch;
 
-     var navigation_award_year = document.getElementById('year');
-     navigation_award_year.onclick = loadGrammysSelector;
+    var navigation_artist= document.getElementById('artist');
+    navigation_artist.onclick = loadArtistSearch;
 
-     var navigation_category= document.getElementById('category');
-     navigation_category.onclick = loadCategorySearch;
-
-     var navigation_artist= document.getElementById('artist');
-     navigation_artist.onclick = loadArtistSearch;
-
-     var navigation_nominee = document.getElementById('nominee');
-     navigation_nominee.onclick = loadNomineeSearch;
-
+    var navigation_nominee = document.getElementById('nominee');
+    navigation_nominee.onclick = loadNomineeSearch;
 
     let element = document.getElementById('grammy_selector');
     if (element) {
@@ -57,9 +49,6 @@ function initialize() {
     }
 }
 
-// function loadTutorialTemplate() {
-//  location.replace("https://www.w3schools.com")
-// }
 
 function checkURL() {
   if (window.location.href.indexOf('#Year') == -1) {
@@ -76,6 +65,7 @@ function checkURL() {
   }
 }
 
+
 function undisplayContent(){
 
   let grammysChart = document.getElementById('container');
@@ -86,15 +76,14 @@ function undisplayContent(){
   let grammysRecord = document.getElementById('record');
   grammysRecord.innerHTML = "";
 
-  let grammysTutorial = document.getElementById('tutorial');
-  grammysTutorial.innerHTML = "";
-
   let helpSelector = document.getElementById('helpDoc');
   helpSelector.innerHTML = "";
 
+  let displayTableSelector = document.getElementById('displayTable');
+  displayTableSelector.innerHTML = "";
 
-
-
+  let searchKeyelector = document.getElementById('searchKey');
+  searchKeyelector.innerHTML = "";
 }
 
 
@@ -108,6 +97,7 @@ function getAPIBaseURL() {
     return baseURL;
 }
 
+// Returns the base URL of home
 function getBaseURL() {
   baseURL = window.location.protocol
           + '//' + window.location.hostname
@@ -115,11 +105,10 @@ function getBaseURL() {
   return baseURL;
 }
 
+// Go back to the home by clicking the logo
 function homeBar() {
   let homeURL = getBaseURL() + '/';
   console.log(homeURL);
-  // let aboutPageURL = getBaseURL() + '/about/';
-
   let homeBar = document.getElementById('home_buttom');
   if(homeBar) {
     homeBar.innerHTML = '<a href=\"' + homeURL + '\">Home</a>';
@@ -128,7 +117,6 @@ function homeBar() {
 
 function loadHelpSelector(){
   undisplayContent();
-  // checkURL();
   let helpSelector = document.getElementById('helpDoc');
   const help_doc = `
   <div>
@@ -141,17 +129,13 @@ function loadHelpSelector(){
   </div>
 `;
   helpSelector.innerHTML = help_doc;
-
 }
-
 
 
 // Search by Year (Award titles)
 let selectorTitle = '';
 function loadGrammysSelector() {
     let url = getAPIBaseURL() + '/titles/';
-
-
 
     // Send the request to the grammy API /titles/ endpoint
     fetch(url, {method: 'get'})
@@ -187,7 +171,6 @@ function loadGrammysSelector() {
 }
 
 function onGrammySelectionChanged() {
-
     undisplayContent()
     let grammyID = this.value;
     let grammyIDInt = parseInt (grammyID);
@@ -205,7 +188,7 @@ function onGrammySelectionChanged() {
         if (nomineesYear.length == 0){
             if (searchKey) {
               //change error message to be more specific
-                searchKey.innerHTML = "Your search input is not valid! Please use following years!";
+                searchKey.innerHTML = "Your search input is not valid! Please use following years! Thanks!";
             }
               if (displayTable) {
                   displayTable.innerHTML = selectorCategory;
@@ -323,11 +306,12 @@ function onGrammySelectionChanged() {
         console.log(error);
     });
 }
+
+
 // Search by Award Category
 let selectorCategory = '';
 function loadCategorySearch() {
   let url = getAPIBaseURL() + '/categories/';
-
 
   fetch(url, {method: 'get'})
 
@@ -371,7 +355,7 @@ function onCategorySearchChanged() {
         let displayTable = document.getElementById('displayTable');
         if (nomineesCategory.length == 0){
             if (searchKey) {
-                searchKey.innerHTML = "Your search input is not valid! Please use following categories!";
+                searchKey.innerHTML = "Your search input is not valid! Please use following categories! Thanks!";
             }
               if (displayTable) {
                   displayTable.innerHTML = selectorCategory;
@@ -470,13 +454,6 @@ function onCategorySearchChanged() {
             if (categoryChart) {
                 chart.container(stage);
                 chart.draw();
-                // // We will these codes later ...
-                // var innerRadius = chart.getPixelInnerRadius();
-                // var pieCenter = chart.center().getPoint();
-                // var customCircle = anychart.graphics.circle(pieCenter.x, pieCenter.y, innerRadius);
-                // customCircle.fill("black");
-                // customCircle.stroke('none')
-                // customCircle.parent(stage);
             }
           });}
     })
@@ -485,8 +462,11 @@ function onCategorySearchChanged() {
     });
 }
 
+
 // Search by Artist
 let selectorArtist = '';
+let selectorArtist_unique= '';
+let selectorArtist_unique_list= [];
 function loadArtistSearch() {
     let url = getAPIBaseURL() + '/artists/';
 
@@ -500,6 +480,12 @@ function loadArtistSearch() {
             selectorArtist += '<option value="' + artist['id'] + '">'
                                 + artist['artist']
                                 + '</option>\n';
+            if (selectorArtist_unique_list.includes(artist['artist']) == false) {
+              selectorArtist_unique += '<option value="' + artist['id'] + '">'
+              + artist['artist']
+              + '</option>\n';
+            selectorArtist_unique_list.push(artist['artist']);
+            }
         }
 
         checkURL()
@@ -517,7 +503,6 @@ function loadArtistSearch() {
   }
 
   function onArtistSearchChanged() {
-
       undisplayContent();
       let search = this.value;
       let url = getAPIBaseURL() + '/artists/' + search;
@@ -536,10 +521,10 @@ function loadArtistSearch() {
 
         if (nomineesArtist.length == 0){
             if (searchKey) {
-                searchKey.innerHTML = "Your search input is not valid! Please use following artists!";
+                searchKey.innerHTML = "Your search input is not valid! Please use following artists! Thanks!";
             }
               if (displayTable) {
-                  displayTable.innerHTML = selectorArtist;
+                  displayTable.innerHTML = selectorArtist_unique;
               }
         }
         else {
@@ -637,13 +622,6 @@ function loadArtistSearch() {
               if (artistChart) {
                   chart.container(stage);
                   chart.draw();
-                  // // We will these codes later ...
-                  // var innerRadius = chart.getPixelInnerRadius();
-                  // var pieCenter = chart.center().getPoint();
-                  // var customCircle = anychart.graphics.circle(pieCenter.x, pieCenter.y, innerRadius);
-                  // customCircle.fill("black");
-                  // customCircle.stroke('none')
-                  // customCircle.parent(stage);
               }
             });}
       })
@@ -652,6 +630,7 @@ function loadArtistSearch() {
           console.log(error);
       });
   }
+
 
 // Search by Nominees
 let selectorNominee = '';
@@ -682,7 +661,6 @@ function loadNomineeSearch() {
   }
 
   function onNomineeSearchChanged() {
-
       undisplayContent()
 
       let search = this.value;
@@ -702,7 +680,7 @@ function loadNomineeSearch() {
 
         if (nominees.length == 0){
             if (searchKey) {
-                searchKey.innerHTML = "Your search input is not valid! Please use following nominees!";
+                searchKey.innerHTML = "Your search input is not valid! Please use following nominees! Thanks!";
             }
               if (displayTable) {
                   displayTable.innerHTML = selectorNominee;
@@ -803,13 +781,6 @@ function loadNomineeSearch() {
               if (nomineeChart) {
                   chart.container(stage);
                   chart.draw();
-                  // // We will these codes later ...
-                  // var innerRadius = chart.getPixelInnerRadius();
-                  // var pieCenter = chart.center().getPoint();
-                  // var customCircle = anychart.graphics.circle(pieCenter.x, pieCenter.y, innerRadius);
-                  // customCircle.fill("black");
-                  // customCircle.stroke('none')
-                  // customCircle.parent(stage);
               }
             });}
       })

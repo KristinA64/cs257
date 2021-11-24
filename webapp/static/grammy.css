@@ -1,7 +1,7 @@
 /*
     grammy.css
     Kristin Albright and Xinyan Xiang
-    11 November 2021
+    24 November 2021
     Modified from code originally by
     Jeff Ondich
 */
@@ -10,27 +10,8 @@ table {
     border-collapse: collapse;
 }
 
-/*
-th, td {
-    border: 1px solid #ddd;
-    padding: 15px;
-}
-
-a {
-  color: #0B86B5;
-  text-decoration: underline;
-}
-
-a:hover {
-  background-color: #D8D8D8;
-  text-decoration: none;
-  cursor: pointer;
-} */
-
-
 body {
   margin: 0;
-  /* background-color: rgb(247, 224, 133); */
 }
 
 ul {
@@ -40,7 +21,7 @@ ul {
   width: 15%;
   background-color: #fef3b5;
   position: fixed;
-  top:15%;
+  top:25%;
   height: 70%;
   overflow: auto;
 }
@@ -120,25 +101,12 @@ li a:hover:not(.active) {
 }
 
 #container {
-   position: fixed;
+   position: relative;
   width:100%;
   height: 100%;
-  padding: 0;
-  margin-right: 140%;
-   /* bottom:0px;  */
-  /* right: 5px;  */
-  /* margin-bottom: 2000px;   */
+  right: 80px
 }
 
-/* Style the footer */
-/* footer {
-  background-color: #777;
-  padding: 10px;
-  text-align: center;
-  color: white;
-  position:fixed;
-  bottom:10%;
-} */
 
 footer {
   list-style-type: none;
@@ -172,3 +140,17 @@ position: absolute;
 }
 
 .btn:hover {opacity: 0.6}
+
+#helpDoc {
+font-family: Helvetica, Arial serif;
+font-size: 15pt;
+color: rgb(201, 138, 12);
+/* position: fixed; */
+}
+
+#searchKey {
+  font-family: Helvetica, Arial serif;
+  font-size: 15pt;
+  color: rgb(201, 138, 12);
+  /* position: fixed; */
+  }

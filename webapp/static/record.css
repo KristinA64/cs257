@@ -1,9 +1,15 @@
+/*
+ * record.css
+ * Kristin Albright and Xinyan Xiang
+ * 24 November 2021
+ * this code was modified from previous
+ * code written by https://www.jq22.com/code3424
+ */
 
 .record {
-  position: relative;
-  margin: auto;
-  /* left: 35px; */
-  /* top: 35px; */
+  position: fixed;
+  left: 300px; 
+  top: 50px;
   width: 500px;
   height: 500px;
   background: black;
@@ -29,7 +35,6 @@
   position: absolute;
   width: 480px;
   height: 480px;
-  /* background: repeating-radial-gradient(#fff3b2, #f2dc5f 10px, #f9f6e2 8px); */
   background: repeating-radial-gradient(black, black 5px, #1C1C1C 6px, #1C1C1C 7px);
   border-radius: 50%;
 }
