@@ -1,10 +1,10 @@
 '''
-    books_webapp.py
-    Jeff Ondich, 25 April 2016
-    Updated 6 November 2021
+    app.py
+    Kristin Albright and Xinyan Xiang
+    24 November 2021
 
-    A small Flask application that provides a barelywebsite with an accompanying
-    API (which is also tiny) to support that website.
+    This code was modified from previous
+    code written by Jeff Ondich
 '''
 import flask
 import argparse
@@ -13,11 +13,11 @@ import api
 app = flask.Flask(__name__, static_folder='static', template_folder='templates')
 app.register_blueprint(api.api, url_prefix='/api')
 
-@app.route('/') 
+@app.route('/')
 def home():
     return flask.render_template('index.html')
 
-@app.route('/tutorial/') 
+@app.route('/tutorial/')
 def tutorial():
     return flask.render_template('tutorial.html')
 
